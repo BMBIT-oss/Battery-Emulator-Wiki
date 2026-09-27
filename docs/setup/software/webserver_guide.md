@@ -40,17 +40,23 @@ If you don't plan to use the Access Point on a regular basis, disable it. Not on
     If you disabled the Access Point earlier and need to use it again without having access to the home network, you can [turn it back on with the BOOT button](boot_button_functions.md#start-wi-fi-access-point) on the board.
 
 ## Using the Webserver
-The front page will contain some quick information about the system. What software version the system has, Inverter protocol, Battery type, Live data from the battery transmitted to the Inverter, along with some buttons to go to other pages. The page will be green incase all is well, go yellow incase there is an active warning, and go red incase an error is active and blocking operation. Incase there is a warning/error active, you can click the `Events` button to go to this view.
+The front page organizes in a couple of cards a quick overview of the information about the system. What software version the system has, Inverter protocol, Battery type, Live data from the battery transmitted to the Inverter, along with some buttons to go to other pages. The page will be **green** in case all is well, go **yellow** in case there is an active warning, and go **red** in case an error is active and blocking operation. When there is a warning/error active, you can click the **Events** button to see what went wrong.
 
 ![mainpage](../../images/webserver-guide-20.png)
+
+The main page refreshes data from the Emulator every 15 s. Clicking any of the data cards will trigger an instant refresh. The maximum refresh rate allowed is 1s, but please, don't abuse it. Should any network issue appear between your browser ant the Emulator, it will be displayed. 
+
+<img width="364" height="57" alt="retry" src="https://github.com/user-attachments/assets/07cb2bf4-77d9-4e6d-8151-9fd30abe2a1f" />
+
+The interface automatically recovers as soon as connection will be reestablished.
 
 #### Limiting factor display
 
 Using the webserver you can see which component is limiting the charge/discharge. It will show you if the battery is the bottleneck, or if the inverter is the limiting factor.
 
-![kép](../../images/webserver-guide-21.png)
+![limit](../../images/webserver-guide-21.png)
 
-![kép](../../images/webserver-guide-22.png)
+![limit](../../images/webserver-guide-22.png)
 
 If no power is being put in/out of the battery, the text will simply say **Battery Idle**.
 
@@ -107,6 +113,13 @@ This button will restart the emulator. Can be useful to get out of a latched err
     Rebooting the Emulator might put your inverter in a fault state. Some inverters take the reboot without any issues (Fronius Gen24), but others can properly lock themselves (SMA Tripower), and require a reset on the inverter side to get going again. 
 
 ## Settings
+
+The settings page contains an embedded help, with short explanations about the related configuration items. Click the small ⓘ icon where available, to display the information. Links to the wiki page containing the documentation will open in a new window.
+
+<img width="539" height="99" alt="help" src="https://github.com/user-attachments/assets/b86dd6b8-a207-4824-b86e-878b7a71718c" />
+
+!!! note "NOTE"
+    Low-flash boards like LilyGo T‐CAN485 display this only when they have Internet access.
 
 ### Web Server Authentication
 
