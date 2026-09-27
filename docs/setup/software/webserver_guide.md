@@ -46,7 +46,7 @@ The front page organizes in a couple of cards a quick overview of the informatio
 
 The main page refreshes data from the Emulator every 15 s. Clicking any of the data cards will trigger an instant refresh. The maximum refresh rate allowed is 1s, but please, don't abuse it. Should any network issue appear between your browser ant the Emulator, it will be displayed. 
 
-<img width="364" height="57" alt="retry" src="https://github.com/user-attachments/assets/07cb2bf4-77d9-4e6d-8151-9fd30abe2a1f" />
+![retry](../../images/webserver-guide-23.png)
 
 The interface automatically recovers as soon as connection will be reestablished.
 
@@ -116,7 +116,7 @@ This button will restart the emulator. Can be useful to get out of a latched err
 
 The settings page contains an embedded help, with short explanations about the related configuration items. Click the small ⓘ icon where available, to display the information. Links to the wiki page containing the documentation will open in a new window.
 
-<img width="539" height="99" alt="help" src="https://github.com/user-attachments/assets/b86dd6b8-a207-4824-b86e-878b7a71718c" />
+![help](../../images/webserver-guide-24.png)
 
 !!! note "NOTE"
     Low-flash boards like LilyGo T‐CAN485 display this only when they have Internet access.
