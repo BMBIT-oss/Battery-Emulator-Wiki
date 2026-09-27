@@ -42,15 +42,15 @@ If you don't plan to use the Access Point on a regular basis, disable it. Not on
 ## Using the Webserver
 The front page will contain some quick information about the system. What software version the system has, Inverter protocol, Battery type, Live data from the battery transmitted to the Inverter, along with some buttons to go to other pages. The page will be green incase all is well, go yellow incase there is an active warning, and go red incase an error is active and blocking operation. Incase there is a warning/error active, you can click the `Events` button to go to this view.
 
-<img width="1178" height="1078" alt="mainpage" src="https://github.com/user-attachments/assets/97cc1a89-98ed-4d2e-aff8-a2c35034b6a9" />
+![mainpage](../../images/webserver-guide-20.png)
 
 #### Limiting factor display
 
 Using the webserver you can see which component is limiting the charge/discharge. It will show you if the battery is the bottleneck, or if the inverter is the limiting factor.
 
-<img width="294" height="37" alt="kép" src="https://github.com/user-attachments/assets/5de7e972-1163-4bb0-9fb0-68e21f3ead57" />
+![kép](../../images/webserver-guide-21.png)
 
-<img width="311" height="37" alt="kép" src="https://github.com/user-attachments/assets/522b8e81-784d-4f42-b7ec-e8444408d67b" />
+![kép](../../images/webserver-guide-22.png)
 
 If no power is being put in/out of the battery, the text will simply say **Battery Idle**.
 
