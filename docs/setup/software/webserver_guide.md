@@ -3,6 +3,7 @@ title: "Webserver guide"
 ---
 
 ## Webserver
+
 You can interact with the Battery-Emulator via the built in Webserver. Here you can check battery status, change battery settings, update the software over-the-air, check active events, monitor cell voltages plus much more! It is easy to commission a new system, and the preferred way to monitor a newly setup battery system.
 
 !!! info "IMPORTANT"
@@ -41,23 +42,25 @@ If you don't plan to use the Access Point on a regular basis, disable it. Not on
 ## Using the Webserver
 The front page will contain some quick information about the system. What software version the system has, Inverter protocol, Battery type, Live data from the battery transmitted to the Inverter, along with some buttons to go to other pages. The page will be green incase all is well, go yellow incase there is an active warning, and go red incase an error is active and blocking operation. Incase there is a warning/error active, you can click the `Events` button to go to this view.
 
-![image](../../images/webserver-guide-03.png)
+<img width="1178" height="1078" alt="mainpage" src="https://github.com/user-attachments/assets/97cc1a89-98ed-4d2e-aff8-a2c35034b6a9" />
 
-#### Limiting factor
-Using the webserver you can see what part is limiting the charge/discharge. It will show you if the battery is the bottleneck, or if the inverter is the limiting factor.
+#### Limiting factor display
 
-![image](../../images/webserver-guide-04.png)
+Using the webserver you can see which component is limiting the charge/discharge. It will show you if the battery is the bottleneck, or if the inverter is the limiting factor.
 
-![image](../../images/webserver-guide-05.png)
+<img width="294" height="37" alt="kép" src="https://github.com/user-attachments/assets/5de7e972-1163-4bb0-9fb0-68e21f3ead57" />
 
-Note, if no power is being put in/out of the battery, the text will simply say Battery Idle.
+<img width="311" height="37" alt="kép" src="https://github.com/user-attachments/assets/522b8e81-784d-4f42-b7ec-e8444408d67b" />
+
+If no power is being put in/out of the battery, the text will simply say **Battery Idle**.
 
 Above this text you can also see the Amperages allowed by the Emulator. You can see when the charge/discharge amperage values are limited by the battery itself (BMS), or by the user configurable settings (Manual)
 
 ![image](../../images/webserver-guide-06.png)
 
 ## Events
-This page contains information about events that have occurred while the system has been running. All events are timestamped, and have an occurrence counter so you know if many events of the same type has triggered. The list is ordered with the newest events on top.
+
+At the bottom of main page, clicking the **Events** button will show information about events that have occurred while the system has been running. All events are timestamped, and have an occurrence counter so you know if many events of the same type has triggered. The list is ordered with the newest events on top.
 
 ![image](../../images/webserver-guide-16.png)
 
