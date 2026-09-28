@@ -38,7 +38,7 @@ Part numbers for connectors/cables, along with purchase links to ebay/aliexpress
 
 Low Voltage connectors:
 
-![image](../images/smart-eq-fortwo-forfour-01.png){ width="810" height="621" }
+![image](../images/smart-eq-fortwo-forfour-01.png)
 
 Diagram:
 

@@ -37,7 +37,7 @@ The Solis inverter works via CAN. A board with a single CAN channel, such as the
 ## Which protocol to use
 For this inverter type, use the option called "BYD Battery-Box Premium HVS over CAN Bus" under the "Inverter Protocol" setting.
 
-![image](../images/afore-01.png){ width="484" height="68" }
+![image](../images/afore-01.png)
 
 In the Solis inverter settings, select the "BYD-HVS/HVM/HVL" option:
 
@@ -45,7 +45,7 @@ In the Solis inverter settings, select the "BYD-HVS/HVM/HVL" option:
 
 BYD_HVL option when looking directly at the inverter screen:
 
-![image](../images/solis-05.png){ width="1203" height="726" }
+![image](../images/solis-05.png)
 
 ## Startup example
 

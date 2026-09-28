@@ -19,7 +19,7 @@ Testing is ongoing with the 18.83kWh (51 Ah) battery with serial number 32336936
 
 For this battery type, use the option called "Volvo PHEV battery" under the "Battery Protocol" setting.
 
-![image](../images/volvo-spa-s60-90-v60-90-xc60-90-hybrid-batteries-06.png){ width="592" height="73" }
+![image](../images/volvo-spa-s60-90-v60-90-xc60-90-hybrid-batteries-06.png)
 
 ## Battery specifications
 The following SPA platform batteries are compatible, checkbox on those confirmed by users to work.

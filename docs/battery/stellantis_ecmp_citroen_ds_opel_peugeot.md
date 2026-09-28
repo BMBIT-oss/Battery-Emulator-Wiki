@@ -81,7 +81,7 @@ For this battery type, use the option called "Stellantis ECMP battery" under the
 
 Example of jumpered HVIL on **unused** HV connector on the rear end of the battery:
 
-![image](../images/stellantis-ecmp-citroen-ds-opel-peugeot-16.png){ width="50%" }
+![image](../images/stellantis-ecmp-citroen-ds-opel-peugeot-16.png)
 
 Polarity on cable side for the VAN Pack:
 
@@ -90,7 +90,7 @@ Polarity on cable side for the VAN Pack:
 !!! warning "CAUTION"
     **For the 50kWh CAR Packs this polarity is REVERSED!!!**
 
-    ![image](../images/stellantis-ecmp-citroen-ds-opel-peugeot-18.png){ width="50%" }
+    ![image](../images/stellantis-ecmp-citroen-ds-opel-peugeot-18.png)
 
 <a name="HVIL"></a>
 !!! tip "TIP"

@@ -56,7 +56,7 @@ If you can't source the original Yazaki sockets, you can use [these models](http
 ### Service Disconnect Switch
 
 Here is a [3D printed SDS for 2013-2023 batteries](https://www.printables.com/model/1337831-nissan-leaf-ze1-service-disconnect-plug) (AZE0, ZE1)
-![3d_AZE0_ZE1_SDS](../../images/nissan-leaf-e-nv200-24.jpeg){ width="900" height="675" }
+![3d_AZE0_ZE1_SDS](../../images/nissan-leaf-e-nv200-24.jpeg)
 
 The link contains the drawing of the copper contact part, you can cut yourself and/or ask a workshop to cut and silver-plate it.
 

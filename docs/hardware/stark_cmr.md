@@ -8,7 +8,7 @@ The Stark CMR (SCMR) is a commercially available and CE certified product specif
 
 Get the SCMR and other related hardware via the official [web shop](https://shop.redispo.se/).
 
-![SCMR02](../images/stark-cmr-02.jpg){ width="400px" }![SCMR01](../images/stark-cmr-03.jpg){ width="400px" }<br>
+![SCMR02](../images/stark-cmr-02.jpg)![SCMR01](../images/stark-cmr-03.jpg)<br>
 
 ## Overview of features
 
@@ -118,7 +118,7 @@ When updating this board [OTA](../setup/software/ota_update.md), be sure to sele
 
 The board comes with 2 CAN channels, the second one of them being capable of CAN-FD. The board also has an RS485 channel, which can be used for Modbus inverters or RS485 batteries.
 
-![image](../images/stark-cmr-04.png){ width="377" height="243" }
+![image](../images/stark-cmr-04.png)
 
 The interfaces correspond to the following options in the Battery-Emulator software
 
@@ -148,13 +148,13 @@ For integrations that need double/triple battery compatibility via CAN, or an ad
 - 5V to 5V
 - GND to GND
 
-![image](../images/stark-cmr-05.png){ width="458" height="291" }
+![image](../images/stark-cmr-05.png)
 
 After connecting the board, you can enable the add-on CAN by configuring it as **MCP2518FD (GPIO add-on)** to component.
 
 Example, Stark CMR used to control 3x separate Nissan LEAF batteries with one of them being on an add-on MCP2518FD board
 
-![image](../images/stark-cmr-06.png){ width="413" height="470" }
+![image](../images/stark-cmr-06.png)
 
 ## Example connection diagram
 
@@ -166,7 +166,7 @@ _Notes: All connections marked GND on the SCMR are joined via the GND plane of t
 
 The configuration for the above example would look like this:
 
-![stark2](../images/stark-cmr-08.png){ width="534" height="887" }
+![stark2](../images/stark-cmr-08.png)
 
 The next wiring diagram shows an example for wiring a Renault Zoe battery. This differs from the previous example as the contactors use _low side_ switching, i.e. the contactors will be closed when the dedicated pins from the contactors on the battery are "shorted to ground". 
 ![image](../images/stark-cmr-01.png)

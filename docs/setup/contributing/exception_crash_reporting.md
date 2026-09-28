@@ -4,7 +4,7 @@ title: "Exception Crash reporting"
 
 ### What is a crash?
 
-![image](../../images/exception-crash-reporting-01.png){ width="435" height="269" }
+![image](../../images/exception-crash-reporting-01.png)
 
 #### :warning: Warning: The board was reset due to an exception or panic. Inform developers!
 

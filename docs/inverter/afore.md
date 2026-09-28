@@ -19,7 +19,7 @@ The Afore inverter works via CAN. A board with a single CAN channel, such as the
 
 For this inverter type, use the option called "BYD Battery-Box Premium HVS over CAN Bus" under the "Inverter Protocol" setting.
 
-![image](../images/afore-01.png){ width="484" height="68" }
+![image](../images/afore-01.png)
 
 ## Note on CAN ID with Nissan LEAF
 

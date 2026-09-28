@@ -20,7 +20,7 @@ Start by connecting the CAN port of the BMS, to the Native CAN port on the Batte
 
 For this battery type, use the option called "Cellpower BMS" under the "Battery Protocol" setting. Also make sure to configure the interface to Native CAN.
 
-![image](../../images/cellpower-bms-01.png){ width="665" height="350" }
+![image](../../images/cellpower-bms-01.png)
 
 Also remember to configure all battery limits to suite the battery you are using!
 

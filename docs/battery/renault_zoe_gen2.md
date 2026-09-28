@@ -19,7 +19,7 @@ Stickers signaling that the battery is the Gen2 50/52kWh battery
 ## Software configuration
 For this battery type, use the option called "Renault Zoe Gen2 50kWh" under the "Battery Protocol" setting.
 
-![image](../images/renault-zoe-gen2-15.png){ width="593" height="73" }
+![image](../images/renault-zoe-gen2-15.png)
 
 ## Zoe Gen2 pictures and pinout
 Credit goes to ljames28 for the excellent repo: [github/ljames28](https://github.com/ljames28/Renault-Zoe-PH2-ZE50-Canbus-LBC-Information)
@@ -50,7 +50,7 @@ Example Wiring Diagram: LilyGo T-2CAN + Zoe Gen2 + optional equipment stop butto
 
 Example Wiring Diagram: Stark CMR + Zoe Gen2
 
-![image](../images/renault-zoe-gen2-16.png){ width="1064" height="764" }
+![image](../images/renault-zoe-gen2-16.png)
 
 !!! note "NOTE"
     This Zoe battery contains GND switched precharge relay and positive contactor. There is no negative contactor to control.

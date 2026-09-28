@@ -94,7 +94,7 @@ Pin layout Custom PCB in the example below:
 ```
 
 This is how the connection for the SMA Tripower would look like.
-![image](../images/sma-07.png){ width="839" }
+![image](../images/sma-07.png)
 
 SMA Hybrid Communication pin layout
 

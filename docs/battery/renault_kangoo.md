@@ -17,7 +17,7 @@ There are 3x batteries available for the Kangoo:
 * 44kWh 2022+
    * Pinout unknown, NOT COMPATIBLE YET since nobody has tested it
 
-![image](../images/renault-kangoo-01.png){ width="393" height="91" }
+![image](../images/renault-kangoo-01.png)
 
 Physical size;
 
@@ -29,7 +29,7 @@ Physical size;
 
 44kWh pack example:
 
-![image](../images/renault-kangoo-02.png){ width="622" height="913" }
+![image](../images/renault-kangoo-02.png)
 
 ## Part numbers for Renault Kangoo batteries
 
