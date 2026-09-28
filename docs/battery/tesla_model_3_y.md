@@ -40,7 +40,7 @@ The Tesla Model 3/Y packs have many hardware/software revisions. Due to this it 
 
 Note that 2024 and onwards might require setting the "Digital HVIL (2024+)" option in the Settings page to get contactor closing to work.
 
-![image](../images/tesla-model-s-3-x-y-15.png)
+![image](../images/tesla-model-s-3-x-y-15.png){ width="561" height="81" }
 
 Also note that Tesla Model S/X needs to be newer than 2020+ to work with the current code!
 
@@ -65,7 +65,7 @@ Example, LilyGo board with 12V battery used to test a Tesla Model Y battery, whi
 ## Software configuration
 For this battery type, use the option called "Tesla Model 3/Y", or "Tesla Model S/X" under the "Battery Protocol" setting.
 
-![image](../images/tesla-model-s-3-x-y-16.png)
+![image](../images/tesla-model-s-3-x-y-16.png){ width="543" height="386" }
 
 Configure all the options correctly, according to what pack size and from which country the donor car came from. This is very important to get right, otherwise fault codes will be active on the battery side.
 
@@ -79,7 +79,7 @@ Some Model 3/Y packs are LFP chemistry, and some are NCM/A chemistry.
 
 The code autodetects incase you have an LFP battery, but the detection method can take up to 5minutes. Incase you want to speed this up for additional safety, configure "Battery chemistry" as LFP. Why you might ask? Well in some rare circumstances, like say you restart everything when the battery sits at true 100% charge, it will be treated as a NCM battery for the first few minutes of boot. This might overcharge the battery, until it figures out it is an LFP pack and should use the more restricted voltage range.
 
-![image](../images/tesla-model-s-3-x-y-17.png)
+![image](../images/tesla-model-s-3-x-y-17.png){ width="592" height="33" }
 
 ## Part numbers for Tesla Model 3 batteries
 
@@ -133,11 +133,11 @@ The connector above will need the following connections...(apart the grounding o
 * Pin 9 - GND 
 * Pin 16 and 15 - To CAN-H and CAN-L on the board (Note, you might need to add 120Ohm resistor here, depending on CAN network structure)
 
-![Tesla X098 HVC](../images/tesla-model-s-3-x-y-19.png)
+![Tesla X098 HVC](../images/tesla-model-s-3-x-y-19.png){ width="520" height="298" }
 
-![Tesla X098](../images/tesla-model-s-3-x-y-20.png)
+![Tesla X098](../images/tesla-model-s-3-x-y-20.png){ width="1313" height="894" }
 
-![Tesla HV Battery and HVIL](../images/tesla-model-s-3-x-y-21.png)
+![Tesla HV Battery and HVIL](../images/tesla-model-s-3-x-y-21.png){ width="1301" height="923" }
 
 ### 12 Volt or 16 Volt?
 
@@ -150,7 +150,7 @@ Make sure to connect the 12V battery to the PCS (two M8 screws close to the X098
 !!! note "NOTE"
     The 12V requirement is quite large for the Tesla packs. Use a high power 14V source (large fully charged lead acid battery OR 30A lab power supply set to 12-16V). If the 12V supply is too weak, closing contactors wont be possible. The cables also need to be quite thick to avoid voltage drop. 1.5mm² is too small, the cables need to be 13mm² (6AWG) at minimum! Any wining/cricket noises are a telltale sign that the wiring is not up to spec.
 
-![image](../images/tesla-model-s-3-x-y-22.png)
+![image](../images/tesla-model-s-3-x-y-22.png){ width="895" height="750" }
 
 ## High voltage interlock circuit (HVIL)
 
@@ -174,7 +174,7 @@ There seems to be many hardware and firmware revisions of the Tesla Model 3/Y ba
 
 It is recommended to turn on `Enable general logging via USB serial` OR `Enable general logging via Webserver` in the settings page get more info why HVIL is not allowing to close. Below are some messages you can encounter, along with troubleshooting tips:
 
-![image](../images/tesla-model-s-3-x-y-23.png)
+![image](../images/tesla-model-s-3-x-y-23.png){ width="556" height="271" }
 
 | Symptom | Fix   |
 | :-----: | :---: |
@@ -246,7 +246,7 @@ Once you are done balancing, you can press the "Close Contactors" button, and "U
 !!! warning "WARNING"
     During balancing with contactors open, 12V lead acid battery will NOT be charged. Make sure the lead acid battery has an external charger available while in this state.
 
-![image](../images/tesla-model-s-3-x-y-24.png)
+![image](../images/tesla-model-s-3-x-y-24.png){ width="902" height="289" }
 
 ### Periodic forced charge-balancing (Can potentially aid to balance LFP)
 
@@ -254,7 +254,7 @@ To help keep LFP batteries balanced outside of a Tesla vehicle, the emulator has
 
 When enabling the Manual LFP balancing , the forced top charge runs for the specified amount of time, set in Balancing max time. The balancing parameters, Balancing float power , Max battery voltage , Max cell voltage and Max cell voltage deviation can also be adjusted from here. During this time, the SOC% is faked towards the inverter, and we allow the charge W set by user. This will help the battery reach higher SOC needed to balance?
 
-![image](../images/tesla-model-s-3-x-y-25.png)
+![image](../images/tesla-model-s-3-x-y-25.png){ width="414" height="382" }
 
 ### Replacement BMS to balance
 

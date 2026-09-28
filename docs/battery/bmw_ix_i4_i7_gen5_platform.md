@@ -31,14 +31,14 @@ Here is a list of all different BMW iX batteries, and their specifications / vol
 | Cooling system                                      | Coolant | Coolant | Coolant | Coolant | Coolant | Coolant | Coolant | Coolant | Coolant |
 
 <p align="center" markdown="1">
-  ![SE11](../images/bmw-ix-i4-i7-gen5-platform-03.png)<br>
+  ![SE11](../images/bmw-ix-i4-i7-gen5-platform-03.png){ width="600" }<br>
   <em>SE11 battery being transported on a trailer</em>
 </p>
 
 ## Software configuration
 For this battery type, use the option called "BMW iX and i4-7 platform" under the "Battery Protocol" setting.
 
-![image](../images/bmw-ix-i4-i7-gen5-platform-04.png)
+![image](../images/bmw-ix-i4-i7-gen5-platform-04.png){ width="654" height="152" }
 
 Also remember to configure the allowed charging power, since we do not read this value via CAN.
 

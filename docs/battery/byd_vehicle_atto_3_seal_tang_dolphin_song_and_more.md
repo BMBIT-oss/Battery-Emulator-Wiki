@@ -45,7 +45,7 @@ Confirmed working BYD Seal 60kWh battery example sticker:
 ## Software setup
 Select **BYD Atto 3/Seal/Dolphin** under **Battery Protocol**.
 
-![image](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-06.png)
+![image](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-06.png){ width="599" height="115" }
 
 !!! note "IMPORTANT"
     The battery needs to be on its own CAN channel. It cannot share the same CAN channel as the solar inverter. LilyGo T-2CAN or similar double CAN hardware is recommended!
@@ -72,8 +72,8 @@ Here is a great video made by "Flying Tools" showcasing how to connect the BYD A
 ## LV Connector Type A
 The connection diagram is derived from reverse engineering the pins. The following pinout is valid for, but not limited to, PE4, PE5, PE6 and P48 battery. It can be identified easily by seeing that there are 4 rows of pins, and three thicker pins on the side.
  
-![BYD_Atto_BK51_pinout](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-07.png)
-![BYD_Atto_BK51_wiring](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-08.png)
+![BYD_Atto_BK51_pinout](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-07.png){ width="489" height="205" }
+![BYD_Atto_BK51_wiring](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-08.png){ width="489" height="257" }
 
 ![image](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-09.png)
 
@@ -85,10 +85,10 @@ Pinout varies between different batteries despite the plug & socket being the sa
 
 | Battery | Plug Image | Wiring Diagram | Pinout |
 |---|---|---|---|
-| **PA4** | ![PA4 plug](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-10.png) | — | Not yet documented |
-| **PC5B** (upside down compared to PA4) | ![PC5B plug](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-11.png) | ![PC5B wiring diagram](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-12.png) | [See below](#pinout-comparison) |
-| **VD6** | ![VD6 plug](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-13.png) | ![VD6 wiring diagram](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-14.png) | [See below](#pinout-comparison) |
-| **VM7** | ![VM7 plug](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-15.png) | — | Mostly unknown at the moment, derived from in car measurements and comparison to VD6 |
+| **PA4** | ![PA4 plug](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-10.png){ width="280" } | — | Not yet documented |
+| **PC5B** (upside down compared to PA4) | ![PC5B plug](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-11.png){ width="280" } | ![PC5B wiring diagram](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-12.png){ width="280" } | [See below](#pinout-comparison) |
+| **VD6** | ![VD6 plug](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-13.png){ width="280" } | ![VD6 wiring diagram](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-14.png){ width="280" } | [See below](#pinout-comparison) |
+| **VM7** | ![VM7 plug](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-15.png){ width="280" } | — | Mostly unknown at the moment, derived from in car measurements and comparison to VD6 |
 
 ### Pinout comparison
 
@@ -278,7 +278,7 @@ Manual calibration has been available on **More Battery Info** since firmware **
 
 The screenshot below shows the controls in an older firmware version; the labels and layout have since changed.
 
-![Manual SOC calibration controls in an older firmware version](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-22.png)
+![Manual SOC calibration controls in an older firmware version](../images/byd-vehicle-atto-3-seal-tang-dolphin-song-and-more-22.png){ width="493" height="199" }
 
 ## How do I unlock a crashed battery?
 There are two methods to try and unlock the battery. The methods are via More Battery Info page (easy), and alternatively via CAN Replay (harder)

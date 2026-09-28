@@ -43,7 +43,7 @@ This can be solved in three ways:
 ## Which protocol to use
 For this inverter type, use the option called "SolaX Triple Power LFP over CAN bus" under the "Inverter Protocol" setting.
 
-![image](../images/solax-04.png)
+![image](../images/solax-04.png){ width="569" height="160" }
 
 !!! warning "WARNING"
     Never use lead-acid battery mode to force a battery to operate. This means there is no communication between the EV battery and inverter, and battery has no way to stop the charge. Users have permanently degraded batteries by operating in this mode!
@@ -54,7 +54,7 @@ For this inverter type, use the option called "SolaX Triple Power LFP over CAN b
 1. Start with checking that your battery contactors are closing, and that high voltage is present on the inverter input pins. 
 2. If the inverter has voltage, but is still throwing the BattVoltFault error, "Reported module count" and the "Reported battery type" option
 
-![image](../images/solax-05.png)
+![image](../images/solax-05.png){ width="556" height="69" }
 
 ## Battery type information (pre-2026)
 
@@ -71,7 +71,7 @@ Feel free to experiment, and post what settings worked for your voltage range. T
 
 Also note, if you are using Custom batteries, remember to configure the max/min design voltage marked in red here. Solax will listen to these limits on Pylon/RJXZS/Orion/DIY packs.
 
-![image](../images/solax-06.png)
+![image](../images/solax-06.png){ width="551" height="289" }
 
 ## Battery type information (2026)
 
@@ -153,7 +153,7 @@ TPCU011(HR522): 171
 
 To get around this issue for instance on Tesla batteries, configure the "Inverter Contactor Workaround:" option
 
-![image](../images/solax-08.png)
+![image](../images/solax-08.png){ width="430" height="30" }
 
 It can be configured to either:
 

@@ -29,21 +29,21 @@ An indicator if the battery is not in lock state is the range indicator of the c
 
 Crashed BMW i3 battery being reset with an EoS tester:
 
-[![](../images/bmw-i3-01.png)](../images/bmw-i3-01.png)
+[![](../images/bmw-i3-01.png){ width="300" }](../images/bmw-i3-01.png)
 
 ## Software configuration
 For this battery type, use the option called "BMW i3" under the "Battery Protocol" setting.
 
-![image](../images/bmw-i3-02.png)
+![image](../images/bmw-i3-02.png){ width="487" height="90" }
 
 ## Connection diagram
 
 ### High voltage connector
 Right beside the HV connector there is a plug with 2 small pins, these need to be bridged either with the original plug, or shorted with a jumper for the battery to be able to turn on (Interlock detection)
 
-[![](../images/bmw-i3-03.png)](../images/bmw-i3-03.png)
+[![](../images/bmw-i3-03.png){ width="300" }](../images/bmw-i3-03.png)
 
-![image](../images/bmw-i3-04.png)
+![image](../images/bmw-i3-04.png){ width="550" height="726" }
 
 ### High voltage connector (E196*1B)
 * Pin 1 = HV+
@@ -61,11 +61,11 @@ Can also be bridged with jumper wires.
 ### Low voltage connector (A191*1B)
 The LV connector is located on the back of the battery pack, next to the A/C cooling port. A/C connector is not required for operation.
 
-[![](../images/bmw-i3-14.png)](../images/bmw-i3-14.png)
+[![](../images/bmw-i3-14.png){ width="300" }](../images/bmw-i3-14.png)
 
 It has the following pinout:
 
-[![](../images/bmw-i3-15.png)](../images/bmw-i3-15.png)
+[![](../images/bmw-i3-15.png){ width="500" }](../images/bmw-i3-15.png)
 
 Connect the wiring as follow:
 
@@ -96,7 +96,7 @@ Since the board has 3.3V logic on the GPIO pins, we need to use a solid state re
 !!! warning "CAUTION"
     To avoid [welded contacts](#CAUTIONCONTACTORSWELDED) Ensure you have a 12V backup system to avoid unwanted contact closings under load in case of a blackout.
 
-[![](../images/bmw-i3-16.png)](../images/bmw-i3-16.png)
+[![](../images/bmw-i3-16.png){ width="700" }](../images/bmw-i3-16.png)
 
 !!! tip "TIP"
     Check out our [Low Voltage wiring](../setup/hardware/wiring_tips_lv.md) page on how to make the connections in practice.
@@ -104,7 +104,7 @@ Since the board has 3.3V logic on the GPIO pins, we need to use a solid state re
 #### Example wiring diagram
 Below an example wiring diagram:
 
-[![](../images/bmw-i3-17.png)](../images/bmw-i3-17.png)
+[![](../images/bmw-i3-17.png){ width="700" }](../images/bmw-i3-17.png)
 
 ##### Stark Box + i3 battery + Fronius Gen24
 ![image](../images/bmw-i3-18.png)
@@ -113,7 +113,7 @@ Below an example wiring diagram:
 ![image](../images/bmw-i3-19.png)
 
 ##### SMA Sunny Tripower to Liligo and BMW i3
-[![SMA i3](../images/sma-06.png)](../images/sma-06.png)
+[![SMA i3](../images/sma-06.png){ width="700" }](../images/sma-06.png)
 
 ## Parts list
 
@@ -153,7 +153,7 @@ Capacitors are high voltage, so they need to be inside an IP enclosure to preven
 
 Example of capacitor integrated at point where wire gauge is reduced, inside exclosure:
 
-[![](../images/bmw-i3-21.png)](../images/bmw-i3-21.png)
+[![](../images/bmw-i3-21.png){ width="300" }](../images/bmw-i3-21.png)
 
 ### Note on Balancing :b: 
 The BMW i3 battery needs periodic cell-balancing to be able to operate at full capacity. To start this balancing procedure, charge the battery to 100%, and go to the "More Battery Info" page on the Webserver. There is a button called "Start balancing". When balancing is started via this page, the battery will power off the wakeup(WUP) pin towards the battery, stop CAN communication, and the battery can then start to balance, just as it would in a car.
@@ -174,8 +174,8 @@ Perform this balancing as often as necessary to keep cell mV delta low. Failure 
 ## Example completed setup
 Fronius Gen24 with 2x BMW i3 batteries in [double battery mode](../setup/software/battery_2x.md)
 
-[![](../images/bmw-i3-22.png)](../images/bmw-i3-22.png)
+[![](../images/bmw-i3-22.png){ width="300" }](../images/bmw-i3-22.png)
 
 i3 94Ah with Sofar inverter
 
-[![](../images/bmw-i3-23.png)](../images/bmw-i3-23.png)
+[![](../images/bmw-i3-23.png){ width="300" }](../images/bmw-i3-23.png)

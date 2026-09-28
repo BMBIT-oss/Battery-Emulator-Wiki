@@ -98,7 +98,7 @@ This method can also be used with the Lilygo HW if a separate FET board is used,
 ToDO add link, for now google for: 15A 400W MOS FET Trigger Switch Drive Module PWM Regulator
 
 Wiring diagram:
-![image](../../images/high-voltage-source-10.png)
+![image](../../images/high-voltage-source-10.png){ width="1262" height="709" }
 
 ## Decoupling inverter from battery during precharge
 During precharge the inverter will see a high voltage on its inputs pins. The inverters we have tested on will use this a trigger to startup. This will put a load on this high voltage while the contactors of the battery are not yet closed. This load will disrupt the precharging sequence and will cause the precharge to fail.
@@ -116,7 +116,7 @@ The connection is added to the schematic above.
 
 ## Overvoltage and reverse-polarity protection
 
-![image](../../images/high-voltage-source-11.png)
+![image](../../images/high-voltage-source-11.png){ width="1001" height="292" }
 
 You can connect three 5KP150A 150V TVS diodes in series to protect against overvoltage (these will clamp the voltage at around 470-480V). Unipolar ones will also conduct like diodes in the forward direction, which will protect against reverse polarity.
 

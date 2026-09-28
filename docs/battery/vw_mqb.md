@@ -9,9 +9,9 @@ title: "VW/Audi/Škoda/Cupra MQB"
 
 This platform shares a lot of similarities with the [Volkswagen MEB platform](vw_meb.md)
 
-![image](../images/mqb-01.png)
+![image](../images/mqb-01.png){ width="862" height="605" }
 
-![image](../images/mqb-02.png)
+![image](../images/mqb-02.png){ width="627" height="328" }
 
 ### Physical Dimensions
 

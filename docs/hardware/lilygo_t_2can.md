@@ -111,9 +111,9 @@ The T-2CAN has two SH-1.0mm connectors with two GPIOs each, and unpopulated sold
 
 You can connect a 4-pin auto-direction 3.3V-supply TTL-RS485 module to the T-2CAN via the first SH-1.0mm connector. LilyGo sell a [pre-made SH-1.0mm to Dupont cable](https://lilygo.cc/products/dupont-cable). The modules are readily available on Aliexpress:
 
-![](../images/lilygo-t-2can-06.png) 
-![](../images/lilygo-t-2can-07.png)
-![](../images/lilygo-t-2can-08.png)
+![](../images/lilygo-t-2can-06.png){ width="270" } 
+![](../images/lilygo-t-2can-07.png){ width="270" }
+![](../images/lilygo-t-2can-08.png){ width="270" }
 
 The connections should be made like this (the colors match the LilyGo cable):
 
@@ -124,7 +124,7 @@ These modules are inconsistent with their TX/RX labelling. Usually the TX pin on
 
 RS485 needs a 120 ohm termination resistor at each end of the bus, for best performance. This may need manually enabling on your RS485 module. For example, the blue modules have empty 'R13' pads which need a solder blob bridging them to enable the 120 ohm termination:
 
-![](../images/lilygo-t-2can-10.png)
+![](../images/lilygo-t-2can-10.png){ width="300" }
 
 The TX/RX pins are also used by the bootloader when the ESP32 starts up, which sends a brief chunk of debugging information onto the bus at 115200. This will hopefully be ignored by attached RS485 devices - if there are problems, it may be possible to burn an efuse on the ESP32S3 to disable this.
 

@@ -28,5 +28,5 @@ In this mode, charging up to 5.0A is allowed. Current can be lowered manually vi
 ## Notes on SOC
 Some inverters wont charge if SOC is 0.xx%. Use the Scaled SOC feature, and set minSOC to -10%. This will force SOC to appear higher towards t he inverter, and allow it to hopefully charge.
 
-![image](../../images/recovering-undercharged-battery-04.png)
+![image](../../images/recovering-undercharged-battery-04.png){ width="309" height="191" }
 

@@ -101,7 +101,7 @@ If either HV+ or HV- touches protective earth while the system is running, the s
 
 Example, wire shielding cut too close to copper, making the shield touch HV-. This was causing inverter to stop operation
 
-![image](../../images/installation-guidelines-13.png)
+![image](../../images/installation-guidelines-13.png){ width="608" height="558" }
 
 Start by checking the easy stuff, measure if HV wiring is leaking to PE. If the wiring is OK, the battery itself can also have an internal leak. These are much harder to diagnose compared to external wiring issues. Checkout this video for more example of leakage to ground [youtube](https://www.youtube.com/watch?v=00eEj_EgMas)
 
@@ -119,7 +119,7 @@ Electrical connections can loosen over time due to thermal cycling (expansion an
     * **Consult your manufacturer's manual for the exact torque specification** (e.g., 4-5 Nm or 35-45 in-lbs). On some terminals the torque value is stamped directly on them. Do not over-tighten, as this can strip threads or damage terminals.
     * Visually inspect terminals for signs of corrosion, melting, or discoloration.
 
-![image](../../images/installation-guidelines-14.png)
+![image](../../images/installation-guidelines-14.png){ width="536" height="523" }
 
 Example of terminal with torque values printed on it.
 
@@ -158,13 +158,13 @@ Phoenix 3049408 DIN rail connectors to use with unmodified cable:
 
 The bmw I3 uses a 35mm² high voltage cable. To connect it to a terminal block and go down in size to a more manageable 10mm² you would need ferrules for these stranded wires to not damage them. This can be done by cutting off the old connector and using a ferrule and crimping them. These tools are not so common for consumers. An alternative for this is modifying the connector and use the current connector as ferrule so you don't have to buy or rent tools to achieve a non-stranded wire for the thermal block with size 35mm². Use at your own risk!
 
-[![](../../images/bmw-i3-05.jpg)](../../images/bmw-i3-05.jpg)
-[![](../../images/bmw-i3-06.jpg)](../../images/bmw-i3-06.jpg)
-[![](../../images/bmw-i3-07.jpg)](../../images/bmw-i3-07.jpg)
-[![](../../images/bmw-i3-08.jpg)](../../images/bmw-i3-08.jpg)
-[![](../../images/bmw-i3-09.jpg)](../../images/bmw-i3-09.jpg)
-[![](../../images/bmw-i3-10.jpg)](../../images/bmw-i3-10.jpg)
-[![](../../images/bmw-i3-11.jpg)](../../images/bmw-i3-11.jpg)
-[![](../../images/bmw-i3-12.jpg)](../../images/bmw-i3-12.jpg)
-[![](../../images/bmw-i3-13.jpg)](../../images/bmw-i3-13.jpg)
+[![](../../images/bmw-i3-05.jpg){ width="200" }](../../images/bmw-i3-05.jpg)
+[![](../../images/bmw-i3-06.jpg){ width="200" }](../../images/bmw-i3-06.jpg)
+[![](../../images/bmw-i3-07.jpg){ width="200" }](../../images/bmw-i3-07.jpg)
+[![](../../images/bmw-i3-08.jpg){ width="200" }](../../images/bmw-i3-08.jpg)
+[![](../../images/bmw-i3-09.jpg){ width="200" }](../../images/bmw-i3-09.jpg)
+[![](../../images/bmw-i3-10.jpg){ width="200" }](../../images/bmw-i3-10.jpg)
+[![](../../images/bmw-i3-11.jpg){ width="200" }](../../images/bmw-i3-11.jpg)
+[![](../../images/bmw-i3-12.jpg){ width="200" }](../../images/bmw-i3-12.jpg)
+[![](../../images/bmw-i3-13.jpg){ width="200" height="267" }](../../images/bmw-i3-13.jpg)
 

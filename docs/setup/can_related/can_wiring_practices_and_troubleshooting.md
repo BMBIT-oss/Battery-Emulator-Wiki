@@ -4,7 +4,7 @@ title: "CAN wiring practices and troubleshooting"
 
 ## CAN termination practices
 
-![image](../../images/can-wiring-practices-and-troubleshooting-05.png)
+![image](../../images/can-wiring-practices-and-troubleshooting-05.png){ width="461" height="149" }
 
 !!! info "IMPORTANT"
     CAN wires need to be **twisted pair** to ensure signal integrity!

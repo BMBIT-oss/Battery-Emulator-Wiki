@@ -17,4 +17,4 @@ The battery is modular, and can be arranged in 1-8 stacks to raise/lower the out
 ## Software configuration
 For this battery type, use the option called "FoxESS HV/2600/ECS4100 OEM battery" under the "Battery Protocol" setting.
 
-![image](../images/foxess-hv2600-02.png)
+![image](../images/foxess-hv2600-02.png){ width="597" height="119" }
