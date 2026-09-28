@@ -70,7 +70,7 @@ Each node's own station MAC is shown on its web UI, which is the address to ente
 
 ESPNow peers are registered with channel 0, meaning they follow the emulator's current Wi-Fi channel. **A receiver must be on the same Wi-Fi channel as the emulator.** A receiver that joins the same access point ends up there automatically; a standalone receiver that never associates stays on channel 1 and will hear nothing if the emulator is joined to a network on a different channel.
 
-It's possible to start and stop ESPNow telemetry transmission at runtime without reboot, using [MQTT](mqtt.md#)
+It's possible to start and stop ESPNow telemetry transmission at runtime, remotely, without reboot, using [MQTT](mqtt.md#starting-and-stopping-espnow).
 
 ## **Protocol version 2**
 
