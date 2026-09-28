@@ -211,7 +211,7 @@ The currently supported commands are:
 - `RESTART` - Restarts the Battery-Emulator (pauses, then reboots the board after a short delay)
 - `STOP` - Triggers the equipment stop (opens contactors); see [Opening and closing contactors](#opening-and-closing-contactors-stop-and-pause-vs-resume)
 - `SET_LIMITS` - Sets a temporary charge and/or discharge limit
-- `ESPNOW_RUN` - Runtime control of ESPNow (payload `1` = start, `0` = stop).
+- `ESPNOW_RUN` - Runtime control of [ESPNow](espnow.md) (payload `1` = start, `0` = stop).
 
 For example: `battery-emulator-a1b2/command/PAUSE`
 
@@ -271,10 +271,9 @@ To cancel a limit quickly, send a new message with a short timeout (for instance
 
 ### Starting and stopping ESPNow
 
-Being able to start and stop ESPNow at runtime remotely lets an automation turn telemetry on only when a receiver needs it. Since it's intended to be used on a display, which likely most of the time is not being actively watched, might not even be turned on, it's beneficial to have a way to only turn on radio broadcast when it's actually needed. Keeping ESPNow off when not used reduces ESP32 temperature, radio interference, power consumption and increases cybersecurity.
+Being able to start and stop [ESPNow](espnow.md) at runtime remotely lets an automation turn telemetry on only when a receiver needs it. Since it's intended to be used on a display, which likely most of the time is not being actively watched, might not even be turned on, it's beneficial to have a way to only turn on radio broadcast when it's actually needed. Keeping [ESPNow](espnow.md) off when not used reduces ESP32 temperature, radio interference, power consumption and increases cybersecurity.
 
 Use command `ESPNOW_RUN` with payload `1` to start and `0` to stop ESPNow.
-
 
 ## Home Assistant Discovery
 
