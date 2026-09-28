@@ -63,12 +63,14 @@ On the settings page, under **Integration settings**:
 
 | Setting | Meaning |
 | --- | --- |
-| **Enable ESPNow** | Turns telemetry transmission on. |
+| **Start ESPNow at boot** | Turns telemetry transmission on at every boot. |
 | **ESPNow receiver MACs** | Comma-separated list of receiver MAC addresses, max 8, e.g. `AA:BB:CC:DD:EE:FF, 11:22:33:44:55:66`. Separators are flexible (`:`, `-`, or none). Leave **empty to broadcast** to every device in range. Takes effect after a restart. |
 
 Each node's own station MAC is shown on its web UI, which is the address to enter in another node's receiver list. The emulator's station MAC is also the source address of the ESPNow frames.
 
 ESPNow peers are registered with channel 0, meaning they follow the emulator's current Wi-Fi channel. **A receiver must be on the same Wi-Fi channel as the emulator.** A receiver that joins the same access point ends up there automatically; a standalone receiver that never associates stays on channel 1 and will hear nothing if the emulator is joined to a network on a different channel.
+
+It's possible to start and stop ESPNow telemetry transmission at runtime without reboot, using [MQTT](mqtt.md#)
 
 ## **Protocol version 2**
 
