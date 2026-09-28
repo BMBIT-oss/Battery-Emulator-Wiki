@@ -75,6 +75,7 @@ Values are only published once **valid data** exists. Battery values appear only
 - `insulation_resistance` is in **kΩ**.
 - Temperatures are in °C. `cpu_temp` is published as a float (display precision is suggested to HA as 1 decimal).
 - Heap values are in **bytes**, `heap_fragmentation` in percent.
+- ESPNow running status in `espnow_running`, `1` = running, `0` = not running.
 
 Example payload (single battery), published to `battery-emulator-a1b2/info`:
 
@@ -107,7 +108,8 @@ Example payload (single battery), published to `battery-emulator-a1b2/info`:
   "hardware": "Waveshare ESP32-S3 RS485 CAN",
   "software_version": "11.2.dev",
   "cpu_temp": 41.3,
-  "emulator_uptime": 10001
+  "emulator_uptime": 10001,
+  "espnow_running": 1
 }
 ```
 
@@ -209,6 +211,7 @@ The currently supported commands are:
 - `RESTART` - Restarts the Battery-Emulator (pauses, then reboots the board after a short delay)
 - `STOP` - Triggers the equipment stop (opens contactors); see [Opening and closing contactors](#opening-and-closing-contactors-stop-and-pause-vs-resume)
 - `SET_LIMITS` - Sets a temporary charge and/or discharge limit
+- `ESPNOW_RUN` - Runtime control of ESPNow (payload `1` = start, `0` = stop).
 
 For example: `battery-emulator-a1b2/command/PAUSE`
 
