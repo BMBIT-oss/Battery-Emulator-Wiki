@@ -32,7 +32,7 @@ Double-Battery can be run on all inverters. The inverter will think that there i
 
 Each battery pack keeps its own readings. Once per second Battery-Emulator combines them into a single virtual battery, and that is the only thing the inverter ever sees. On the web interface it's shown in a combined card on the main page; the cards below it show each pack on its own:
 
-![image](../../images/battery-2x-04.png)
+<img width="1416" height="988" alt="aggregatecards" src="https://github.com/user-attachments/assets/ae60e04a-e009-420d-89b1-7239b3f225da" />
 
 Not every value combines the same way. Some add up, some take the weakest pack, some take the extremes:
 
