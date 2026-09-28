@@ -33,7 +33,7 @@ The Growatt HV inverter works via CAN. A board with a single CAN channel, such a
 ### Which protocol to use
 For this inverter type, use the option called **Growatt High Voltage protocol via CAN Bus** under the "Inverter Protocol" setting.
 
-![image](../images/growatt-hv-01.png){ width="491" height="66" }
+![image](../images/growatt-hv-01.png)
 
 ## Growatt LV
 
@@ -44,7 +44,7 @@ The Growatt LV compatible inverters works via CAN. A board with a single CAN cha
 ### Which protocol to use
 For this inverter type, use the option called **Growatt Low Voltage (48V) protocol via CAN** under the "Inverter Protocol" setting.
 
-![image](../images/growatt-lv-01.png){ width="483" height="68" }
+![image](../images/growatt-lv-01.png)
 
 ## Growatt WIT
 
@@ -62,7 +62,7 @@ Here is the inverter CAN definitions:
 
 For this inverter type, use the option called **Growatt WIT compatible battery via CAN** under the "Inverter Protocol" setting.
 
-![image](../images/growatt-wit-01.png){ width="490" height="63" }
+![image](../images/growatt-wit-01.png)
 
 ## General notes
 

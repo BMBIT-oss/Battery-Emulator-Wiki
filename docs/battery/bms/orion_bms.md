@@ -7,7 +7,7 @@ title: "Orion"
 ## Software configuration
 For this battery type, use the option called "DIY battery with Orion BMS (Victron setting)" under the "Battery Protocol" setting.
 
-![image](../../images/orion-bms-02.png){ width="668" height="272" }
+![image](../../images/orion-bms-02.png)
 
 Also remember to configure the designed voltage for your pack, and the chemistry/cellvoltage limits.
 

@@ -16,7 +16,7 @@ The DFRobot Edge101 is a rugged board, with the following features.
 - SD Card slot
 - 16MB Flash
 
-![image](../images/dfrobot-edge101-01.png){ width="337" height="461" }
+![image](../images/dfrobot-edge101-01.png)
 
 | GPIO | Function |
 |---|---|
@@ -35,7 +35,7 @@ The DFRobot Edge101 is a rugged board, with the following features.
 !!! note "NOTE"
     This board defines no contactor, precharge, [BMS Power](../setup/hardware/periodic_bms_reset.md), [Equipment stop](../setup/software/equipment_stop.md) or wake-up pins yet.
 
-![dfrobot101_verto](../images/dfrobot-edge101-02.jpg){ height="461" }
+![dfrobot101_verto](../images/dfrobot-edge101-02.jpg)
 
 ## Purchase link
 The hardware can be bought via sites like AliExpress, the [official store](https://www.dfrobot.com/product-2934.html) and [various distributors](https://octopart.com/de/part/dfrobot/DFR0886)

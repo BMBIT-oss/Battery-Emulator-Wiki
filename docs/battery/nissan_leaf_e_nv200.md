@@ -53,7 +53,7 @@ Battery Emulator hardware can act on its own, and [turn on/off the contactors/pr
 
 To enable the feature in the software, Enable the **Contactor control via GPIO** option on the Settings page.
 
-![image](../images/nissan-leaf-e-nv200-22.png){ width="505" height="42" }
+![image](../images/nissan-leaf-e-nv200-22.png)
 
 To keep things simple and durable, it is recommended to use Solid State Relays (SSR). These can be activated directly with 3V from the Emulator GPIOs, and control large DC currents. Follow the schematic above to complete the circuit. 
 
@@ -237,7 +237,7 @@ To see some results, follow these steps after you do the reset (in normal ambien
 - Watch how the values of **Cell Voltage Delta** and **SOC (real)** change over time as approaching full and empty
 
 For example:
-![image](../images/nissan-leaf-e-nv200-25.png){ width="2200" height="1000" }
+![image](../images/nissan-leaf-e-nv200-25.png)
 
 !!! tip "TIP"
     The BMS will prevent damage to the cells when discharging to empty and charging to full. Battery Emulator will show these events as `Battery is completely discharged` and `Battery is fully charged`. You'll likely see `Large cell voltage deviation! Check balancing of cells` too. The goal is to find the thresholds you can manually set between which the battery can operate without running into these regularly.

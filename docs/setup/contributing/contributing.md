@@ -92,8 +92,8 @@ PlatformIO is an extension that adds all the necessary functionality to VSCode.
 - Connect your Battery-Emulator hardware to your computer using a USB cable.
 - Select the right board type (Stark, LilyGo)
 - At the bottom left of VScode, click the Env to bring up a menu of boards. Select the board you are using
-![image](../../images/contributing-01.png){ width="396" height="95" }
-![image](../../images/contributing-02.png){ width="679" height="177" }
+![image](../../images/contributing-01.png)
+![image](../../images/contributing-02.png)
 
 - Ensure the correct upload port is set in the platformio.ini file (it's often auto-detected, but you may need to set it manually. See Troubleshooting below).
 - Upload the code:
