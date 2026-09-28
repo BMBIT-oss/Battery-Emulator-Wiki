@@ -423,6 +423,28 @@ template:
               payload: "PRESS"
 ```
 
+### Turn ON and OFF ESPNow broadcast
+
+Create a manually configured mqtt switch to remotely toggle ESPNow telemetry transmission.
+
+```yaml
+mqtt:
+  - switch:
+      - name: ESPNow transmission
+        unique_id: battery_emulator_a1b2_espnow_toggle
+        availability:
+          - topic: "battery_emulator_a1b2/status"
+        command_topic: "battery_emulator_a1b2/command/ESPNOW_RUN"
+        state_topic: "battery-emulator-a1b2/info"
+        value_template: "{{ value_json.espnow_running }}"
+        icon: mdi:battery-charging-wireless
+        payload_on: "1"
+        payload_off: "0"
+        state_on: "1"
+        state_off: "0"
+        optimistic: false
+```
+
 ### [SET_LIMITS](mqtt.md#set_limits) user interface
 
 Use an input number helper to select the **limit timeout**, and create two MQTT number entities to select the desired current limits. Always set the desired timeout first, and change the current values after.
