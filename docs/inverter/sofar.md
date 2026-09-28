@@ -71,7 +71,7 @@ On the battery emulator side, have one battery configured as 0, and the next 1, 
 
 ![image](../images/sofar-03.png)
 
-![image](../images/sofar-08.png)
+![image](../images/sofar-08.png){ width="933" height="697" }
 
 See the attached .zip file for more info on this protocol
 [SofarDocuments.zip](https://github.com/dalathegreat/BYD-Battery-Emulator-For-Gen24/files/13260240/SofarDocuments.zip)

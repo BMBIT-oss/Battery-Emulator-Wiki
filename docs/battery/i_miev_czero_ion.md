@@ -49,7 +49,7 @@ Handle precharge/contactors manually or use [GPIO control](../setup/software/con
 ## Software configuration
 For this battery type, use the option called "I-Miev / C-Zero / Ion Triplet" under the "Battery Protocol" setting.
 
-![image](../images/i-miev-czero-ion-03.png)
+![image](../images/i-miev-czero-ion-03.png){ width="641" height="146" }
 
 Also remember to configure the allowed charging power, since we do not read this value via CAN.
 

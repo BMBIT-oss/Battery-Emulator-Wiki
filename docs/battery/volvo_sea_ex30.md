@@ -41,7 +41,7 @@ The following batteries are available for the EX30
 
 Batteries that have been involved in a severe collision will be crash locked. You can unlock the battery by pressing the "Unlock crashed BMS" button in the More Battery Info webserver page. Remember that the pyrofuse most likely also is blown if the crash status is set.
 
-![image](../images/volvo-ex30-06.png)
+![image](../images/volvo-ex30-06.png){ width="711" height="179" }
 
 Volvo EX30 batteries can be unlocked this way, but Zeekr SEA based batteries require a more involved security algorithm that is not yet implemented in the software.
 
@@ -95,8 +95,8 @@ LV connector:
 * Make sure that the correct (60ohm) termination resistance is present between CAN-H and CAN-L, there is no built in resistor in the battery. (you should most likely add a 120ohm resistor at the battery connector)
 * Also make sure to jumper the HVIL loop in the unused high voltage connectors. (make sure to isolate/block the access to the connectors as they will/could have over 400v accessible when the system is running)
 
-![image](../images/volvo-ex30-07.png)
-![image](../images/volvo-ex30-08.png)
+![image](../images/volvo-ex30-07.png){ width="320" height="240" }
+![image](../images/volvo-ex30-08.png){ width="320" height="240" }
 
 |  Product |  Purchase Link |
 | :--------: | :---------: |

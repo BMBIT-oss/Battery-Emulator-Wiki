@@ -55,7 +55,7 @@ Nothing needs to be configured, this happens by itself.
 ## Troubleshooting
 If you see "Upload failed" or some other error code, you can try the following things.
 
-![image](../../images/ota-update-05.png)
+![image](../../images/ota-update-05.png){ width="572" height="373" }
 
 - Make sure you are sending the right .bin file for the correct hardware
 - Improve Wifi coverage if signal is weak, remove obstructions if needed

@@ -8,7 +8,7 @@ The earlier Tesla batteries use a radically different CAN structure compared to 
 
 When using a Legacy battery, make sure to select the "Tesla Model S/X 2012-2020" option.
 
-![image](../images/tesla-model-s-x-2012-2020-01.png)
+![image](../images/tesla-model-s-x-2012-2020-01.png){ width="517" height="118" }
 
 ## High voltage connectors
 
@@ -19,17 +19,17 @@ The Tesla Model S/X is equipped with an HV Rapid Mate connector. When using the 
 The plug also features two pins; the smaller one is responsible for the HVIL continuity. The bigger one should be connected to battery frame. 
 From the battery side, the pinout is as follows:
 
-![images](../images/tesla-model-s-x-2012-2020-02.png)
+![images](../images/tesla-model-s-x-2012-2020-02.png){ width="298" height="169" }
 
 ## Low voltage connectors
 
 Connector X035:
 
-![image](../images/tesla-model-s-x-2012-2020-03.png)
+![image](../images/tesla-model-s-x-2012-2020-03.png){ width="451" height="347" }
 
 Connector X036:
 
-![image](../images/tesla-model-s-x-2012-2020-04.png)
+![image](../images/tesla-model-s-x-2012-2020-04.png){ width="465" height="360" }
 
 Pinout X035:
 

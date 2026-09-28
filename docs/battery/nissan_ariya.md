@@ -63,7 +63,7 @@ Battery Emulator hardware can act on its own, and turn on/off the contactors/pre
 
 To enable the feature in the software, Enable the **Contactor control via GPIO** option on the Settings page.
 
-![image](../images/nissan-leaf-e-nv200-22.png)
+![image](../images/nissan-leaf-e-nv200-22.png){ width="505" height="42" }
 
 To keep things simple, it is recommended to use Solid State Relays (SSR). These can be activated with 3Volt, and control large DC currents. Follow this schematic to complete the circuit:
 
