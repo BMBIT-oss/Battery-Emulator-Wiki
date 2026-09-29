@@ -69,6 +69,7 @@ The pin numbering is engraved on the LV connector (PT06A-12-10S)
 
 Try to source at least the LV connector; scrapers are happy to cut the cables and usually give them for free.
 The LV connector usually goes to scrap with the car.
+You can buy LV connector using the PT06A-12-10S from [here](https://www.conrad.com/en/p/amphenol-62in-16a-12-10s-6a-cable-socket-62in-nominal-current-details-7-5-a-pins-10-n-a-739514.html)
 
 Get the HV connector too; it makes things look nicer. 
 Search for HV cable and connector on [eBay](https://www.ebay.com/sch/i.html?_nkw=297A21306R), part#: 297A21306R
