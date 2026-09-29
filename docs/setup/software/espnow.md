@@ -46,7 +46,7 @@ The following independently maintained community projects provide ready-to-insta
 
 - [Battery-Emulator-Esphome](https://github.com/nagyrobi/Battery-Emulator-Esphome) display - touch displays in the look of [sort282-rgb](https://github.com/sort282-rgb/battery-display-esp32-4848s040c), built with ESPHome's LVGL component - many display hardware boards supported.
 
-<img width="1476" height="996" alt="image" src="https://github.com/user-attachments/assets/ffa43dbc-25d4-446f-a1b1-c1b9946a28ed" />
+![image](../../images/espnow-01.png)
 
 - [Battery Display for LILYGO T-Display-S3](https://github.com/sort282-rgb/battery-display-t-display-s3) - a compact five-screen ESPNow v2 dashboard with a [USB web installer](https://sort282-rgb.github.io/battery-display-t-display-s3/), phone-based setup, local web controls, and prebuilt firmware.
 - [Battery Display for ESP32-4848S040C](https://github.com/sort282-rgb/battery-display-esp32-4848s040c) - a 480 x 480 touchscreen ESPNow v2 dashboard with a [USB web installer](https://sort282-rgb.github.io/battery-display-esp32-4848s040c/installer/), phone-based setup, local web controls, and prebuilt firmware.
