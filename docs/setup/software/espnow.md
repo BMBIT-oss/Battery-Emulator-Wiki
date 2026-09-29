@@ -72,18 +72,6 @@ ESPNow peers are registered with channel 0, meaning they follow the emulator's c
 
 It's possible to start and stop ESPNow telemetry transmission at runtime, remotely, without reboot, using [MQTT](mqtt.md#starting-and-stopping-espnow).
 
-## **Protocol version 2**
-
-!!! warning "This replaces the v1 protocol"
-    Protocol v1 broadcast raw C structs copied byte-for-byte out of the datalayer. That broke every receiver whenever a field was inserted, reordered or resized, and it quantized cell voltages to 20 mV to fit the 250 byte v1 frame. **v1 receivers will not decode v2 frames** — see [Migrating from v1](#migrating-from-v1).
-
-v2 is a self-describing key/length/value (TLV) stream:
-
-* Adding a new field never breaks an existing receiver. Unknown keys are skipped using the length that is always present in the record.
-* Adding a new *data type* never breaks an existing receiver either: the length is encoded in the tag independently of the type, so a parser that has never heard of a type can still skip past it. This is the property that lets the protocol grow without another compatibility break.
-* Fields a given battery integration does not provide are simply not emitted, so receivers can tell **"not supported" apart from "zero"**.
-* Cell voltages are transmitted as raw millivolts. No quantization, for all three batteries.
-
 ## Technical details
 
 ESPNow is a low-latency wireless protocol by Espressif that allows direct device-to-device communication without a router. It works on the data-link layer, bypassing higher OSI layers, which results in fast response times and minimal overhead. It is compatible with ESP8266, ESP32, ESP32-S, and ESP32-C series chips and can coexist with Wi-Fi and Bluetooth LE.
@@ -99,6 +87,9 @@ It’s ideal for smart home devices, remote controls, and sensor networks, suppo
 
 !!! note "NOTE" 
     Enabling ESPNow increases the temperature of the ESP chip, as it shares the radio interface with Wi-Fi. Without ESPNow, the Wi-Fi client connection lets the modem duty-cycle down to the network's DTIM interval. The moment ESPNow is active, the connectionless path needs the PHY/RX chain powered continuously — Espressif's own FAQ states that once the device enters modem-sleep it can't service ESPNow. So you flip from a low duty-cycle radio to a ~100%-on radio, and the PA/PHY idle current is what generates heat with ESPNow enabled. It's the radio staying lit.
+
+!!! tip "TIP" 
+    ESPNow can be started and stopped at runtime without needing to restart Battery Emulator. This can save from broadcasting all the time, and allows turning it on remotely only when it's needed via [MQTT](mqtt.md#starting-and-stopping-espnow).
 
 ### Wire format
 
@@ -1298,7 +1289,19 @@ Cells (96):
 ========================
 ```
 
-## Migrating from v1
+## Protocol version 2
+
+!!! warning "This replaces the v1 protocol"
+    Protocol v1 broadcast raw C structs copied byte-for-byte out of the datalayer. That broke every receiver whenever a field was inserted, reordered or resized, and it quantized cell voltages to 20 mV to fit the 250 byte v1 frame. **v1 receivers will not decode v2 frames** — see below.
+
+v2 is a self-describing key/length/value (TLV) stream:
+
+* Adding a new field never breaks an existing receiver. Unknown keys are skipped using the length that is always present in the record.
+* Adding a new *data type* never breaks an existing receiver either: the length is encoded in the tag independently of the type, so a parser that has never heard of a type can still skip past it. This is the property that lets the protocol grow without another compatibility break.
+* Fields a given battery integration does not provide are simply not emitted, so receivers can tell **"not supported" apart from "zero"**.
+* Cell voltages are transmitted as raw millivolts. No quantization, for all three batteries.
+
+### Migrating from v1
 
 | v1 | v2 |
 | --- | --- |
