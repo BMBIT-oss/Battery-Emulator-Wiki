@@ -26,7 +26,8 @@ Battery Emulator implements ESPNow v2 in the **ESPNow** integration.
       checked against its published source code.** Once flashed, it has full
       control of the device and of anything you enter into it.
     - **Do not enter your main home Wi-Fi name and password into these
-      displays.** Some of them run open or default-password setup hotspots,
+      displays**, at least not until you compile the binary yourself.
+      Some of them run open or default-password setup hotspots,
       accept firmware updates over the network without any login, or show
       saved credentials on their setup pages. Anyone within radio range
       could then take them over or read your Wi-Fi password.
