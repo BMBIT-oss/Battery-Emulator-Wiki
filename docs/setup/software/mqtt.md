@@ -256,7 +256,7 @@ Example payload (max 90.0 %, min 10.0 %), published to `battery-emulator-a1b2/co
 }
 ```
 
-Use case for this is to increase the usable SOC window during winter or when weather is worse and charging is slower, decrease it during summer when charge is faster - all these to increase battery lifespan, but still be able to max out the battery capacity when it's really needed - automated by an exterlan system.
+Use case for this is to increase the usable SOC window during winter or when weather is worse and charging is slower, decrease it during summer when charge is faster - all these to increase battery lifespan, but still be able to max out the battery capacity when it's really needed - automated by an external system.
 
 ### SET_LIMITS
 
