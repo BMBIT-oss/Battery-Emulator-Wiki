@@ -49,8 +49,6 @@ The following independently maintained community projects provide ready-to-insta
 
 The main telemetry screens use battery-agnostic ESPNow v2 fields and are not limited to Tesla integrations. The current firmware displays battery 1 and plots up to 96 cells. Tesla-specific HVIL, DTC and BMS controls are available only in Wi-Fi web mode and are not applicable to other battery integrations. Integrations that do not provide cell-voltage telemetry may show unavailable cell values.
 
-![espnow_4848s040c](../../images/espnow_4848s040c.jpg)
-
 !!! note "Payload-size compatibility"
     The current public firmware builds use an ESPNow receive layer limited to 250-byte payloads. Build Battery Emulator with `ESPNOW_MAX_PAYLOAD=250` for complete cell-voltage telemetry. The ESP32-4848S040C application's packet buffer is already sized to 1470 bytes, but the ESPNow SDK in the published build still limits received payloads to 250 bytes.
 
