@@ -99,7 +99,7 @@ The sensor is supported on the [Waveshare ESP32-S3-RS485-CAN](../../hardware/wav
 
 In **Settings → Optional components config**:
 
-<img width="796" height="244" alt="settings" src="https://github.com/user-attachments/assets/fe9963a8-8d19-481b-98e6-a634032c3c26" />
+![settings](../../images/shunt-qnhck2-16-04.png)
 
 * **Shunt:** QNHCK2-16 (3.3V)
 * **Rated current:** as printed on the sensor, e.g. 30 A (±33 A)
