@@ -6,6 +6,8 @@ The QNHCK2-16 is an open loop Hall effect current sensor with a split core: it c
 
 This helps when a battery reports its current coarsely or with an offset, and it measures what actually flows through the inverter's cable, in one place, however many packs there are.
 
+<img width="467" height="465" alt="sensorpic" src="https://github.com/user-attachments/assets/e7494d82-9885-458f-b70e-a68811547576" />
+
 | Parameter | QNHCK2-16, 3.3 V version |
 | :-- | :-- |
 | Rated current (Ipn) | 10, 20, 30, 50, 100 or 150 A |
@@ -19,6 +21,8 @@ This helps when a battery reports its current coarsely or with an offset, and it
 | Window | Ø 16 mm |
 | Leads | 50 cm: red +3.3 V, yellow output, black GND, blue NC or Vref |
 | Operating temperature | −25 to +85 °C |
+
+Purchase from: [AliExpress](https://www.aliexpress.com/item/1005006124647110.html)
 
 ### Choosing the model
 
@@ -146,6 +150,10 @@ The log (**Log** on the main page, with **General logging via Webserver** enable
 | `QNHCK2-16: automatic calibration needs contactor control via GPIO for every battery. Its reading is not used until then.` | See [Automatic calibration](#automatic-calibration) |
 | `QNHCK2-16: GPIO1 reads 93 mV with the contactors open, too far from 1.65 V to be its zero point.` | Check its supply and the pin, see [LV Wiring](#lv-wiring) |
 | `QNHCK2-16 reads 36500 mA, beyond its range. Using the current the batteries report.` | More than 1.2 × its rated current. `QNHCK2-16 reading back within range.` follows when it drops again |
+
+<img width="790" height="1315" alt="datasheet1" src="https://github.com/user-attachments/assets/c7abfa1b-77f4-4726-9394-a639655f9f18" />
+
+<img width="790" height="1257" alt="datasheet2" src="https://github.com/user-attachments/assets/be4077a0-3721-4303-baa9-ac1fa07610c7" />
 
 ## More info
 * [Waveshare ESP32-S3-RS485-CAN](../../hardware/waveshare_esp32_s3_rs485_can.md), the board and its SH1.0 connector
