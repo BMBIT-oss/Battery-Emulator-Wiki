@@ -6,7 +6,7 @@ The QNHCK2-16 is an open loop Hall effect current sensor with a split core: it c
 
 This helps when a battery reports its current coarsely or with an offset, and it measures what actually flows through the inverter's cable, in one place, however many packs there are.
 
-<img width="354" height="414" alt="sensorpic" src="https://github.com/user-attachments/assets/fbbb4670-52d1-4c9f-a8a6-0d9a3fcab13b" />
+![sensorpic](../../images/shunt-qnhck2-16-04.png)
 
 | Parameter | QNHCK2-16, 3.3 V version |
 | :-- | :-- |
