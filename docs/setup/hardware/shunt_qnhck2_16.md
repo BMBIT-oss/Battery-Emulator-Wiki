@@ -2,7 +2,7 @@
 title: "QNHCK2-16 Hall current sensor"
 ---
 
-The QNHCK2-16 is an open loop Hall effect current sensor with a split core: it clamps around a battery cable of up to 16 mm diameter without cutting or disconnecting it, and it is galvanically isolated from it. Battery Emulator reads its output voltage through an ADC pin and gives the measured current instead of the current the battery reports — with a [double](../software/battery_2x.md) or [triple](../software/battery_3x.md) battery, instead of the sum the packs report. The power reported to the inverter is calculated from it too, while everything else (SOC, limits, cell data) still comes from the batteries.
+The QNHCK2-16 is an open loop Hall effect current sensor with a split core: it clamps around a battery cable of up to 16 mm diameter without cutting or disconnecting it, and it is galvanically isolated from it. Battery Emulator reads its output voltage through an ADC pin and gives the measured current instead of the current the battery reports — with a [double](../software/battery_2x.md) or [triple](../software/battery_3x.md) battery, instead of the sum the packs report. The power is calculated from it too, and both show up wherever the battery's own would: towards the inverter, on MQTT, ESP-NOW, the web pages and the display. With several packs, each pack's own figures stay as its battery reports them, and the sensor stands in for their sum. Everything else (SOC, limits, cell data) still comes from the batteries.
 
 This helps when a battery reports its current coarsely or with an offset, and it measures what actually flows through the inverter's cable, in one place, however many packs there are.
 
@@ -106,7 +106,7 @@ In **Settings → Optional components config**:
 * **Rated output:** as printed on the sensor, e.g. 1.65 ± 0.625 V
 * **Automatic calibration:** ticked by default, see below
 
-Save and reboot. The main page then shows it as e.g. **Shunt protocol: QNHCK2-16 (30 A ±0.625 V) ✓**. The ✓ means the inverter gets the sensor's current. A red ✗ means it gets the batteries' own, because the sensor has no reading yet, its zero point has not been measured yet, it reads more than 1.2 × its rated current, or GPIO1 is not available (the Events page then reports a GPIO conflict).
+Save and reboot. The main page then shows it as e.g. **Shunt protocol: QNHCK2-16 (30 A ±0.625 V) ✓**. The ✓ means the sensor's current is the one in use. A red ✗ means the batteries' own is used instead, because the sensor has no reading yet, its zero point has not been measured yet, it reads more than 1.2 × its rated current, or GPIO1 is not available (the Events page then reports a GPIO conflict).
 
 ### Automatic calibration
 
