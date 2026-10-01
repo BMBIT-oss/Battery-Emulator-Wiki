@@ -147,21 +147,26 @@ You can either solder directly to the pads, or attach a 2x13P header and use Dup
 
 #### MCP2518 CAN FD module
 
-An [MCP2518 CAN FD](../setup/can_related/can_fd_add_on_mcp2518fd.md) module can be connected to the green pins on the diagram above. This can be attached with a 2x5 Dupont connector to the top section of the pin headers (you can make up your own cable with a 2x6 Dupont at the other end for the module). This provides a third non-isolated interface capable of CAN FD (required by some batteries), in addition to the existing two isolated ones.
+An [MCP2518 CAN FD](../setup/can_related/can_fd_add_on_mcp2518fd.md) module can be connected to the green 'FD' pins on the diagram above. This can be attached with a 2x5 Dupont connector to the top section of the pin headers (you can make up your own cable with a 2x6 Dupont at the other end for the module). This provides a third non-isolated interface capable of CAN FD (required by some batteries), in addition to the existing two isolated ones.
 
 On the T-2CAN FD, this means you can have two CAN FD ports and one CAN (non-FD) port.
 
+The connection labels on the pinout above should match those on the MCP2518FD module. For example, `SDI` on the pinout should connect to `SDI` on the MCP2518FD module. Most modules require both 3.3V and 5V (for the MCP2518FD chip and the transciever respectively), although some only need 5V if they have an onboard regulator. In theory a 3.3V-only module is possible (with a 3.3V transceiver) although one like this has not yet been seen.
+
 #### LED
 
-You can attach a WS2812B LED to the board, connecting to IO35, 5V and GND. It may be easiest to solder this directly to the board using thin jumper wires. It is preferable to use the 5V rather than 3.3V supply as it has more spare capacity.
+You can attach a WS2812B LED to the board, connecting to `IO35`, `5V` and `GND`. It may be easiest to solder this directly to the board using thin jumper wires. It is preferable to use the 5V rather than 3.3V supply as it has more spare capacity.
 
 #### Contactors
 
 The contactor outputs provide a 3.3V logic signal, which is insufficient to drive a contactor directly. You can drive relays via a transistor or optoisolator buffer, or use solid state relays (SSRs) which turn on fully at 3V (the voltage may sag below 3.3V).
 
 !!! note "NOTE"
-    In the past, `BMS POWER` was `IO45` for the 2CAN FD. It has now moved back to `IO3` - if your setup uses `IO45`, you will need to move the connection when upgrading to newer software versions. If you are running the CAN-FD version of this board, you need to enable dip switch **2** like in this picture:<br>
+    The CAN-FD needs the DIP switches setting correctly. You need to enable DIP switch **2** like in this picture:<br>
     ![image](../images/lilygo-t-2can-19.png)
+
+!!! note "NOTE"
+    In the past, `BMS POWER` was `IO45` for the 2CAN FD. It has now moved back to `IO3` - if your setup uses `IO45`, you will need to move the connection when upgrading to newer software versions.
 
 ### 3D-printable parts
 
