@@ -414,13 +414,35 @@ template:
         turn_off:
           - action: mqtt.publish
             data:
-              topic: "battery_emulator_a1b2/command/RESUME"
+              topic: "battery-emulator-a1b2/command/RESUME"
               payload: "PRESS"
         turn_on:
           - action: mqtt.publish
             data:
-              topic: "battery_emulator_a1b2/command/PAUSE"
+              topic: "battery-emulator-a1b2/command/PAUSE"
               payload: "PRESS"
+```
+
+### Turn ON and OFF ESPNow broadcast
+
+Create a manually configured mqtt switch to remotely toggle ESPNow telemetry transmission.
+
+```yaml
+mqtt:
+  - switch:
+      - name: ESPNow transmission
+        unique_id: battery_emulator_a1b2_espnow_toggle
+        availability:
+          - topic: "battery-emulato-a1b2/status"
+        command_topic: "battery-emulator-a1b2/command/ESPNOW_RUN"
+        state_topic: "battery-emulator-a1b2/info"
+        value_template: "{{ value_json.espnow_running }}"
+        icon: mdi:battery-charging-wireless
+        payload_on: "1"
+        payload_off: "0"
+        state_on: "1"
+        state_off: "0"
+        optimistic: false
 ```
 
 ### [SET_LIMITS](mqtt.md#set_limits) user interface
@@ -442,12 +464,12 @@ mqtt:
   - number:
       - name: "BE charge current limit"
         unique_id: be_charge_current_limit
-        command_topic: "battery_emulator_a1b2/command/SET_LIMITS"
-        availability_topic: "battery_emulator_a1b2/status"
+        command_topic: "battery-emulator-a1b2/command/SET_LIMITS"
+        availability_topic: "battery-emulator-a1b2/status"
         payload_available: "online"
         payload_not_available: "offline"
         device:
-          identifiers: ["battery_emulator_a1b2"]
+          identifiers: ["battery-emulator-a1b2"]
         min: 0
         max: 30          # set to your battery/inverter max
         step: 0.5
@@ -462,12 +484,12 @@ mqtt:
   - number:
       - name: "BE discharge current limit"
         unique_id: be_discharge_current_limit
-        command_topic: "battery_emulator_a1b2/command/SET_LIMITS"
-        availability_topic: "battery_emulator_a1b2/status"
+        command_topic: "battery-emulator-a1b2/command/SET_LIMITS"
+        availability_topic: "battery-emulator-a1b2/status"
         payload_available: "online"
         payload_not_available: "offline"
         device:
-          identifiers: ["battery_emulator_a1b2"]
+          identifiers: ["battery-emulator-a1b2"]
         min: 0
         max: 30
         step: 0.5

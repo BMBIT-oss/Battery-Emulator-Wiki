@@ -78,6 +78,7 @@ Values are only published once **valid data** exists. Battery values appear only
 - `insulation_resistance` is in **kΩ**.
 - Temperatures are in °C. `cpu_temp` is published as a float (display precision is suggested to HA as 1 decimal).
 - Heap values are in **bytes**, `heap_fragmentation` in percent.
+- ESPNow running status in `espnow_running`, `1` = running, `0` = not running.
 
 Example payload (single battery), published to `battery-emulator-a1b2/info`:
 
@@ -110,7 +111,8 @@ Example payload (single battery), published to `battery-emulator-a1b2/info`:
   "hardware": "Waveshare ESP32-S3 RS485 CAN",
   "software_version": "11.2.dev",
   "cpu_temp": 41.3,
-  "emulator_uptime": 10001
+  "emulator_uptime": 10001,
+  "espnow_running": 1
 }
 ```
 
@@ -279,6 +281,7 @@ The currently supported commands are:
 - `RESTART` - Restarts the Battery-Emulator (pauses, then reboots the board after a short delay)
 - `STOP` - Triggers the equipment stop (opens contactors); see [Opening and closing contactors](#opening-and-closing-contactors-stop-and-pause-vs-resume)
 - `SET_LIMITS` - Sets a temporary charge and/or discharge limit
+- `ESPNOW_RUN` - Runtime control of [ESPNow](espnow.md) (payload `1` = start, `0` = stop).
 
 For example: `battery-emulator-a1b2/command/PAUSE`
 
@@ -335,7 +338,13 @@ Example payload (max charge 30 A, max discharge 40 A, timeout 60 seconds), publi
 - **Overrides rather than combines with the manual limit.** While a remote limit is active, the manual user limit is bypassed - the remote value is used instead. The remote limit can therefore sit *above* your manual limit during the active window. It still only ever *lowers* the BMS/inverter-derived allowed current (it caps, it cannot raise the battery's own limit).
 - **Applies to the installation, not to a single pack.** In a double or triple setup the limit caps the combined battery, which is what the inverter is given. It shows up as `max_charge_current` / `max_discharge_current` on `info_multi`, with `limiting_factor` reading `UserSetting`.
 
-To cancel a limit quickly, send a new message with a short timeout (for instance `1` second).
+To cancel a limit quickly, send a new message with a short timeout (for instance `1` second). 
+
+### Starting and stopping ESPNow
+
+Being able to start and stop [ESPNow](espnow.md) at runtime remotely lets an automation turn telemetry on only when a receiver needs it. Since it's intended to be used on a display, which likely most of the time is not being actively watched, might not even be turned on, it's beneficial to have a way to only turn on radio broadcast when it's actually needed. Keeping [ESPNow](espnow.md) off when not used reduces ESP32 temperature, radio interference, power consumption and increases cybersecurity.
+
+Use command `ESPNOW_RUN` with payload `1` to start and `0` to stop ESPNow. To see the current status, watch topic `info/espnow_running`, where the same values reflect the running status.
 
 ## Home Assistant Discovery
 
