@@ -101,7 +101,7 @@ In **Settings → Optional components config**:
 
 ![settings](../../images/shunt-qnhck2-16-04.png)
 
-* **Shunt:** QNHCK2-16 (3.3V)
+* **Shunt:** QNHCK2-16 Clamp
 * **Rated current:** as printed on the sensor, e.g. 30 A (±33 A)
 * **Rated output:** as printed on the sensor, e.g. 1.65 ± 0.625 V
 * **Automatic calibration:** ticked by default, see below
