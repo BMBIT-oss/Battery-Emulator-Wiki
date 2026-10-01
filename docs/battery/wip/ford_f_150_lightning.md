@@ -2,6 +2,9 @@
 title: "Ford F‐150 Lightning"
 ---
 
+!!! warning "Work in progress"
+    This battery is not yet supported by Battery-Emulator, it can't be selected in the Settings. This page collects what is known so far for a future integration, so it may be incomplete or untested. Can you help? See [data needed for a new battery integration](../../setup/contributing/data_needed_for_new_battery_integration.md).
+
 ## Compatible batteries
 The model years 2022-2025 came with the following batteries.
 
@@ -10,7 +13,7 @@ The model years 2022-2025 came with the following batteries.
 
 There are stickers on the battery that informs gross capacity
 
-![image](../images/ford-f-150-lightning-01.png){ width="1018" height="303" }
+![image](../../images/ford-f-150-lightning-01.png){ width="1018" height="303" }
 
 ### Physical Dimensions
 
@@ -33,18 +36,18 @@ Part numbers for connectors/cables, along with purchase links to ebay/aliexpress
 
 ## Wiring, Low voltage connector
 
-![image](../images/ford-f-150-lightning-02.png)
+![image](../../images/ford-f-150-lightning-02.png)
 
 A replacement LV connector can be purchased from AliExpress. 
 [aliexpress](https://www.aliexpress.com/item/1005008121256506.html)
 
 Detailed LV connector C144 pin description
 
-![image](../images/ford-f-150-lightning-03.png){ width="450" }
+![image](../../images/ford-f-150-lightning-03.png){ width="450" }
 
-![image](../images/ford-f-150-lightning-04.png){ width="450" }
+![image](../../images/ford-f-150-lightning-04.png){ width="450" }
 
-[![MachE-2 SMA inverter setup](../images/ford-f-150-lightning-05.png){ width="900" }](../images/ford-f-150-lightning-05.png)
+[![MachE-2 SMA inverter setup](../../images/ford-f-150-lightning-05.png){ width="900" }](../../images/ford-f-150-lightning-05.png)
 
 For communication only:
 

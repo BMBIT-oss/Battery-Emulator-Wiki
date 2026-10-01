@@ -113,7 +113,7 @@ The following pinout has been reverse engineered on an ë-C4.
 | 12 | pink | HVIL | (Connect to pin 11) [*](#HVIL)
 | 14 | light grey | GND | (Connect to GND for the 12V feed)
 
-This platform shares its low voltage connector with the [Stellantis SMP platform](stellantis_smp_platform.md)
+This platform shares its low voltage connector with the [Stellantis SMP platform](wip/stellantis_smp_platform.md)
 
 ### Part numbers and purchase links
 Did your battery not come with all the required cables/plugs? No worries, here are the part numbers and purchase links!

@@ -2,7 +2,8 @@
 title: "Kia Soul"
 ---
 
-## Work in progress integration :construction: 
+!!! warning "Work in progress"
+    This battery is not yet supported by Battery-Emulator, it can't be selected in the Settings. This page collects what is known so far for a future integration, so it may be incomplete or untested. Can you help? See [data needed for a new battery integration](../../setup/contributing/data_needed_for_new_battery_integration.md).
 
 Kia Soul EV had two types of batteries:
 
@@ -23,7 +24,7 @@ Main connector (out of stock?): [KET Connector MG645649-5](https://www.amazon.co
 
 HV Cable part no. 91876E 4000
 
-![image](../images/kia-soul-27kwh-01.png)
+![image](../../images/kia-soul-27kwh-01.png)
 
 ### Wiring diagram
 
@@ -52,10 +53,10 @@ Connect the following pins to 12V, GND and CAN;
 | 19 GND | To GND of 12V system |
 | 20 GND | To GND of 12V system |
 
-![image](../images/kia-soul-27kwh-02.png)
+![image](../../images/kia-soul-27kwh-02.png)
 
 ### Pictures
 
-![soul2](../images/kia-soul-27kwh-03.jpg)
+![soul2](../../images/kia-soul-27kwh-03.jpg)
 
-![image](../images/kia-soul-27kwh-04.png)
+![image](../../images/kia-soul-27kwh-04.png)

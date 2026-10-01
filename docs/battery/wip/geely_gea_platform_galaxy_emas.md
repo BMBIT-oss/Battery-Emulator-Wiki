@@ -2,6 +2,9 @@
 title: "Geely GEA (Galaxy, eMAS)"
 ---
 
+!!! warning "Work in progress"
+    This battery is not yet supported by Battery-Emulator, it can't be selected in the Settings. This page collects what is known so far for a future integration, so it may be incomplete or untested. Can you help? See [data needed for a new battery integration](../../setup/contributing/data_needed_for_new_battery_integration.md).
+
 ## Platform overview
 The Geely GEA platform is used on the following vehicles
 Vehicles using platform:
@@ -16,7 +19,7 @@ Vehicles using platform:
 - [Geely Galaxy A7 (P181)](https://en.wikipedia.org/wiki/Geely_Galaxy_A7) (2025–present)
 - [Geely Galaxy Starshine 7](https://en.wikipedia.org/wiki/Geely_Galaxy_Starshine_7) (to commence)
 
-![image](../images/geely-gea-platform-galaxy-emas-01.png)
+![image](../../images/geely-gea-platform-galaxy-emas-01.png)
 
 ## High Voltage connector
 TODO
@@ -24,7 +27,7 @@ TODO
 ## Low voltage connector
 The low voltage connector is the same as on the Geely SEA platform.
 
-![image](../images/geely-gea-platform-galaxy-emas-02.png)
+![image](../../images/geely-gea-platform-galaxy-emas-02.png)
 
 |  Product |  Purchase Link |
 | :--------: | :---------: |

@@ -2,11 +2,14 @@
 title: "Omoda"
 ---
 
+!!! warning "Work in progress"
+    This battery is not yet supported by Battery-Emulator, it can't be selected in the Settings. This page collects what is known so far for a future integration, so it may be incomplete or untested. Can you help? See [data needed for a new battery integration](../../setup/contributing/data_needed_for_new_battery_integration.md).
+
 Omoda E5 Noble 
 2025, 58.9KW
 Battery is manufactured by CATL 
 
-![IMG_20260611_222236](../images/omoda-01.jpg){ width="1152" height="365" }
+![IMG_20260611_222236](../../images/omoda-01.jpg){ width="1152" height="365" }
 
 ### Physical Dimensions
 
@@ -15,8 +18,8 @@ Battery is manufactured by CATL
 | Pack Size (L × W × H) | 1900 × 1370 × 300 mm |
 | Weight | 437 kg |
 
-![IMG_20260611_205018](../images/omoda-02.jpg){ width="615" height="615" }
-![1000043711](../images/omoda-03.jpg){ width="615" height="615" }
+![IMG_20260611_205018](../../images/omoda-02.jpg){ width="615" height="615" }
+![1000043711](../../images/omoda-03.jpg){ width="615" height="615" }
 
 ## Software configuration
 For this battery type, use the option called "xyz" under the "Battery Protocol" section.
@@ -32,7 +35,7 @@ Part numbers for connectors/cables, along with purchase links to ebay/aliexpress
 
 ## Wiring, Low voltage connector
 LV Connector is a Amphenol-TPI HC Series (HC18B-S32 2516 326024) 
-![1000043655](../images/omoda-04.jpg){ width="614" height="614" }
+![1000043655](../../images/omoda-04.jpg){ width="614" height="614" }
 
 This has the ability 6 Power Pins (13A max) + 26 Signals (5A max)
 The rear is protected in a (EDPM KR 06) boot that is cable tied closed. 
@@ -65,7 +68,7 @@ The connection on the battery has following Pins.
 | 31:| Ground           | 0.85mm Black   |
 | 32:| Ground           | 1.2mm Black    | 
  
-![IMG_20260611_161810](../images/omoda-05.jpg){ width="775" height="473" }
+![IMG_20260611_161810](../../images/omoda-05.jpg){ width="775" height="473" }
 
 **Diagram of LV connections currently needed**
 
@@ -82,16 +85,16 @@ Connectors are Jonhon 2 Pin EVH6 Series (EVH6 L2TJ-A G001 25046021)
 Rated: Current is 150-350A, Voltage 1000V DC, IP68  
 Straight Plugs with 70mm² cable 
 
-![1000043666](../images/omoda-06.jpg){ width="797" height="598" }
-![IMG_20260611_203502](../images/omoda-07.jpg){ width="615" height="615" }
+![1000043666](../../images/omoda-06.jpg){ width="797" height="598" }
+![IMG_20260611_203502](../../images/omoda-07.jpg){ width="615" height="615" }
 
 Cable A is 750mm in length.
 Cable B is 2000mm in length.
 
-![IMG_20260611_162235](../images/omoda-08.jpg){ width="826" height="904" }
+![IMG_20260611_162235](../../images/omoda-08.jpg){ width="826" height="904" }
 
 The Connections on the battery for each plug are clearly marked on Aluminium casting. 
-![1000043715](../images/omoda-09.jpg){ width="765" height="345" }
+![1000043715](../../images/omoda-09.jpg){ width="765" height="345" }
 
 | Parameter | Value |
 |----------|-------|
