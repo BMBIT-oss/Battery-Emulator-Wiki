@@ -9,29 +9,25 @@ title: "MG4"
 
 | Year |  Model | Battery capacity | Compatible? | Rated Voltage | Voltage Range |
 | :--------: | :---------: | :---------: | :----------: | :----------: |  :----------: |
-| 2024- | MG4 EH32 | 49kWh LFP       |   ✅⚠️ Testing ongoing | 315V | 250-365V 
-| 2022- | MG4 EH32 | 51kWh LFP       |   ✅⚠️ Testing ongoing | 327V | 260-379.6V   |
-| 2022- | MG4 EH32 | 64kWh NMC       |   ✅⚠️ Testing ongoing| 380V | 291.2-452.4V |
-| 2022- | MG4 EH32 | 77kWh NMC       |   ✅⚠️ Testing ongoing| 380V | 302.4-469.8V |
+| 2024- | MG4 EH32 | 49kWh LFP       |   ✅ | 315V | 250-365V     |
+| 2022- | MG4 EH32 | 51kWh LFP       |   ✅ | 327V | 260-379.6V   |
+| 2022- | MG4 EH32 | 64kWh NMC       |   ✅ | 380V | 291.2-452.4V |
+| 2022- | MG4 EH32 | 77kWh NMC       |   ✅ | 380V | 302.4-469.8V |
 | 2026- | MG4 EH?? | 64kWh LFP       |    TBC                 | 316V | ???          |
 
 ## Current status
 
-There are a couple of current challenges:
+All packs, except the new 64kWh LFP pack, have now been tested to close contactors when requested, report SoC, SoH, cell voltages and temps and other necessary information, contactor control is also available.  Packs capacity, chemistry and cell counts are autodetected. 
 
-- Most packs (~75% of ones tested) will close contactors when requested, and report the state-of-charge over the PT EXT CAN, but others do not. It is not clear why not, perhaps they are crash-locked and need resetting, the 49kWh pack is reported to have closed contactors once 12V was applied to PIN 4 on the LV connector.
+SoC snaps to 100% on LFP packs when the max cell reaches ~3.75v. It is not known whether the packs are balancing, but the LFP packs seem to be 3-5mv accept at the extremes.
 
-MG4 code now has the option to "Use estimated SOC" which will snap to 100% and coulomb count backwards from there, the BE SoC is persistent across reboots, but not power cycles.
-
-- It is not known whether the packs are balancing, but the LFP packs seem to be 3-5mv accept at the extremes.
-
-Both locked packs (using external contactor control and coulomb-counting) and non-locked packs (using BMS contactor control and SoC) are currently being tested, we've successfully replaced a locked BMU with an unlocked one from a catastrophically damaged pack, so this is worth keeping in mind as an option.
+The MG4 code has the option to "Use estimated SOC" which will snap to 100% and coulomb count backwards from there, for packs with significant SoC drift the BE SoC is persistent across reboots, but not power cycles.
 
 ## Software configuration
 
 Not yet merged, latest builds in:
 
-https://github.com/jonny5532/Battery-Emulator/tree/feature/mg4-coulomb-count
+https://github.com/jonny5532/Battery-Emulator/tree/feature/mg4-working-11i
 
 For this battery type, use the option called "MG4 battery" under the "Battery config" setting.
 
@@ -65,7 +61,6 @@ Lots of useful information here: [MG4 ESS SM.pdf](https://github.com/user-attach
 ### Power connections
 
 The battery needs a 12V-14V supply to pins 1 & 3, and draws 600mA continuous with the contactors closed, and ~3A briefly when closing the contactors. 
-On the 49.1kWh pack, the pin 4 IgnRelay also requires 12V before the contactors will close.
 
 To reduce potential issues with the isolation measurement, it is preferable to have a 12V supply that is isolated from the grid (eg, powered from a 2-pin double-insulated adapter).
 
@@ -73,11 +68,11 @@ To reduce potential issues with the isolation measurement, it is preferable to h
 
 The battery has three CAN buses:
 
-**CAN PT** is the powertrain bus, which connects the main powertrain components. The battery outputs its vital statistics (voltages, SoC and temperatures) on this bus. OBD requests (0x7e5 & 0x7DF) work over this bus. It is an FD interface which requires a 50000kbit CAN  2Mb CANFD connection.  
+**CAN PT** is the powertrain bus, it is an FD interface which requires a 500kbit CAN 2Mb CANFD connection.  Contactor control, battery statistics and UDS requests (0x7e5 & 0x7DF) all work via this bus.
 
-**CAN PT EXT** which we don't use now. It's a regular CAN interface at 50000kbit.
+**CAN PT EXT** is the powertrain extension bus, a regular CAN interface at 500kbit, but is not used for BE.
 
-**CAN BMS** is the raw data from the BMS that in the car goes to the EVCC.  It's a regular CAN interface at 25000kbit.
+**CAN BMS** is the BMS bus, a regular CAN interface at 250kbit, but is not used for BE.
 
 ## High Voltage Interlock (HVIL)
 
