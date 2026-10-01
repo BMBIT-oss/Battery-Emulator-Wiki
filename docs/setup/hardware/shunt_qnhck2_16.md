@@ -54,22 +54,25 @@ The QNHCK2-16 is also made for a 5 V supply, with its zero point at 2.5 V and ou
 
 ## LV Wiring
 
-The sensor takes its 3.3 V supply from the board, and its output goes to an ADC pin. On the [Waveshare ESP32-S3-RS485-CAN](../../hardware/waveshare_esp32_s3_rs485_can.md) this is GPIO1, on the 4-pin SH1.0 connector directly behind the USB-C socket, the same one the [status LED](../../hardware/waveshare_esp32_s3_rs485_can.md#status-led-neopixel-via-gpio2) uses:
+The sensor takes its 3.3 V supply from the board, and its output goes to an ADC pin, which depends on the board:
 
-| Sensor wire | Function | SH1.0 connector pin |
-| :-- | :-- | :-- |
-| Red | +3.3 V supply | 2 (3V3) |
-| Black | GND | 1 (GND) |
-| Yellow | Output | 4 (GPIO1) |
-| Blue/shield | NC or Vref | not connected, insulate its end |
+| Sensor wire | Function | [Waveshare ESP32-S3-RS485-CAN](../../hardware/waveshare_esp32_s3_rs485_can.md): 4-pin SH1.0 connector behind the USB-C socket | [LilyGo T-2CAN](../../hardware/lilygo_t_2can.md): configurable QWIIC port | [BECom](../../hardware/becom.md): expansion socket J5 |
+| :-- | :-- | :-- | :-- | :-- |
+| Red | +3.3 V supply | 2 (3V3) | 3V3 | 29 (+3.3V) |
+| Black | GND | 1 (GND) | GND | 13 (GND) |
+| Yellow | Output | 4 (GPIO1) | IO01 | 23 (IO4) |
+| Blue/shield | NC or Vref | not connected, insulate its end | not connected | not connected |
 
-A pigtail with a 4-pin JST SH (1.0 mm pitch) plug makes the connection - Waveshare bundles it with the unit.
+On the Waveshare and the T-2CAN, a pigtail with a 4-pin JST SH (1.0 mm pitch) plug makes the connection: Waveshare bundles it with the unit, LilyGo sells a [pre-made one](https://lilygo.cc/products/dupont-cable). The Waveshare's connector is the one the [status LED](../../hardware/waveshare_esp32_s3_rs485_can.md#status-led-neopixel-via-gpio2) uses, the T-2CAN's is the second one, labelled GND/3V3/IO01/IO02. J5 on the BECom is a 2×15 socket with 1.27 mm pitch.
 
 !!! warning "CAUTION"
     Supply the sensor with 3.3 V only, and check each wire before powering up: the datasheet warns that wrong wiring can damage the sensor. Its pin legend says "+5V" for the red wire, which is the 5 V version's; the 3.3 V version takes 3.3 V there.
 
 * Before connecting the yellow wire, measure it against black with no current through the sensor: it should read close to 1.65 V.
-* GPIO1 is also the I2C display's SDA pin, so the two cannot be used together: keep **GPIO 1/2 function** (Settings → Hardware config) at **Status LED (GPIO2)**. A status LED on GPIO2 can share the 3V3 and GND pins with the sensor.
+* Waveshare: GPIO1 is also the I2C display's SDA pin, so the two cannot be used together: keep **GPIO 1/2 function** (Settings → Hardware config) at **Status LED (GPIO2)**. A status LED on GPIO2 can share the 3V3 and GND pins with the sensor.
+* T-2CAN: IO01 belongs to the configurable port. Keep **Configurable port** (Settings → Hardware config) at **WUP1 / WUP2**, and use neither a battery that needs wake-up pin 1 (CMP Smart Car) nor the I2C display or E-Stop / BMS Power options.
+* BECom: IO4 is not used for anything else.
+* If the pin is taken by something else after all, the Events page reports a GPIO conflict and the sensor is not used.
 * The leads can be extended: twist the output together with GND, or use shielded cable, and keep it away from HV cables and contactor coil wiring. The emulator averages up to a thousand readings every second, which smooths out noise.
 * Do not load the output: the datasheet asks for at least 4.7 kΩ. The ADC pin needs nothing added, no divider or pull resistor.
 
@@ -95,7 +98,7 @@ The classic ESP32's ADC only reads accurately up to about 2.45 V, which leaves o
 
 ## Configuration
 
-The sensor is supported on the [Waveshare ESP32-S3-RS485-CAN](../../hardware/waveshare_esp32_s3_rs485_can.md) only for now; other boards do not list it.
+The sensor is supported on the [Waveshare ESP32-S3-RS485-CAN](../../hardware/waveshare_esp32_s3_rs485_can.md), the [LilyGo T-2CAN](../../hardware/lilygo_t_2can.md) and the [BECom](../../hardware/becom.md); other boards do not list it.
 
 In **Settings → Optional components config**:
 
@@ -106,7 +109,7 @@ In **Settings → Optional components config**:
 * **Rated output:** as printed on the sensor, e.g. 1.65 ± 0.625 V
 * **Automatic calibration:** ticked by default, see below
 
-Save and reboot. The main page then shows it as e.g. **Shunt protocol: QNHCK2-16 (30 A ±0.625 V) ✓**. The ✓ means the sensor's current is the one in use. A red ✗ means the batteries' own is used instead, because the sensor has no reading yet, its zero point has not been measured yet, it reads more than 1.2 × its rated current, or GPIO1 is not available (the Events page then reports a GPIO conflict).
+Save and reboot. The main page then shows it as e.g. **Shunt protocol: QNHCK2-16 (30 A ±0.625 V) ✓**. The ✓ means the sensor's current is the one in use. A red ✗ means the batteries' own is used instead, because the sensor has no reading yet, its zero point has not been measured yet, it reads more than 1.2 × its rated current, or its pin is not available (the Events page then reports a GPIO conflict).
 
 ### Automatic calibration
 
@@ -158,7 +161,7 @@ The log (**Log** on the main page, with **General logging via Webserver** enable
 ![datasheet2](../../images/shunt-qnhck2-16-03.png)
 
 ## More info
-* [Waveshare ESP32-S3-RS485-CAN](../../hardware/waveshare_esp32_s3_rs485_can.md), the board and its SH1.0 connector
+* [Waveshare ESP32-S3-RS485-CAN](../../hardware/waveshare_esp32_s3_rs485_can.md), [LilyGo T-2CAN](../../hardware/lilygo_t_2can.md) and [BECom](../../hardware/becom.md), the boards and their connectors
 * [Contactor control via GPIO](../software/contactor_control_via_gpio_pins.md), needed for the automatic calibration
 * [Double Battery](../software/battery_2x.md) and [Triple Battery](../software/battery_3x.md)
 * [Manufacturer's product page](https://njqineng.en.made-in-china.com/product/trFUNzKOAHkG/China-Qnhck2-16-Input-10A-20A-30A-50A-100A-Output-2-5-0-625V-2-5-2V-DC-Hall-Effect-Current-Transducer-Clamp-CT-Split-Core-Current-Sensor-Transformer.html) (Nanjing Qineng Electronic Technology)
