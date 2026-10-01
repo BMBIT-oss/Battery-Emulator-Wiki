@@ -3,6 +3,7 @@ title: "Webserver guide"
 ---
 
 ## Webserver
+
 You can interact with the Battery-Emulator via the built in Webserver. Here you can check battery status, change battery settings, update the software over-the-air, check active events, monitor cell voltages plus much more! It is easy to commission a new system, and the preferred way to monitor a newly setup battery system.
 
 !!! info "IMPORTANT"
@@ -49,25 +50,33 @@ If you don't plan to use the Access Point on a regular basis, disable it. Not on
     If you disabled the Access Point earlier and need to use it again without having access to the home network, you can [turn it back on with the BOOT button](boot_button_functions.md#start-wi-fi-access-point) on the board.
 
 ## Using the Webserver
-The front page will contain some quick information about the system. What software version the system has, Inverter protocol, Battery type, Live data from the battery transmitted to the Inverter, along with some buttons to go to other pages. The page will be green incase all is well, go yellow incase there is an active warning, and go red incase an error is active and blocking operation. Incase there is a warning/error active, you can click the `Events` button to go to this view.
+The front page organizes in a couple of cards a quick overview of the information about the system. What software version the system has, Inverter protocol, Battery type, Live data from the battery transmitted to the Inverter, along with some buttons to go to other pages. The page will be **green** in case all is well, go **yellow** in case there is an active warning, and go **red** in case an error is active and blocking operation. When there is a warning/error active, you can click the **Events** button to see what went wrong.
 
-![image](../../images/webserver-guide-03.png)
+![mainpage](../../images/webserver-guide-20.png)
 
-#### Limiting factor
-Using the webserver you can see what part is limiting the charge/discharge. It will show you if the battery is the bottleneck, or if the inverter is the limiting factor.
+The main page refreshes data from the Emulator every 15 s. Clicking any of the data cards will trigger an instant refresh. The maximum refresh rate allowed is 1s, but please, don't abuse it. Should any network issue appear between your browser ant the Emulator, it will be displayed. 
 
-![image](../../images/webserver-guide-04.png)
+![retry](../../images/webserver-guide-23.png)
 
-![image](../../images/webserver-guide-05.png)
+The interface automatically recovers as soon as connection will be reestablished.
 
-Note, if no power is being put in/out of the battery, the text will simply say Battery Idle.
+#### Limiting factor display
+
+Using the webserver you can see which component is limiting the charge/discharge. It will show you if the battery is the bottleneck, or if the inverter is the limiting factor.
+
+![limit](../../images/webserver-guide-21.png)
+
+![limit](../../images/webserver-guide-22.png)
+
+If no power is being put in/out of the battery, the text will simply say **Battery Idle**.
 
 Above this text you can also see the Amperages allowed by the Emulator. You can see when the charge/discharge amperage values are limited by the battery itself (BMS), or by the user configurable settings (Manual)
 
 ![image](../../images/webserver-guide-06.png)
 
 ## Events
-This page contains information about events that have occurred while the system has been running. All events are timestamped, and have an occurrence counter so you know if many events of the same type has triggered. The list is ordered with the newest events on top.
+
+At the bottom of main page, clicking the **Events** button will show information about events that have occurred while the system has been running. All events are timestamped, and have an occurrence counter so you know if many events of the same type has triggered. The list is ordered with the newest events on top.
 
 ![image](../../images/webserver-guide-16.png)
 
@@ -115,6 +124,13 @@ This button will restart the emulator. Can be useful to get out of a latched err
 
 ## Settings
 
+The settings page contains an embedded help, with short explanations about the related configuration items. Click the small ⓘ icon where available, to display the information. Links to the wiki page containing the documentation will open in a new window.
+
+![help](../../images/webserver-guide-24.png)
+
+!!! note "NOTE"
+    Low-flash boards like LilyGo T‐CAN485 display this only when they have Internet access.
+
 ### Web Server Authentication
 
 This protection level is not particularly robust (Digest access authentication), however, it is sufficient to prevent non-malicious usage within the internal network on which it operates and the username and password are not sent in clear text. 
@@ -143,19 +159,19 @@ From the appropriate dropdown lists select the driver you'd like to use when com
 
 Certain settings allow customizing the battery parameters:
 
-![image](../../images/webserver-guide-09.png)
+![image](../../images/webserver-guide-17.png)
 
 #### Battery Capacity
 
-How much energy can your battery store? Some batteries autodetect this via CAN communication, but for some battery types that do not have this it is good to manually define the value so that your inverter knows how large the battery is.
+How much energy can your battery store? Some batteries autodetect this via CAN communication, this setting is invisible for them, but for some battery types that do not have this it is good to manually define the value so that your inverter knows how large the battery is.
 
 #### Rescale SOC%
 
-If enabled, the system will rescale SOC% between the configured min/max-percentage. By not using the entire battery, the amount of cycles the battery can last increases. Good practice is to use this feature, and restrict SOC% between 20-80%, however, scaling SOC max too low may cause oscillations when charge approaches the scaled 100%. If you run into this, enable "Ramp up charge limits gradually" in "Inverter config" and raise SOC max percentage to 100%.
+If enabled, the system will rescale SOC% between the configured min/max-percentage. By not using the entire battery, the amount of cycles the battery can last increases. Good practice is to use this feature, and restrict SOC% between 20-80%, however, scaling SOC max too low may cause oscillations when charge approaches the scaled 100%. If you run into this, enable **Ramp up charge limits gradually** in **Inverter config** and raise SOC max percentage to 100%.
 
-![image](../../images/webserver-guide-10.png)
+![image](../../images/webserver-guide-18.png)
 
-![image](../../images/webserver-guide-11.png)
+For [double](battery_2x.md) and [triple](battery_3x.md) setups SOC scaling is applied once, to the installation aggregated total, per-pack values remain unchanged.
 
 !!! note "NOTE"
     For some battery chemistries (LFP especially), rescaling SOC% prevents the battery from top-balancing properly. For these chemistries it is recommended to rescale only the bottom section with **SOC min percentage** (e.g. using 20-100%).
@@ -165,10 +181,10 @@ If enabled, the system will rescale SOC% between the configured min/max-percenta
 !!! tip "TIP"
     It is now possible to do negative rescaling, as some inverters restrict the possibility to use the entire battery capacity at the bottom section. With this trick you can circumvent that. Use with caution!
 
-#### Battery charge/discharge limit
+#### Battery charge/discharge speed limits
 
-- Max charge speed (A)
-- Max discharge speed (A)
+- Max charge current (A)
+- Max discharge current (A)
 
 This setting caps the amount of power that can go in/out of the battery. Even though most EV packs can push out hundreds of ampere, most inverters will not handle so large amounts of current. Some inverters even stop functioning in case they see allowed a large value. By default this is set to 30A on charge and discharge. Set this value to correspond to the parameters of your inverter (Inverter Power / Vmin), the wiring or the fuses in your system (whichever the lowest). It is important for these numbers to be correct, in order for the filters and the taper to operate correctly. 
 
@@ -177,9 +193,17 @@ This setting caps the amount of power that can go in/out of the battery. Even th
 
 #### Manual charge voltage limits
 
-Disabled by default. This option can be enabled to manually limit min/max voltage in the system. Note that not all inverters are compatible with voltage based limits, the setting was primarily developed for BYD_CAN. If left disabled, the system will automatically use the entire voltage range of your battery (unless Rescale SOC% is enabled)
+Disabled by default. This option can be enabled to manually limit min/max voltage in the system. Note that not all inverters are compatible with voltage based limits, the setting was primarily developed for BYD_CAN. If left disabled, the system will automatically use the entire voltage range of your battery (unless Rescale SOC% is enabled).
 
-![image](../../images/webserver-guide-12.png)
+![image](../../images/webserver-guide-19.png)
+
+#### Periodic BMS reset
+
+See the dedicated page for [Periodic BMS reset](../hardware/periodic_bms_reset.md).
+
+#### Undercharged emergency recovery mode
+
+See the dedicated page for [Recovering undercharged battery](../hardware/ecovering_undercharged_battery.md).
 
 ### Log
 

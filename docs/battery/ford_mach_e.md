@@ -178,58 +178,12 @@ To confirm NMC balancing, record DID `0x4818`, individual cell voltages, highest
 
 If the battery 12 V is powered up with an interlock not connected when you try to get the contactors to close they will not. 
 
-This requires the DTC error clearing and then contactors will immediately close. DTC clear can be accessed from the More Battery Info page.
+This requires the DTC error clearing and then contactors will immediately close. DTC read/clear can be accessed from the More Battery Info page.
 
 ![image](../images/ford-mach-e-12.png){ width="376" height="81" }
 
-DTC Reading is still under development
-
-### DTC descriptions
-The following DTCs have been decoded.
-
-- B11D5 - Restraints Event - Vehicle Disabled
-- U0100 - Lost Communication With ECM/PCM A
-- U019B - Lost Communication With Battery Charger Control Module 'A'
-- U0140 - Lost Communication With Body Control Module
-- U0146 - Lost Communication With Serial Data Gateway Module 'A'
-- U0293 - Lost Communication With Hybrid/EV Powertrain Control Module 'A'
-- U0298 - Lost Communication With DC/DC Converter Control Module 'A'
-- U027C - Lost Communication With Off-Board Charger Control Module
-- U0594 - Invalid Data Received From Hybrid/EV Powertrain Control Module 'A'
-- P0C44 - Hybrid/EV Battery Pack Coolant Temperature Sensor 'A' Circuit Low
-- P0A06 - Motor Electronics Coolant Pump 'A' Control Circuit Low
-- P0AA6 - Hybrid/EV Battery Pack 'A' Voltage System Isolation Fault
-- P0AA7 - Hybrid/EV Battery Pack 'A' Voltage Isolation Sensor Circuit
-- P1A42 - Propulsion System Status Signal Performance
-- U3001 - Control Module Improper Shutdown Performance
-- U3003 - Battery Voltage
-- U351B - High Voltage System Interlock Circuit 'D' Low
-- P1A0F - Hybrid Powertrain Control Module - Vehicle Disabled
-- P1A43 - Hybrid/EV Battery Contactor Request Signal Performance
-- P0C48 - Hybrid/EV Battery Pack Coolant Pump 'A' Control Circuit Low
-- P1627 - Module Supply Voltage Out Of Range
-- P0C45 - Hybrid/EV Battery Pack Coolant Temperature Sensor 'A' Circuit High
-
-#### Status codes
-Status (-2F):
-
- - DTC Present at Time of Request
- - Malfunction Indicator Lamp is Off for this DTC
-
-Status (-AF):
-
- - DTC Present at Time of Request
- - Malfunction Indicator Lamp is On for this DTC
-
-Status (-2C):
-
- - DTC Maturing - Intermittent at Time of Request
- - Malfunction Indicator Lamp is Off for this DTC
-
-Status (-28):
-
- - Previously Set DTC - Not Present at Time of Request
- - Malfunction Indicator Lamp is Off for this DTC
+### Missing HVIL
+If you see the DTC "U351B High Voltage System Interlock Circuit 'D' Low", you will get contactor opening during load. You will need to seat HVIL jumpers on the large DC connector.
 
 ## 3D-printable parts
 
