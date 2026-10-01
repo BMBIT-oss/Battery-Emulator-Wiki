@@ -68,7 +68,7 @@ Other models:
 
 - 37501 GI050 is Hyundai Ioniq 5 72kWh (For this battery see [EGMP](hyundai_e_gmp_platform_58_2_77_4_kwh.md))
 - 37501 CV050 is Kia EV6 78kWh (For this battery see [EGMP](hyundai_e_gmp_platform_58_2_77_4_kwh.md))
-- 37510 E4050 is [Kia Soul 27kWh](kia_soul.md)
+- 37510 E4050 is [Kia Soul 27kWh](wip/kia_soul.md)
 
 ## Part numbers
 
