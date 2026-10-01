@@ -2,6 +2,9 @@
 title: "Taycan E‐Tron"
 ---
 
+!!! warning "Work in progress"
+    This battery is not yet supported by Battery-Emulator, it can't be selected in the Settings. This page collects what is known so far for a future integration, so it may be incomplete or untested. Can you help? See [data needed for a new battery integration](../../setup/contributing/data_needed_for_new_battery_integration.md).
+
 ### Volkswagen Group MSB platform
 
 - [Porsche Taycan](https://en.wikipedia.org/wiki/Porsche_Taycan) (J1 Performance; 2019–present)
@@ -12,7 +15,7 @@ title: "Taycan E‐Tron"
 - 79.2 kWh (71.0 kWh usable) liquid-cooled lithium-ion
 - 93.4 kWh (83.7 kWh usable) liquid-cooled lithium-ion "Performance Battery Plus"
 
-![IMG_5353](../images/taycan-e-tron-01.jpeg)
+![IMG_5353](../../images/taycan-e-tron-01.jpeg)
 
 ### Wiring
 
@@ -31,13 +34,13 @@ Pin 19: CAN Low
 
 Only CAN Pins 16 and 19 are populated in both Audi Etron GT and Porsche Taycan Batteries so that is where I have taken the CAN data from
 
-![image](../images/taycan-e-tron-02.png)
+![image](../../images/taycan-e-tron-02.png)
 
-![IMG_5352](../images/taycan-e-tron-03.jpeg)
-![IMG_5351](../images/taycan-e-tron-04.jpeg)
-![IMG_5360](../images/taycan-e-tron-05.jpeg)
-![IMG_5357](../images/taycan-e-tron-06.jpeg)
-![IMG_5358](../images/taycan-e-tron-07.jpeg)
+![IMG_5352](../../images/taycan-e-tron-03.jpeg)
+![IMG_5351](../../images/taycan-e-tron-04.jpeg)
+![IMG_5360](../../images/taycan-e-tron-05.jpeg)
+![IMG_5357](../../images/taycan-e-tron-06.jpeg)
+![IMG_5358](../../images/taycan-e-tron-07.jpeg)
 
 ### Logs 
 
@@ -70,6 +73,6 @@ OBD Data from Carscanner App Toggling through menus and again ending with cell v
 LOG in CANFD standalone 30/05/2025
 [TaycanFDstanalone.log](https://github.com/user-attachments/files/20522032/TaycanFDstanalone.log)
 
-![Screenshot 2025-05-30 152852](../images/taycan-e-tron-08.png)
+![Screenshot 2025-05-30 152852](../../images/taycan-e-tron-08.png)
 
  

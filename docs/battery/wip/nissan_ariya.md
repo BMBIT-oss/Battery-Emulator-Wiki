@@ -2,7 +2,8 @@
 title: "Nissan Ariya"
 ---
 
-## Work in progress integration :construction: 
+!!! warning "Work in progress"
+    This battery is not yet supported by Battery-Emulator, it can't be selected in the Settings. This page collects what is known so far for a future integration, so it may be incomplete or untested. Can you help? See [data needed for a new battery integration](../../setup/contributing/data_needed_for_new_battery_integration.md).
 
 ## General info
 
@@ -13,14 +14,14 @@ The Nissan Ariya [battery](https://www.batterydesign.net/2022-nissan-ariya/) com
 - 63kWh - 96S 400V Architecture - 451kg 1456x384x2099mm
 - 87kWh - 96S 400V Architecture - 578kg 1456x384x2099mm
 
-![image](../images/nissan-ariya-01.png)
+![image](../../images/nissan-ariya-01.png)
 
 ## Pinout BMS
 The Ariya battery uses the same 36-pin Yazaki connector as the Nissan LEAF, but it uses more pins:
 
-![bild](../images/nissan-ariya-02.png)
+![bild](../../images/nissan-ariya-02.png)
 
-![image](../images/nissan-ariya-04.png)
+![image](../../images/nissan-ariya-04.png)
 
 * Pin 34 CAN-H - Connect to CAN-H on the board
 * Pin 35 CAN-L - Connect to CAN-L on the board
@@ -48,7 +49,7 @@ If using QC-HV: (UNCLEAR HOW THIS WORKS)
 * Pin 25 QC state sig - Connect to ?
 
 You can use either QC-HV or the MAIN-HV connector. The QC-HV uses the same high voltage cable as the Nissan LEAF.
-![bild](../images/nissan-ariya-03.png)
+![bild](../../images/nissan-ariya-03.png)
 
 ## Precharge/Contactor closing
 
@@ -63,7 +64,7 @@ Battery Emulator hardware can act on its own, and turn on/off the contactors/pre
 
 To enable the feature in the software, Enable the **Contactor control via GPIO** option on the Settings page.
 
-![image](../images/nissan-leaf-e-nv200-22.png){ width="505" height="42" }
+![image](../../images/nissan-leaf-e-nv200-22.png){ width="505" height="42" }
 
 To keep things simple, it is recommended to use Solid State Relays (SSR). These can be activated with 3Volt, and control large DC currents. Follow this schematic to complete the circuit:
 

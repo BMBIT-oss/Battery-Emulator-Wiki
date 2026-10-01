@@ -88,4 +88,20 @@ plugins:
   - redirects:
       redirect_maps:
           'bmsreset.md': 'setup/hardware/periodic_bms_reset.md#taking-it-into-use'
+          'battery/aiways_u5_2021.md': 'battery/wip/aiways_u5_2021.md'
+          'battery/byd_dolphin_seal_seagull.md': 'battery/wip/byd_dolphin_seal_seagull.md'
+          'battery/fisker_ocean.md': 'battery/wip/fisker_ocean.md'
+          'battery/ford_f_150_lightning.md': 'battery/wip/ford_f_150_lightning.md'
+          'battery/geely_gea_platform_galaxy_emas.md': 'battery/wip/geely_gea_platform_galaxy_emas.md'
+          'battery/kia_soul.md': 'battery/wip/kia_soul.md'
+          'battery/kia_xceed_phev.md': 'battery/wip/kia_xceed_phev.md'
+          'battery/land_rover.md': 'battery/wip/land_rover.md'
+          'battery/maxus_ed3.md': 'battery/wip/maxus_ed3.md'
+          'battery/mg4.md': 'battery/wip/mg4.md'
+          'battery/nissan_ariya.md': 'battery/wip/nissan_ariya.md'
+          'battery/omoda.md': 'battery/wip/omoda.md'
+          'battery/seres_3.md': 'battery/wip/seres_3.md'
+          'battery/smart_eq_fortwo_forfour.md': 'battery/wip/smart_eq_fortwo_forfour.md'
+          'battery/stellantis_smp_platform.md': 'battery/wip/stellantis_smp_platform.md'
+          'battery/taycan_e_tron.md': 'battery/wip/taycan_e_tron.md'
 

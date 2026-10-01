@@ -2,6 +2,9 @@
 title: "Smart EQ Fortwo Forfour"
 ---
 
+!!! warning "Work in progress"
+    This battery is not yet supported by Battery-Emulator, it can't be selected in the Settings. This page collects what is known so far for a future integration, so it may be incomplete or untested. Can you help? See [data needed for a new battery integration](../../setup/contributing/data_needed_for_new_battery_integration.md).
+
 ## Compatible batteries
 
 For this platform...
@@ -38,7 +41,7 @@ Part numbers for connectors/cables, along with purchase links to ebay/aliexpress
 
 Low Voltage connectors:
 
-![image](../images/smart-eq-fortwo-forfour-01.png){ width="810" height="621" }
+![image](../../images/smart-eq-fortwo-forfour-01.png){ width="810" height="621" }
 
 Diagram:
 
