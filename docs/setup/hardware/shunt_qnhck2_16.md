@@ -1,5 +1,5 @@
 ---
-title: "QNHCK2-16 Hall current sensor"
+title: "QNHCK2-16 DC current clamp"
 ---
 
 The QNHCK2-16 is an open loop Hall effect current sensor with a split core: it clamps around a battery cable of up to 16 mm diameter without cutting or disconnecting it, and it is galvanically isolated from it. Battery Emulator reads its output voltage through an ADC pin and gives the measured current instead of the current the battery reports — with a [double](../software/battery_2x.md) or [triple](../software/battery_3x.md) battery, instead of the sum the packs report. The power is calculated from it too, and both show up wherever the battery's own would: towards the inverter, on MQTT, ESP-NOW, the web pages and the display. With several packs, each pack's own figures stay as its battery reports them, and the sensor stands in for their sum. Everything else (SOC, limits, cell data) still comes from the batteries.
