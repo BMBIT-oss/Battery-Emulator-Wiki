@@ -22,7 +22,10 @@ This helps when a battery reports its current coarsely or with an offset, and it
 | Leads | 50 cm: red +3.3 V, yellow output, black GND, blue NC or Vref |
 | Operating temperature | −25 to +85 °C |
 
-Purchase from: [AliExpress](https://www.aliexpress.com/item/1005006124647110.html)
+Purchase from: [AliExpress](https://www.aliexpress.com/item/1005006124647110.html).
+
+!!! note "NOTE"
+    Despite looking similar, this is not a CT clamp. CTs (current transformers) can only measure AC, they don't work for DC. The [Hall effect current sensor](https://itg-motor.com/what-is-a-hall-effect-current-sensor/) works on a different principle — and it requires separate power to operate.
 
 ### Choosing the model
 
@@ -166,3 +169,4 @@ The log (**Log** on the main page, with **General logging via Webserver** enable
 * [Double Battery](../software/battery_2x.md) and [Triple Battery](../software/battery_3x.md)
 * [Manufacturer's product page](https://njqineng.en.made-in-china.com/product/trFUNzKOAHkG/China-Qnhck2-16-Input-10A-20A-30A-50A-100A-Output-2-5-0-625V-2-5-2V-DC-Hall-Effect-Current-Transducer-Clamp-CT-Split-Core-Current-Sensor-Transformer.html) (Nanjing Qineng Electronic Technology)
 * [ESP32-S3 datasheet](https://documentation.espressif.com/esp32-s3_datasheet_en.pdf), ADC characteristics in section 5
+* [Hall effect current sensor](https://itg-motor.com/what-is-a-hall-effect-current-sensor/) working principle
