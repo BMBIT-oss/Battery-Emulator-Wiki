@@ -104,12 +104,12 @@ In **Settings → Optional components config**:
 
 ![settimgs](../../images/shunt-qnhck2-16-05.png)
 
-* **Shunt:** QNHCK2-16 Clamp
+* **Measurement:** QNHCK2-16 Clamp
 * **Rated current:** as printed on the sensor, e.g. 30 A (±33 A)
 * **Rated output:** as printed on the sensor, e.g. 1.65 ± 0.625 V
 * **Automatic calibration:** ticked by default, see below
 
-Save and reboot. The main page then shows it as e.g. **Shunt protocol: QNHCK2-16 (30 A ±0.625 V) ✓**. The ✓ means the sensor's current is the one in use. A red ✗ means the batteries' own is used instead, because the sensor has no reading yet, its zero point has not been measured yet, it reads more than 1.2 × its rated current, or its pin is not available (the Events page then reports a GPIO conflict).
+Save and reboot. The main page then shows it as e.g. **Shunt protocol: QNHCK2-16 (30A ±0.625V) ✓**. The ✓ means the sensor's current is the one in use. A red ✗ means the batteries' own is used instead, because the sensor has no reading yet, its zero point has not been measured yet, it reads more than 1.2 × its rated current, or its pin is not available (the Events page then reports a GPIO conflict).
 
 ### Automatic calibration
 
