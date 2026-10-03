@@ -98,6 +98,9 @@ The classic ESP32's ADC only reads accurately up to about 2.45 V, which leaves o
 * **Double or triple battery:** on the cable to the inverter, after the point where the packs join, so it measures their total. On one pack's cable it would only see that pack's share, and the inverter would take it for the total.
 * **Direction:** the emulator counts charging current as positive, so the output has to rise above 1.65 V while the battery charges. If the housing has an arrow, point it the way the charging current flows: towards the battery on the positive cable, towards the inverter on the negative one. Check it once running (see [Checking it works](#checking-it-works)). If charging shows as discharging, open the clamp, turn it around and close it again; there is no setting to invert it.
 * **Fully closed:** the two halves have to latch together with nothing between their faces, as a gap lowers the reading. Center the cable in the window, fix the sensor with a cable tie so it cannot move, and keep it away from other current carrying cables, contactors and relays, whose magnetic fields shift its reading.
+* **Perpendicular (optional):** to ensure maximum accuracy, you can use the two little ears and small wire straps on the sensor to fixate the wire against the sensor, so it falls in exact perpendicular angle against the loop:
+
+<img width="443" height="309" alt="fixated" src="https://github.com/user-attachments/assets/ea91a4f5-10db-4758-81c0-1cf963d11776" />
 
 ## Configuration
 
