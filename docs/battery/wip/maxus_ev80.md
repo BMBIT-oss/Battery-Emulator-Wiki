@@ -1,0 +1,30 @@
+---
+title: "Maxus EV80"
+---
+
+!!! warning "Work in progress"
+    This battery has no dedicated integration in Battery-Emulator, it can't be selected in the Settings. This page collects what is known so far, so it may be incomplete or untested. Can you help? See [data needed for a new battery integration](../../setup/contributing/data_needed_for_new_battery_integration.md).
+
+!!! note
+    The EV80 battery does not contain any contactors or shunt. This means there is no way to control the battery, and the battery does not keep track of SOC% in any way. This is handled externally on the EV80 vehicle. Due to this, you will need to fit an aftermarket BMS onto the battery to use it, for instance the [RJXZS](../bms/rjxzs_bms.md) BMS.
+
+- Maxus EV80
+
+![image](../../images/maxus-ev80-01.png){ width="795" height="692" }
+
+## Battery overview
+
+## Low voltage wiring
+The cables are labelled in Chinese
+
+![image](../../images/maxus-ev80-02.png){ width="1098" height="805" }
+
+![image](../../images/maxus-ev80-03.png){ width="1095" height="588" }
+
+TODO: check for official cabling documentation on [saicmaxus](https://xyx.saicmaxus.com/overseaAfterSaleWeb/staticDownloads.html)
+
+## High voltage wiring
+Cable for heater?
+
+![image](../../images/maxus-ev80-04.png){ width="974" height="372" }
+

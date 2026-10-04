@@ -2,6 +2,9 @@
 title: "Huawei SUN2000"
 ---
 
+!!! warning "Work in progress"
+    This inverter is not supported by Battery-Emulator, there is no protocol for it in the Settings. This page collects what is known so far, so it may be incomplete or untested. Can you help? See [data needed for a new inverter integration](../../setup/contributing/data_needed_for_new_inverter_integration.md).
+
 LUNA2000 compatibility is not planned at the moment due to requiring DC/DC converter.
 
 ## ⚠️ DC/DC link
