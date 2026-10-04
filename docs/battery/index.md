@@ -14,6 +14,7 @@ Be sure to checkout the [installation guidelines](../setup/installation_guidelin
 - 🅱️ Cell balancing has been confirmed working (Important for longterm operation). Note that some batteries require powering off / opening contactors to balance, which can make them unsuitable for offgrid applications
 - 2️⃣ Compatible with Double battery (two identical packs in parallel, see [Double Battery](../setup/software/battery_2x.md)).
 - 3️⃣ Compatible with Triple battery (see [Triple Battery](../setup/software/battery_3x.md)). Every triple-capable integration is also compatible with double.
+- 💾 Not available on the small flash boards (LilyGo T-CAN485, ESP32 DevKit), see [Small flash boards](../hardware/index.md#small-flash-boards).
 
 |           Car (Manufacturer)            |                                    Product Name                                    |  Capacity (kWh)   | Compatibility status |                 Compatibility level                 |        Balancing        | Parallel Packs | Voltage min / max (V) |                      Notes                       |
 |:---------------------------------------:|:----------------------------------------------------------------------------------:|:-----------------:|:----------------:|:---------------------------------------------:|:------------------------------:|:------------------------:|:---------------------:|:------------------------------------------------:|
@@ -60,7 +61,7 @@ Be sure to checkout the [installation guidelines](../setup/installation_guidelin
 |               Mitsubishi                |                   [eK X EV](nissan_sakura_mitsubishi_ek_x_ev.md)                   |        20         |        ✅         |                       ⭐                       |                                |                          |       300 / 400       |                                                  |
 |                   MG                    |                              [HS PHEV](mg_hs_phev.md)                              |        16         |        ✅         |                       ⭐                       |        🅱️ (Automatic)         |           2️⃣            |       310 / 378       |                                                  |
 |                   MG                    |                                   [MG4](wip/mg4.md)                                    |     51/64/77      |        ⚠️        |                Testing ongoing                |                                |                          |       260 / 470       |                                                  |
-|                   MG                    |                         [MG5 - Marvel R](mg5_marvel_r.md)                          |    50/52/61/70    |        ✅         |                      ⭐⭐                       |              🅱️               |           2️⃣            |       268 / 438       | Double battery only via the MG Gen1 integration |
+|                   MG                    |                         [MG5 - Marvel R](mg5_marvel_r.md) [💾](../hardware/index.md#small-flash-boards "Not available on LilyGo T-CAN485 and ESP32 DevKit")                          |    50/52/61/70    |        ✅         |                      ⭐⭐                       |              🅱️               |           2️⃣            |       268 / 438       | Double battery only via the MG Gen1 integration |
 |                    MG                   |                                   [ZS](mg_zs.md)                                   |    44.5 / 69.9    |        ✅         |                       ⭐                       |                                |           2️⃣            |                       |    MG Gen1 protocol. No LFP packs tested yet     |
 |                 Nissan                  |                              [Ariya](wip/nissan_ariya.md)                              |       87/63       |        ⚠️        |                CAN logs wanted                |                                |                          |                       |                                                  |
 |                 Nissan                  |                           [LEAF](nissan_leaf_e_nv200.md)                           |    24/30/40/62    |        ✅         |                      ⭐⭐⭐                      |              🅱️               |          2️⃣3️⃣          |       300 / 400       |                                                  |
@@ -124,7 +125,7 @@ DIY LV battery:
 
 [Pylon HV batteries (Dyness Tower)](pylon_hv.md) ✅ 2️⃣
 
-[CHAdeMO vehicles](wip/chademo_vehicle.md) ⚠️ (Experimental compatibility)
+[CHAdeMO vehicles](wip/chademo_vehicle.md) ⚠️ [💾](../hardware/index.md#small-flash-boards "Not available on LilyGo T-CAN485 and ESP32 DevKit") (Experimental compatibility)
 
-[CCS bidirectional charging](wip/ccs_bidirectional_charging.md) ⚠️ (Experimental compatibility)
+[CCS bidirectional charging](wip/ccs_bidirectional_charging.md) ⚠️ [💾](../hardware/index.md#small-flash-boards "Not available on LilyGo T-CAN485 and ESP32 DevKit") (Experimental compatibility)
 

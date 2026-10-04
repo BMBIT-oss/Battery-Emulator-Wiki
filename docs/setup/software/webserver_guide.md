@@ -130,7 +130,7 @@ The settings page contains an embedded help, with short explanations about the r
 ![help](../../images/webserver-guide-24.png)
 
 !!! note "NOTE"
-    Low-flash boards like LilyGo T‐CAN485 display this only when they have Internet access.
+    On the [small flash boards](../../hardware/index.md#small-flash-boards) (LilyGo T‐CAN485, ESP32 DevKit) the help is shown only when the browser has Internet access.
 
 ### Web Server Authentication
 
