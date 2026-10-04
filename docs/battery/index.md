@@ -124,7 +124,7 @@ DIY LV battery:
 
 [Pylon HV batteries (Dyness Tower)](pylon_hv.md) ✅ 2️⃣
 
-[CHAdeMO vehicles](chademo_vehicle.md) ⚠️ (Experimental compatibility)
+[CHAdeMO vehicles](wip/chademo_vehicle.md) ⚠️ (Experimental compatibility)
 
 [CCS bidirectional charging](ccs_bidirectional_charging.md) ⚠️ (Experimental compatibility)
 
