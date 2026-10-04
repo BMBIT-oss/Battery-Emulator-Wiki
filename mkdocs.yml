@@ -107,6 +107,12 @@ plugins:
           'battery/smart_eq_fortwo_forfour.md': 'battery/wip/smart_eq_fortwo_forfour.md'
           'battery/stellantis_smp_platform.md': 'battery/wip/stellantis_smp_platform.md'
           'battery/taycan_e_tron.md': 'battery/wip/taycan_e_tron.md'
+          'inverter/bluesun.md': 'inverter/pylon/bluesun.md'
+          'inverter/felicity.md': 'inverter/pylon/felicity.md'
+          'inverter/hoymiles.md': 'inverter/pylon/hoymiles.md'
           'inverter/huawei_sun2000.md': 'inverter/wip/huawei_sun2000.md'
+          'inverter/saj.md': 'inverter/pylon/saj.md'
           'inverter/vevor.md': 'inverter/wip/vevor.md'
+          'inverter/yingfa.md': 'inverter/pylon/yingfa.md'
+          'inverter/zcs_azzurro.md': 'inverter/pylon/zcs_azzurro.md'
 
