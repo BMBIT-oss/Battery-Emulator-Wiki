@@ -6,7 +6,7 @@ hide:
 
 # Compatible Emulator Hardware
 
-There are many hardware kits that can run the Battery-Emulator software. Cheap option is the "LilyGo T-2CAN" (2x CAN). For those that need more reliable and certifiable hardware, the "Stark CMR" is highly recommended. Amount of stars ⭐ signal how easy to use the hardware is for a newcomer:
+There are many hardware kits that can run the Battery-Emulator software. Amount of stars ⭐ signal how easy to use the hardware is for a newcomer:
 
 |  Product | Notes | CAN interfaces | Newcomer friendly | All features |
 | :---------: | :---------: | :----------: | :----------: | :----------: |
