@@ -27,7 +27,7 @@ There are many hardware kits that can run the Battery-Emulator software. Amount 
 
 The [LilyGo T-CAN485](lilygo_t_can485.md) and the [ESP32 DevKit](esp32_devkit_v1.md) have only 4 MB of flash, so their firmware is built without some features to make room for the rest. 
 
-??? note "Reduced features"
+??? quote "Reduced features"
     | Feature | On a small flash board |
     |---|---|
     | [CHAdeMO V2X](../battery/wip/chademo_vehicle.md) battery, with its CT clamp and IVT shunt support | Not offered in the battery list |
