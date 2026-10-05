@@ -9,6 +9,8 @@ title: "ESP32 DevKit V1"
 !!! note "NOTE"
     The Devkit is for advanced users that are OK with troubleshooting wiring and complex software setups. For easy use of Battery-Emulator, consider using a ready-made board.
 
+    This board has limited flash memory, so its firmware is built without some features, see [Small flash boards](index.md#small-flash-boards).
+
 The ESP32 DevKit V1 hardware can be used with Battery-Emulator, and has the following features:
 
 - 25 configurable GPIO pins, allowing the following features simultaneously:

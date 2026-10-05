@@ -200,6 +200,8 @@ This will not give you any more battery capacity, though if you've swapped a bad
 
 ### Performing the reset 
 
+--8<-- "snippets/small_flash.md"
+
 To perform a proper SOH% reset, [that sticks between reboots](https://github.com/dalathegreat/Battery-Emulator/issues/900#issuecomment-3482162856), choose how to perform the following steps:
 
 #### Remotely

@@ -1,5 +1,5 @@
 ---
 title: "Compatible chargers"
-hide:
-  - toc
 ---
+
+Select from the menu.

@@ -53,7 +53,7 @@ Be sure to checkout the [installation guidelines](../setup/installation_guidelin
 |                   Kia                   |                               [Soul EV](wip/kia_soul.md)                               |      27 / 30      |        ⚠️        |                Work in progress               |                                |                          |                       |                                                  |
 |               Land Rover                |                            [Land Rover](wip/land_rover.md)                             |                   |        ⚠️        |              Untested base added              |                                |                          |                       |                                                  |
 |                  Maxus                  |                          [eD3 / eDeliver 3](wip/maxus_ed3.md)                          |  35 / 50.2 / 52.5 |        ⚠️        |                Work in progress               |                                |                          |                       |                                                  |
-|                  Maxus                  |                               [EV80](maxus_ev80.md)                                |                   |        ⚠️        |Needs an aftermarket BMS, no contactors or shunt in pack|                                |                          |                       |                                                  |
+|                  Maxus                  |                               [EV80](wip/maxus_ev80.md)                                |                   |        ⚠️        |Needs an aftermarket BMS, no contactors or shunt in pack|                                |                          |                       |                                                  |
 |                 Mercedes                |                   [B250E "W246"](mercedes_b_class_b250e_w246.md)                   |         36        |        ✅         |                       ⭐                       |                                |                          |       250 / 350       |   Uses the Tesla Model S/X 2012-2020 protocol    |
 |                  Mini                   |                            [Cooper electric](bmw_i3.md)                            |        32         |        ✅         |                      ⭐⭐⭐                      |              🅱️               |           2️⃣            |       270 / 400       |                                                  |
 |               Mitsubishi                |                           [i-Miev](i_miev_czero_ion.md)                            |        16         |        ✅         |                       ⭐                       |               ⚠️               |                          |       310 / 370       |                                                  |
@@ -124,7 +124,7 @@ DIY LV battery:
 
 [Pylon HV batteries (Dyness Tower)](pylon_hv.md) ✅ 2️⃣
 
-[CHAdeMO vehicles](chademo_vehicle.md) ⚠️ (Experimental compatibility)
+[CHAdeMO vehicles](wip/chademo_vehicle.md) ⚠️ (Experimental compatibility)
 
-[CCS bidirectional charging](ccs_bidirectional_charging.md) ⚠️ (Experimental compatibility)
+[CCS bidirectional charging](wip/ccs_bidirectional_charging.md) ⚠️ (Experimental compatibility)
 

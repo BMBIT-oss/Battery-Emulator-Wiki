@@ -91,10 +91,11 @@ Warning level events contain info that users might want to act upon. The system 
 ### 🟥 Error
 Critical level error events contain info about why the system has stopped operation. In case it is no longer safe to continue using the battery, an error event will be generated and charging/discharging is set to 0W allowed. Check the Error event description for information on how to proceed or what to check. The front page of the webserver, plus the LED on the board will also turn red when an error event is active.
 
-## Cellmonitor
-Via this page you can keep track of all the cells in your battery. At the top of the page there is a quick readout of Min/Max/Deviation inside the battery. The view also has a grid view of all cells and their values, along with a graph at the bottom for quick visualization on how balanced the battery is. The two cells that are lowest and highest will be highlighted red for quicker identification where they are.
+## More battery info and Cellmonitor
 
-![image](../../images/webserver-guide-08.png)
+Via these pages you can get a lot of detailed information about the battery's current status, health and lifetime usage. Some battery packs even show the active Diagnostic Trouble Codes and offer options to reset them, and visualize all the cells in your battery. At the top of the Cellmonitor page there is a quick readout of Min/Max/Deviation inside the battery. The view has a graph for quick visualization on how balanced the battery is, and a grid view of all cells and their values. The cells that are lowest and highest will be highlighted red for quicker identification where they are.
+
+![image](../../images/webserver-guide-03.png)
 
 ### Interpreting the values
 
@@ -129,7 +130,7 @@ The settings page contains an embedded help, with short explanations about the r
 ![help](../../images/webserver-guide-24.png)
 
 !!! note "NOTE"
-    Low-flash boards like LilyGo T‐CAN485 display this only when they have Internet access.
+    On the [small flash boards](../../hardware/index.md#small-flash-boards) (LilyGo T‐CAN485, ESP32 DevKit) the help is shown only when the browser has Internet access.
 
 ### Web Server Authentication
 
@@ -159,7 +160,7 @@ From the appropriate dropdown lists select the driver you'd like to use when com
 
 Certain settings allow customizing the battery parameters:
 
-![image](../../images/webserver-guide-17.png)
+![image](../../images/webserver-guide-04.png)
 
 #### Battery Capacity
 
@@ -188,6 +189,8 @@ For [double](battery_2x.md) and [triple](battery_3x.md) setups SOC scaling is ap
 
 This setting caps the amount of power that can go in/out of the battery. Even though most EV packs can push out hundreds of ampere, most inverters will not handle so large amounts of current. Some inverters even stop functioning in case they see allowed a large value. By default this is set to 30A on charge and discharge. Set this value to correspond to the parameters of your inverter (Inverter Power / Vmin), the wiring or the fuses in your system (whichever the lowest). It is important for these numbers to be correct, in order for the filters and the taper to operate correctly. 
 
+![image](../../images/webserver-guide-05.png)
+
 !!! tip "TIP"
     If you have a 3kW inverter, the Max charge/discharge speed would be 3000W / 300Vmin = 10A
 
@@ -195,7 +198,7 @@ This setting caps the amount of power that can go in/out of the battery. Even th
 
 Disabled by default. This option can be enabled to manually limit min/max voltage in the system. Note that not all inverters are compatible with voltage based limits, the setting was primarily developed for BYD_CAN. If left disabled, the system will automatically use the entire voltage range of your battery (unless Rescale SOC% is enabled).
 
-![image](../../images/webserver-guide-19.png)
+![image](../../images/webserver-guide-07.png)
 
 #### Periodic BMS reset
 

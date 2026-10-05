@@ -4,6 +4,8 @@ title: "MG5, Marvel R"
 
 # MG5, Marvel R
 
+--8<-- "snippets/small_flash.md"
+
 | Car | kWh | Chemistry | Battery type  | Part number | Status |
 |----------|----------|----------|--------|----------|---------|
 | MG5  | 52.5  | NMC  |    EU150A52S  | 10847655 | Tested and working |

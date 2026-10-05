@@ -261,6 +261,9 @@ See picture below, they fit perfect.
 
 ### Battery disassembly and replacing the pyrofuse
 
+!!! info "IMPORTANT"
+    The procedure here shows how to access the pyrofuse. In the pictures the pyro is replaced with a copper bar. This should never be performed, the pyro should always be replaced by another pyrofuse, otherwise the battery has no way to blow a fuse internally. Always wear PPE (faceshield, hearing protection) when working with pyrofuses, as they can blow up instantly if handled incorrectly.
+
 1. Remove all the small Torx screws (TX20) around the top. There are many, so make use of an electric impact screwdriver.
    ![Step 1](../images/meb-27.jpg){ width="480" }
 

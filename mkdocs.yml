@@ -5,6 +5,9 @@ repo_name: 'dalathegreat/Battery-Emulator'
 repo_url: 'https://github.com/dalathegreat/Battery-Emulator'
 edit_uri: 'https://github.com/dalathegreat/Battery-Emulator-Wiki/blob/main/docs/'
 docs_dir: docs
+validation:
+  links:
+    absolute_links: relative_to_docs
 theme:
   name: material
   logo: assets/be.svg
@@ -90,6 +93,8 @@ plugins:
           'bmsreset.md': 'setup/hardware/periodic_bms_reset.md#taking-it-into-use'
           'battery/aiways_u5_2021.md': 'battery/wip/aiways_u5_2021.md'
           'battery/byd_dolphin_seal_seagull.md': 'battery/wip/byd_dolphin_seal_seagull.md'
+          'battery/ccs_bidirectional_charging.md': 'battery/wip/ccs_bidirectional_charging.md'
+          'battery/chademo_vehicle.md': 'battery/wip/chademo_vehicle.md'
           'battery/fisker_ocean.md': 'battery/wip/fisker_ocean.md'
           'battery/ford_f_150_lightning.md': 'battery/wip/ford_f_150_lightning.md'
           'battery/geely_gea_platform_galaxy_emas.md': 'battery/wip/geely_gea_platform_galaxy_emas.md'
@@ -97,6 +102,7 @@ plugins:
           'battery/kia_xceed_phev.md': 'battery/wip/kia_xceed_phev.md'
           'battery/land_rover.md': 'battery/wip/land_rover.md'
           'battery/maxus_ed3.md': 'battery/wip/maxus_ed3.md'
+          'battery/maxus_ev80.md': 'battery/wip/maxus_ev80.md'
           'battery/mg4.md': 'battery/wip/mg4.md'
           'battery/nissan_ariya.md': 'battery/wip/nissan_ariya.md'
           'battery/omoda.md': 'battery/wip/omoda.md'
@@ -104,4 +110,6 @@ plugins:
           'battery/smart_eq_fortwo_forfour.md': 'battery/wip/smart_eq_fortwo_forfour.md'
           'battery/stellantis_smp_platform.md': 'battery/wip/stellantis_smp_platform.md'
           'battery/taycan_e_tron.md': 'battery/wip/taycan_e_tron.md'
+          'inverter/huawei_sun2000.md': 'inverter/wip/huawei_sun2000.md'
+          'inverter/vevor.md': 'inverter/wip/vevor.md'
 
