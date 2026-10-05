@@ -20,25 +20,26 @@ There are many hardware kits that can run the Battery-Emulator software. Amount 
 | [LilyGo T-CAN485](lilygo_t_can485.md)   | CAN & Modbus! | 1 (+ 1 add-on) | ⭐ | [Reduced](#small-flash-boards)
 | [ESP32 Devkit V1](esp32_devkit_v1.md) | Build your own! For expert tinkerers | | ⭐ | [Reduced](#small-flash-boards)
 
-!!! note "NOTE"
+!!! info "NOTE"
     There is no way to purchase a pre-programmed device. This is a hobbyist open source project. You will be responsible for loading the software and setting it up correctly for your components. There is however a [support Discord group](https://www.patreon.com/dala) available.
 
 ## Small flash boards { #small-flash-boards }
 
-The [LilyGo T-CAN485](lilygo_t_can485.md) and the [ESP32 DevKit](esp32_devkit_v1.md) have only 4 MB of flash, so their firmware is built without some features to make room for the rest. Everything below works on all the other boards.
+The [LilyGo T-CAN485](lilygo_t_can485.md) and the [ESP32 DevKit](esp32_devkit_v1.md) have only 4 MB of flash, so their firmware is built without some features to make room for the rest. 
 
-| Feature | On a small flash board |
-|---|---|
-| [CHAdeMO V2X](../battery/wip/chademo_vehicle.md) battery, with its CT clamp and IVT shunt support | Not offered in the battery list |
-| [Chargebyte CCS V2X](../battery/wip/ccs_bidirectional_charging.md) battery | Not offered in the battery list |
-| [MG 5](../battery/mg5_marvel_r.md) battery | Not offered in the battery list |
-| [Nissan LEAF degradation reset](../battery/nissan_leaf_e_nv200.md#performing-the-reset) | No reset button, the LEAF battery itself works |
-| "Custom Clamp" and "QNHCK2-16 Clamp" shunts | Not offered in the shunt list |
-| I2C display (SSD1306) | Not offered for the configurable port |
-| `<hostname>.local` address (mDNS) | Reach the board by its IP address instead |
-| Built-in help texts of the [Settings page](../setup/software/webserver_guide.md#settings) | Shown only when the browser has Internet access |
-| Built-in DTC descriptions on the battery pages | Shown only when the browser has Internet access |
-| RS485 driver-enable (DE) pin control | Not driven, matters only for an RS485 transceiver that needs it |
+??? note "Reduced features"
+    | Feature | On a small flash board |
+    |---|---|
+    | [CHAdeMO V2X](../battery/wip/chademo_vehicle.md) battery, with its CT clamp and IVT shunt support | Not offered in the battery list |
+    | [Chargebyte CCS V2X](../battery/wip/ccs_bidirectional_charging.md) battery | Not offered in the battery list |
+    | [MG 5](../battery/mg5_marvel_r.md) battery | Not offered in the battery list |
+    | [Nissan LEAF degradation reset](../battery/nissan_leaf_e_nv200.md#performing-the-reset) | No reset button, the LEAF battery itself works |
+    | "Custom Clamp" and "QNHCK2-16 Clamp" shunts | Not offered in the shunt list |
+    | I2C display (SSD1306) | Not offered for the configurable port |
+    | `<hostname>.local` address (mDNS) | Reach the board by its IP address instead |
+    | Built-in help texts of the [Settings page](../setup/software/webserver_guide.md#settings) | Shown only when the browser has Internet access |
+    | Built-in DTC descriptions on the battery pages | Shown only when the browser has Internet access |
+    | RS485 driver-enable (DE) pin control | Not driven, matters only for an RS485 transceiver that needs it |
 
 ## Status LED 🟢
 
