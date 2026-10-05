@@ -30,13 +30,13 @@ The [LilyGo T-CAN485](lilygo_t_can485.md) and the [ESP32 DevKit](esp32_devkit_v1
 ??? quote "Reduced features"
     | Feature | On a small flash board |
     |---|---|
-    | [CHAdeMO V2X](../battery/wip/chademo_vehicle.md) battery, with its CT clamp and IVT shunt support | Not offered in the battery list |
-    | [Chargebyte CCS V2X](../battery/wip/ccs_bidirectional_charging.md) battery | Not offered in the battery list |
     | [MG 5](../battery/mg5_marvel_r.md) battery | Not offered in the battery list |
-    | [Nissan LEAF degradation reset](../battery/nissan_leaf_e_nv200.md#performing-the-reset) | No reset button, the LEAF battery itself works |
-    | "Custom Clamp" and "QNHCK2-16 Clamp" shunts | Not offered in the shunt list |
-    | I2C display (SSD1306) | Not offered for the configurable port |
+    | [Degradation reset for Nissan LEAF](../battery/nissan_leaf_e_nv200.md#performing-the-reset) | No reset button, the LEAF battery itself works |
+    | [CHAdeMO V2X](../battery/wip/chademo_vehicle.md) battery, with its CT clamp and IVT shunt support | Not offered in the battery list |
+    | "Custom Clamp" shunt | Not offered in the shunt list |
+    | [Chargebyte CCS V2X](../battery/wip/ccs_bidirectional_charging.md) battery | Not offered in the battery list |
     | `<hostname>.local` address (mDNS) | Reach the board by its IP address instead |
+    | I2C display (SSD1306) | Not offered for the configurable port |
     | Built-in help texts of the [Settings page](../setup/software/webserver_guide.md#settings) | Shown only when the browser has Internet access |
     | Built-in DTC descriptions on the battery pages | Shown only when the browser has Internet access |
     | RS485 driver-enable (DE) pin control | Not driven, matters only for an RS485 transceiver that needs it |
