@@ -106,6 +106,8 @@ The classic ESP32's ADC only reads accurately up to about 2.45 V, which leaves o
 
 The sensor is supported on the [Waveshare ESP32-S3-RS485-CAN](../../hardware/waveshare_esp32_s3_rs485_can.md), the [LilyGo T-2CAN](../../hardware/lilygo_t_2can.md) and the [BECom](../../hardware/becom.md); other boards do not list it.
 
+--8<-- "snippets/small_flash.md"
+
 In **Settings → Optional components config**:
 
 ![settimgs](../../images/shunt-qnhck2-16-05.png)
