@@ -95,7 +95,7 @@ Critical level error events contain info about why the system has stopped operat
 
 Via these pages you can get a lot of detailed information about the battery's current status, health and lifetime usage. Some battery packs even show the active Diagnostic Trouble Codes and offer options to reset them, and visualize all the cells in your battery. At the top of the Cellmonitor page there is a quick readout of Min/Max/Deviation inside the battery. The view has a graph for quick visualization on how balanced the battery is, and a grid view of all cells and their values. The cells that are lowest and highest will be highlighted red for quicker identification where they are.
 
-<img width="1000" height="1230" alt="image" src="https://github.com/user-attachments/assets/11d767b4-ddf7-441a-95da-c23b046c4b6c" />
+![image](../../images/webserver-guide-03.png)
 
 ### Interpreting the values
 
@@ -130,7 +130,7 @@ The settings page contains an embedded help, with short explanations about the r
 ![help](../../images/webserver-guide-24.png)
 
 !!! note "NOTE"
-    Low-flash boards like LilyGo T‐CAN485 display this only when they have Internet access.
+    On the [small flash boards](../../hardware/index.md#small-flash-boards) (LilyGo T‐CAN485, ESP32 DevKit) the help is shown only when the browser has Internet access.
 
 ### Web Server Authentication
 
@@ -160,7 +160,7 @@ From the appropriate dropdown lists select the driver you'd like to use when com
 
 Certain settings allow customizing the battery parameters:
 
-<img width="1016" height="538" alt="image" src="https://github.com/user-attachments/assets/f0e38b51-5056-427b-8d33-f08485e38792" />
+![image](../../images/webserver-guide-04.png)
 
 #### Battery Capacity
 
@@ -189,7 +189,7 @@ For [double](battery_2x.md) and [triple](battery_3x.md) setups SOC scaling is ap
 
 This setting caps the amount of power that can go in/out of the battery. Even though most EV packs can push out hundreds of ampere, most inverters will not handle so large amounts of current. Some inverters even stop functioning in case they see allowed a large value. By default this is set to 30A on charge and discharge. Set this value to correspond to the parameters of your inverter (Inverter Power / Vmin), the wiring or the fuses in your system (whichever the lowest). It is important for these numbers to be correct, in order for the filters and the taper to operate correctly. 
 
-<img width="560" height="93" alt="image" src="https://github.com/user-attachments/assets/ed50ab48-dbdd-4232-895e-5cac98249acb" />
+![image](../../images/webserver-guide-05.png)
 
 !!! tip "TIP"
     If you have a 3kW inverter, the Max charge/discharge speed would be 3000W / 300Vmin = 10A
@@ -198,7 +198,7 @@ This setting caps the amount of power that can go in/out of the battery. Even th
 
 Disabled by default. This option can be enabled to manually limit min/max voltage in the system. Note that not all inverters are compatible with voltage based limits, the setting was primarily developed for BYD_CAN. If left disabled, the system will automatically use the entire voltage range of your battery (unless Rescale SOC% is enabled).
 
-<img width="556" height="141" alt="image" src="https://github.com/user-attachments/assets/dfd32756-2e3a-4fb8-84a5-ab6386d92168" />
+![image](../../images/webserver-guide-07.png)
 
 #### Periodic BMS reset
 

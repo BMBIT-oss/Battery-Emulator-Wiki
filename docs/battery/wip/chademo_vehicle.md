@@ -3,7 +3,9 @@ title: "CHAdeMO vehicles"
 ---
 
 !!! warning "Work in progress"
-    The CHAdeMO integration is experimental and incomplete: it can be selected in the Settings, but it is untested and not meant for regular use. It is not available on the small flash boards ([LilyGo T-CAN485](../../hardware/lilygo_t_can485.md) and [ESP32 DevKit](../../hardware/esp32_devkit_v1.md)), their firmware leaves it out together with its CT clamp and IVT shunt support. Can you help? See [data needed for a new battery integration](../../setup/contributing/data_needed_for_new_battery_integration.md).
+    The CHAdeMO integration is experimental and incomplete: it can be selected in the Settings, but it is untested and not meant for regular use. Can you help? See [data needed for a new battery integration](../../setup/contributing/data_needed_for_new_battery_integration.md).
+
+--8<-- "snippets/small_flash.md"
 
 !!! warning "WARNING"
     The entire Battery-Emulator project focuses on re-using EV batteries for stationary storage. The following support page for CHAdeMO connection to the in-vehicle battery is only to be used for emergencies, where the grid is down and you need backup power. It is not intended for daily usage, the following info is ONLY for emergency situations!

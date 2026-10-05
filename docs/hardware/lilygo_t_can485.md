@@ -9,7 +9,7 @@ The LilyGo T-CAN485 is what the Battery-Emulator originally started development 
 ![image](../images/lilygo-t-can485-02.png)
 
 !!! warning "WARNING"
-    This board has limited flash memory. Starting from 2027, it might not get new integrations added to it. All other hardware choices are better suited for those seeking new feature development and new integrations.
+    This board has limited flash memory. Starting from 2027, it might not get new integrations added to it. All other hardware choices are better suited for those seeking new feature development and new integrations. Its firmware is already built without some features, see [Small flash boards](index.md#small-flash-boards).
 
     A good replacement is [Waveshare ESP32‐S3‐RS485‐CAN](waveshare_esp32_s3_rs485_can.md). For CAN components, the new [T-2CAN](lilygo_t_2can.md) board is a good choice.
 
@@ -45,7 +45,7 @@ The hardware can be bought via sites like [AliExpress](https://www.aliexpress.co
 | 35 | MCP2515 / [MCP2518FD](../setup/can_related/can_fd_add_on_mcp2518fd.md) INT — or [Equipment stop](../setup/software/equipment_stop.md) input |
 
 !!! note "NOTE"
-    Thhe binary for this board builds with `SMALL_FLASH_DEVICE`, which compiles out the I2C display, so on the stock firmware the Configurable port dropdown only offers µSD Card.
+    The binary for this board builds with `SMALL_FLASH_DEVICE`, which compiles out the I2C display, so on the stock firmware the Configurable port dropdown only offers µSD Card.
 
 The hardware has more details on LilyGo's Github page [github/Xinyuan-LilyGO](https://github.com/Xinyuan-LilyGO/T-CAN485)
 

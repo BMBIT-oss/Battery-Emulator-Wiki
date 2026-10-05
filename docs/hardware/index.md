@@ -8,20 +8,37 @@ hide:
 
 There are many hardware kits that can run the Battery-Emulator software. Cheap option is the "LilyGo T-2CAN" (2x CAN). For those that need more reliable and certifiable hardware, the "Stark CMR" is highly recommended. Amount of stars ⭐ signal how easy to use the hardware is for a newcomer:
 
-|  Product | Notes | CAN interfaces | Newcomer friendly |
-| :---------: | :---------: | :----------: | :----------: |
-| [Stark CMR Module](stark_cmr.md) | Professional HW, CE certified, Massive I/O, DIN rail mount | 2 (+ 1 add-on) | ⭐⭐⭐
-| [BECom](becom.md) | Open source triple-CAN and RS485 (fully isolated), DIN rail mount | 3 | ⭐⭐⭐
-| [LilyGo T-2CAN](lilygo_t_2can.md) | Dual isolated CAN | 2 (+ 1 add-on) | ⭐⭐⭐
-| [LilyGo T-2CANFD](lilygo_t_2can.md) | Isolated CAN & Isolated CAN-FD | 2 (+ 1 add-on) | ⭐⭐⭐
-| [Waveshare ESP32-S3-RS485-CAN](waveshare_esp32_s3_rs485_can.md) | CAN & Modbus, DIN rail mount | 1 (+ 1 add-on) | ⭐⭐
-| [DFRobot Edge101](dfrobot_edge101.md) | CAN & Modbus, metal enclosure, Massive I/O, DIN rail mount | 1 | ⭐⭐
-| [3LB](https://github.com/malcolmputer/3lb) | Open source triple-CAN (fully isolated) | 3 (+ ? add-on) | ⚠️
-| [LilyGo T-CAN485](lilygo_t_can485.md)   | CAN & Modbus! | 1 (+ 1 add-on) | ⭐
-| [ESP32 Devkit V1](esp32_devkit_v1.md) | Build your own! For expert tinkerers | | ⭐
+|  Product | Notes | CAN interfaces | Newcomer friendly | All features |
+| :---------: | :---------: | :----------: | :----------: | :----------: |
+| [Stark CMR Module](stark_cmr.md) | Professional HW, CE certified, Massive I/O, DIN rail mount | 2 (+ 1 add-on) | ⭐⭐⭐ | ✅
+| [BECom](becom.md) | Open source triple-CAN and RS485 (fully isolated), DIN rail mount | 3 | ⭐⭐⭐ | ✅
+| [LilyGo T-2CAN](lilygo_t_2can.md) | Dual isolated CAN | 2 (+ 1 add-on) | ⭐⭐⭐ | ✅
+| [LilyGo T-2CANFD](lilygo_t_2can.md) | Isolated CAN & Isolated CAN-FD | 2 (+ 1 add-on) | ⭐⭐⭐ | ✅
+| [Waveshare ESP32-S3-RS485-CAN](waveshare_esp32_s3_rs485_can.md) | CAN & Modbus, DIN rail mount | 1 (+ 1 add-on) | ⭐⭐ | ✅
+| [DFRobot Edge101](dfrobot_edge101.md) | CAN & Modbus, metal enclosure, Massive I/O, DIN rail mount | 1 | ⭐⭐ | ✅
+| [3LB](https://github.com/malcolmputer/3lb) | Open source triple-CAN (fully isolated) | 3 (+ ? add-on) | ⚠️ | ❔
+| [LilyGo T-CAN485](lilygo_t_can485.md)   | CAN & Modbus! | 1 (+ 1 add-on) | ⭐ | [Reduced](#small-flash-boards)
+| [ESP32 Devkit V1](esp32_devkit_v1.md) | Build your own! For expert tinkerers | | ⭐ | [Reduced](#small-flash-boards)
 
 !!! note "NOTE"
     There is no way to purchase a pre-programmed device. This is a hobbyist open source project. You will be responsible for loading the software and setting it up correctly for your components. There is however a [support Discord group](https://www.patreon.com/dala) available.
+
+## Small flash boards { #small-flash-boards }
+
+The [LilyGo T-CAN485](lilygo_t_can485.md) and the [ESP32 DevKit](esp32_devkit_v1.md) have only 4 MB of flash, so their firmware is built without some features to make room for the rest. Everything below works on all the other boards.
+
+| Feature | On a small flash board |
+|---|---|
+| [CHAdeMO V2X](../battery/wip/chademo_vehicle.md) battery, with its CT clamp and IVT shunt support | Not offered in the battery list |
+| [Chargebyte CCS V2X](../battery/wip/ccs_bidirectional_charging.md) battery | Not offered in the battery list |
+| [MG 5](../battery/mg5_marvel_r.md) battery | Not offered in the battery list |
+| [Nissan LEAF degradation reset](../battery/nissan_leaf_e_nv200.md#performing-the-reset) | No reset button, the LEAF battery itself works |
+| "Custom Clamp" and "QNHCK2-16 Clamp" shunts | Not offered in the shunt list |
+| I2C display (SSD1306) | Not offered for the configurable port |
+| `<hostname>.local` address (mDNS) | Reach the board by its IP address instead |
+| Built-in help texts of the [Settings page](../setup/software/webserver_guide.md#settings) | Shown only when the browser has Internet access |
+| Built-in DTC descriptions on the battery pages | Shown only when the browser has Internet access |
+| RS485 driver-enable (DE) pin control | Not driven, matters only for an RS485 transceiver that needs it |
 
 ## Status LED 🟢
 
