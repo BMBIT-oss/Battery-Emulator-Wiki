@@ -22,6 +22,10 @@ title: "SMA"
 * Sunny Boy Smart Energy 7.7  (SBSE7.7-US-50)  ✅
 * Sunny Boy Smart Energy 9.6  (SBSE9.6-US-50)  ✅
 * Sunny Boy Smart Energy 11.5 (SBSE11.5-US-50) ✅
+* Sunny Boy Smart Energy 3.6 (SBSE3.6-50) ✅
+* Sunny Boy Smart Energy 4.0 (SBSE4.0-50) ✅
+* Sunny Boy Smart Energy 5.0 (SBSE5.0-50) ✅
+* Sunny Boy Smart Energy 6.0 (SBSE6.0-50) ✅
 
 ### Sunny Tripower Smart Energy
 
