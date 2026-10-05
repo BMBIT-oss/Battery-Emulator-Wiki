@@ -17,15 +17,15 @@ There are many hardware kits that can run the Battery-Emulator software. Cheap o
 | [Waveshare ESP32-S3-RS485-CAN](waveshare_esp32_s3_rs485_can.md) | CAN & Modbus, DIN rail mount | 1 (+ 1 add-on) | ⭐⭐ | ✅
 | [DFRobot Edge101](dfrobot_edge101.md) | CAN & Modbus, metal enclosure, Massive I/O, DIN rail mount | 1 | ⭐⭐ | ✅
 | [3LB](https://github.com/malcolmputer/3lb) | Open source triple-CAN (fully isolated) | 3 (+ ? add-on) | ⚠️ | ❔
-| [LilyGo T-CAN485](lilygo_t_can485.md)   | CAN & Modbus! | 1 (+ 1 add-on) | ⭐ | [💾](#small-flash-boards "Small flash board, some features are left out")
-| [ESP32 Devkit V1](esp32_devkit_v1.md) | Build your own! For expert tinkerers | | ⭐ | [💾](#small-flash-boards "Small flash board, some features are left out")
+| [LilyGo T-CAN485](lilygo_t_can485.md)   | CAN & Modbus! | 1 (+ 1 add-on) | ⭐ | [Reduced](#small-flash-boards)
+| [ESP32 Devkit V1](esp32_devkit_v1.md) | Build your own! For expert tinkerers | | ⭐ | [Reduced](#small-flash-boards)
 
 !!! note "NOTE"
     There is no way to purchase a pre-programmed device. This is a hobbyist open source project. You will be responsible for loading the software and setting it up correctly for your components. There is however a [support Discord group](https://www.patreon.com/dala) available.
 
-## Small flash boards 💾 { #small-flash-boards }
+## Small flash boards { #small-flash-boards }
 
-The [LilyGo T-CAN485](lilygo_t_can485.md) and the [ESP32 DevKit](esp32_devkit_v1.md) have only 4 MB of flash, so their firmware is built without some features to make room for the rest. Pages and tables in this wiki mark these features with 💾. Everything below works on all the other boards.
+The [LilyGo T-CAN485](lilygo_t_can485.md) and the [ESP32 DevKit](esp32_devkit_v1.md) have only 4 MB of flash, so their firmware is built without some features to make room for the rest. Everything below works on all the other boards.
 
 | Feature | On a small flash board |
 |---|---|

@@ -27,8 +27,8 @@ The hardware can be bought via sites like [AliExpress](https://www.aliexpress.co
 | 5 | MCP2515 MOSI / [MCP2518FD](../setup/can_related/can_fd_add_on_mcp2518fd.md) SDI — or SMA inverter contactor enable input (SMA enable pin = Pin 5, default) |
 | 12 | MCP2515 / [MCP2518FD](../setup/can_related/can_fd_add_on_mcp2518fd.md) SCK |
 | 13 | SD card CS (Configurable port = µSD Card) |
-| 14 | SD card SCLK (µSD Card) — or I2C display SCL (Configurable port = I2C Display SSD1306) [💾](index.md#small-flash-boards "Not in the firmware of this board") |
-| 15 | SD card MOSI (µSD Card) — or I2C display SDA (I2C Display SSD1306) [💾](index.md#small-flash-boards "Not in the firmware of this board") — or [second battery](../setup/software/battery_2x.md) contactors output |
+| 14 | SD card SCLK (µSD Card) — or I2C display SCL (Configurable port = I2C Display SSD1306) |
+| 15 | SD card MOSI (µSD Card) — or I2C display SDA (I2C Display SSD1306) — or [second battery](../setup/software/battery_2x.md) contactors output |
 | 16 | 5 V boost regulator enable |
 | 17 | RS485 transceiver enable |
 | 18 | [BMS Power](../setup/hardware/periodic_bms_reset.md) output ([BMS Power](../setup/hardware/periodic_bms_reset.md) pin = Pin 18, default) — or MCP2515 / [MCP2518FD](../setup/can_related/can_fd_add_on_mcp2518fd.md) CS |
