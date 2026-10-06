@@ -116,32 +116,31 @@ Codes might be divided between consecutive CAN frames, but just add them togethe
 
 ![DTCs_2](../images/volvo-ex30-05.jpg)
 
-## DTC explanation
-
-- 065868 - Actuator Supply Voltage A Circuit Low
-- 0A0A00 - High Voltage System Interlock Circuit
-- 0A2900 - Battery Power Off Circuit High
-- 0A9500 - High Voltage Fuse A
-- 0AA700 - EV Battery Voltage Isolation Sensor Circuit
-- 0AA800 - EV Battery Voltage Isolation Sensor Circuit Range/Performance
-- 0C7663 - EV Battery System Discharge Time Too Long
-- 0CEE00 - EV Electronics Coolant Temperature Sensor Circuit
-- 0D1500 - Battery Charging System High Voltage Interlock Circuit/Open
-- 0D5C00 - Battery Charger EV Battery Output Power Performance
-- 0D9A00 - Battery Charger Coupler Temperature Sensor A Circuit Range/Performance
-- 0D9B00 - Battery Charger Coupler Temperature Sensor A Circuit Low
-- 0D9C00 - Battery Charger Coupler Temperature Sensor A Circuit High
-- 0E0F00 - Generator Inverter Power Supply Circuit/Open
-- 0EE900 - Battery Charger Coupler Temperature Sensor B Circuit Low
-- 0EEA00 - Battery Charger Coupler Temperature Sensor B Circuit High
-- 106800 - EV Battery Pack Coolant Level Low
-- 125200 - Lost Communication with Battery Charger Power Converter Module "A"
-- 127800 - EV Battery Voltage System Isolation Internal
-- 127900 - EV Battery Voltage System Isolation Front electrical machine
-- 920600 - Crash Occurred
-- 908787 - LIN Bus "A" Bus. Signal / Message Failures. Missing message
-- C06488 - CAN Bus Message Failures BECM going Bus off
-- C10000 - Lost Communication With Engine Control Module
-- C11000 - Lost Communication With Drive Motor Control Module A
-- C29200 - Lost Communication With Drive Motor Control Module B
-- C29900 - Lost Communication With On Board Charger
+??? quote "DTC explanation"
+    065868 - Actuator Supply Voltage A Circuit Low
+    0A0A00 - High Voltage System Interlock Circuit
+    0A2900 - Battery Power Off Circuit High
+    0A9500 - High Voltage Fuse A
+    0AA700 - EV Battery Voltage Isolation Sensor Circuit
+    0AA800 - EV Battery Voltage Isolation Sensor Circuit Range/Performance
+    0C7663 - EV Battery System Discharge Time Too Long
+    0CEE00 - EV Electronics Coolant Temperature Sensor Circuit
+    0D1500 - Battery Charging System High Voltage Interlock Circuit/Open
+    0D5C00 - Battery Charger EV Battery Output Power Performance
+    0D9A00 - Battery Charger Coupler Temperature Sensor A Circuit Range/Performance
+    0D9B00 - Battery Charger Coupler Temperature Sensor A Circuit Low
+    0D9C00 - Battery Charger Coupler Temperature Sensor A Circuit High
+    0E0F00 - Generator Inverter Power Supply Circuit/Open
+    0EE900 - Battery Charger Coupler Temperature Sensor B Circuit Low
+    0EEA00 - Battery Charger Coupler Temperature Sensor B Circuit High
+    106800 - EV Battery Pack Coolant Level Low
+    125200 - Lost Communication with Battery Charger Power Converter Module "A"
+    127800 - EV Battery Voltage System Isolation Internal
+    127900 - EV Battery Voltage System Isolation Front electrical machine
+    920600 - Crash Occurred
+    908787 - LIN Bus "A" Bus. Signal / Message Failures. Missing message
+    C06488 - CAN Bus Message Failures BECM going Bus off
+    C10000 - Lost Communication With Engine Control Module
+    C11000 - Lost Communication With Drive Motor Control Module A
+    C29200 - Lost Communication With Drive Motor Control Module B
+    C29900 - Lost Communication With On Board Charger

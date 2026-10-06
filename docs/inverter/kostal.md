@@ -31,9 +31,7 @@ For this inverter type, use the option called "BYD battery via Kostal RS485" und
 
 The Kostal inverter works via RS485. Connect pins A, B and GND from the Kostal connector X601 to the corresponding points of the RS485 connector on the Battery-Emulator hardware. Setup the Kostal inverter to use the BYD battery option.
 
-ℹ️ Always check the termination resistance of the system! That way you know if resistor needs to be removed or not.
-
-ℹ️ Grounding is extremely important. Make sure the battery case is connected to protective earth, and the shield part of the twisted pair CAN is connected to PE also! Failing to do this will result in CAN errors.
+--8<-- "snippets/grounding_termination.md"
 
 ## Traces for reverse engineering
 

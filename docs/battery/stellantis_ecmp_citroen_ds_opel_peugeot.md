@@ -12,10 +12,10 @@ Failure to fulfill the two requirements will lead to contactors opening after 60
 ### Compatible Stellantis e-CMP batteries
 The following eCMP ( Peugeot, Citroën, DS, Opel/Vauxhall ) batteries are currently compatible.
 
-- Citroen ë-C4 (2020-) ✔️
+- Citroen ë-C4 (2020-) ✅❓
 - DS DS3 (2020-) ❓ 
-- Opel/Vauxhall Corsa-e/Mokka-e (2019-) ✔️
-- Peugeot e-208/e-2008(2020-) ✔️
+- Opel/Vauxhall Corsa-e/Mokka-e (2019-) ✅
+- Peugeot e-208/e-2008(2020-) ✅
 
 ### Compatible 50kWh & 75kWh VAN? platform batteries
 The same Stellantis eCMP platform integration can be used for **some** Toyota/Citroen/Fiat/Opel/Peugeot/Vauxhall van batteries. These batteries come in 50 and 75kWh sizes. It is still unclear what packs work, and which require more integration. It is also unclear what specific platform these batteries are.
@@ -25,20 +25,20 @@ Only V1 VAN packs work, V2 does not. You can spot the V1 by looking at the small
 
 ![image](../images/stellantis-ecmp-citroen-ds-opel-peugeot-15.png)
 
-- Toyota Proace / Proace Verso Electric ✔️
-- Citroën e-Jumpy / e-SpaceTourer ✔️
-- Fiat Scudo / Ulysse Electric ✔️
-- Opel (Vauxhall) Zafira / Vivaro ✔️
-- Peugeot Partner / Expert / Traveller ✔️
+- Toyota Proace / Proace Verso Electric ✅
+- Citroën e-Jumpy / e-SpaceTourer ✅
+- Fiat Scudo / Ulysse Electric ✅
+- Opel (Vauxhall) Zafira / Vivaro ✅
+- Peugeot Partner / Expert / Traveller ✅
 - Maybe more, feel free to add
 
 ### Compatible 44kWh & 82kWh "STLA medium" platform batteries
 
 Work in progress, values not valid yet.
 
-- Peugeot e-3008 III (e-P64, 2024–present)  ❓ 
-- Peugeot e-5008 III (e-P67, 2024–present)  ❓ 
-- Opel Grandland II (2024–present)  ❓ 
+- Peugeot e-3008 III (e-P64, 2024–present) ❓ 
+- Peugeot e-5008 III (e-P67, 2024–present) ❓ 
+- Opel Grandland II (2024–present) ❓ 
 
 ### Battery dimensions
 
@@ -59,7 +59,7 @@ The eCMP platform comes in three different physical sizes, A, B and C type:
 
 ## Software configuration
 For this battery type, use the option called "Stellantis ECMP battery" under the "Battery Protocol" setting.
-
+❓
 ![image](../images/stellantis-ecmp-citroen-ds-opel-peugeot-02.png)
 
 ### HV connection
