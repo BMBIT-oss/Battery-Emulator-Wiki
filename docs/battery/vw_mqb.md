@@ -7,20 +7,7 @@ title: "VW/Audi/Škoda/Cupra MQB"
 !!! info "IMPORTANT"
     The MQB batteries do **not** have any precharge resistors built in. They need to see actual battery voltage on the high voltage terminals before the battery can turn on the contactors. Due to this requirement the MQB batteries are harder to re-use compared to most EV battery packs. To achieve this, a standalone lab PSU or high voltage isolated boost converter can be used to generate the high voltage needed to start the battery.
 
-This platform shares a lot of similarities with the [Volkswagen MEB platform](vw_meb.md)
-
-![image](../images/mqb-01.png)
-
-![image](../images/mqb-02.png)
-
-### Physical Dimensions
-
-| Parameter | Value |
-|----------|-------|
-| Pack Size (L × W × H) | <!-- e.g. 2400 × 1500 × 150 mm --> |
-| Weight | <!-- e.g. 540 kg --> |
-
-??? quote "Compatible batteries"
+??? success "Compatible batteries"
     Vehicles using the MQB Evo 2024+ platform (Note only 2024+)
     
     - Audi A3 Mk4 (2020–present)
@@ -48,6 +35,12 @@ This platform shares a lot of similarities with the [Volkswagen MEB platform](vw
     - Volkswagen Tiguan Mk3 (2023–present)
     - Volkswagen Tayron Mk2 (2024–present)
     - Volkswagen T-Roc Mk2 (2025–present)
+
+This platform shares a lot of similarities with the [Volkswagen MEB platform](vw_meb.md)
+
+![image](../images/mqb-01.png)
+
+![image](../images/mqb-02.png)
 
 
 ## Software configuration
