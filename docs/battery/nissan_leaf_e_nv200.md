@@ -35,7 +35,7 @@ The Positive (+) wire is close to the data port and the Negative (-) wire is clo
 ![423205153-0e4498c8-f8b8-41d3-bd6f-fa9e5d0640d2](../images/nissan-leaf-e-nv200-04.jpg)
 ![Zoe_harness](../images/nissan-leaf-e-nv200-05.jpg)
 
-!!! tip "TIP"
+!!! success "TIP"
     Check out our [High Voltage wiring](../setup/hardware/wiring_tips_hv.md) page with examples on how to make the connections safely.
 
 ### Low Voltage connection (control and data)
@@ -45,7 +45,7 @@ This example diagram shows how to connect a [LilyGo T‐CAN485](../hardware/lily
 ![lilygo draw](../images/nissan-leaf-e-nv200-06.png)
 Nissan's own documentation uses pin numbering on the 36pin low voltage connector which does not match the moulded connector on AZE0/ZE1. The connections on this diagram have been renumbered so that they do. Scroll further down for the pinout of the 22pin connector for ZE0.
 
-!!! tip "TIP"
+!!! success "TIP"
     Check out our [Low Voltage wiring](../setup/hardware/wiring_tips_lv.md) page on how to make the connections in practice.
 
 #### Automatic control 🤖
@@ -102,13 +102,14 @@ The **More Battery Info** button at the bottom of the main page will open a wind
 - **Charge to full count**: the number of charges that resulted in full battery.
 - **Turtle count**: the number of cases when the car has been forced to run into turtle mode, to prevent over-discharging.
 - **Automatic current offset**: the current offset measured at every boot and again each time the contactors open (see note below).
-- **lifetime usage histograms**: Each event recorded the temperature at its start and the peak it reached. Peak (the hottest the pack got) drives the heat assessment; start temperature is shown alongside.
+- **Lifetime usage histograms**: Each event recorded the temperature at its start and the peak it reached. Peak (the hottest the pack got) drives the heat assessment; start temperature is shown alongside.
 
-!!! note "NOTE"
+!!! success "Capacity information"
     The SOH value you see in Battery Emulator's main page is calculated from **Capacity as new** and **Actual capacity**. It may be slightly different from the (raw) SOH value you'd see in LeafSpy, but it's a relevant value even in case of a SOH-resetted pack, which would stick to 100% for a longer period of time.
 
     A certain difference between total charges and the AC + QC counts is normal — it can happen when charging is interrupted (e.g. a power cut).
 
+??? quote "Automatic current offset"
     Some Leaf battery packs report a small current even when none can flow; in some cases it even reaches a few amperes. This shows up as phantom charging or discharging, and skews the power and SOC figures passed to the inverter. With Automatic current offset correction, enabled by default under Battery configg, Battery-Emulator measures this error itself. Whenever a pack's contactors are open, any current the BMS reports can only be sensor offset. After a short settling time, those readings are averaged over up to the last 10 seconds and subtracted from that pack's current from then on. The offset is measured at every boot and again each time the contactors open. It is kept unchanged while they are closed, including during a periodic BMS reset. A second or third pack that stays disconnected, for example because its voltage differs too much from the other packs, keeps updating its offset. Battery Emulator can only tell that contactors are open when it drives them itself, so this needs **Contactor control via GPIO** enabled, plus **2ⁿᵈ / 3ʳᵈ battery contactor control via GPIO** in double or triple battery setups. Each pack is measured separately, using its own contactors. The value found for each pack is shown as **Automatic current offset** at the bottom of the Status panel on the More Battery Info page. "Unknown" means that pack has not been measured yet, for example because its contactors are not controlled by Battery-Emulator. The setting takes effect after a reboot. Put it simple, to re-calibrate, just reboot Battery Emulator.
 
 !!! tip "TIP"
@@ -159,6 +160,7 @@ The battery contactors drain continuously 0.4A each one at 12V. 0.5mm² (AWG 22)
 The Yazaki 22/36pin connectors are designed with an hole of 2.1mm that would contain cable and included elastic ring for water proof sealing. Normal cable of the above cross-section has protective insulation that is too thick (usually 2.1mm external diameter) to be used with the water proof seals. You may want to choose automotive cable that follow the reduced rubber cable standard (FLRY-A or B ISO 6722) that shouldn't be thicker than 1.5/1.7mm (better 1.5) outside diameter. Need at least 0.7/1mm thick cable (e.g. cable + wrap) to allow correct water proofing e.g. no ethernet cable can be used because it's too thin. 
 
 BTW it's not strictly necessary to be automotive grade cable if it has enough copper diameter (0.5mm²) and outer diameter of ~1.5mm. 
+
 !!! note "NOTE"
     Ensure the pins go all the way to the bottom and the pin is seated properly with a "tick". If they are inserted incorrectly (not far enough, "wonky") then you won't have proper connection.
     
