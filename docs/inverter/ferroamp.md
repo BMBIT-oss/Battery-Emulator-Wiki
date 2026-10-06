@@ -19,9 +19,7 @@ The Ferroamp inverter works via CAN. A board with a single CAN channel, such as 
 !!! note "NOTE"
     While the Ferroamp will work on the same CAN channel as an EV battery, it sometimes can cause "ESO fault code 2 - communication issues". If you are seeing this error, put the inverter on its own dedicated CAN channel.
 
-ℹ️ Always check the termination resistance of the system! That way you know if resistor needs to be removed or not.
-
-ℹ️ Grounding is extremely important. Make sure the battery case is connected to protective earth, and the shield part of the twisted pair CAN is connected to PE also! Failing to do this will result in CAN errors.
+--8<-- "snippets/grounding_termination.md"
 
 ![Skarmbild_2024-07-10_211612](../images/ferroamp-01.png)
 
