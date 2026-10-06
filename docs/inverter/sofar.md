@@ -18,9 +18,7 @@ The Sofar inverter works via CAN. You can have both a CAN battery and a CAN inve
 
 Note, if you use Sofar CAN protocol instead, the inverter will need to be on a dedicated CAN channel!
 
-ℹ️ Always check the termination resistance of the system! That way you know if resistor needs to be removed or not.
-
-ℹ️ Grounding is extremely important. Make sure the battery case is connected to protective earth, and the shield part of the twisted pair CAN is connected to PE also! Failing to do this will result in CAN errors.
+--8<-- "snippets/grounding_termination.md"
 
 ## Which protocol to use
 For this inverter type, use the option called "Sofar BMS (Extended) via CAN" under the "Inverter Protocol" setting.
