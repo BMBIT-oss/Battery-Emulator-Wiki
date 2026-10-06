@@ -46,9 +46,10 @@ Picture of remotely disabled unit in the US:
 ## Communication wiring
 The Deye inverter works via CAN. A board with a single CAN channel, such as the LilyGo T-CAN485, can have both a CAN battery and a CAN inverter connected on the same pins. When the board is used with two CAN devices at the same time that have termination resistors in all ends, the terminating resistor needs to be removed from the board. Please measure CAN termination if you have issues. This is explained in [CAN-troubleshooting](../setup/can_related/can_wiring_practices_and_troubleshooting.md)
 
-ℹ️ Always check the termination resistance of the system! That way you know if resistor needs to be removed or not.
+!!! danger "Attention" 
+    Always check the termination resistance of the system! That way you know if resistor needs to be removed or not.
 
-ℹ️ Grounding is extremely important. Make sure the battery case is connected to protective earth, and the shield part of the twisted pair CAN is connected to PE also! Failing to do this will result in CAN errors.
+    Grounding is extremely important. Make sure the battery case is connected to protective earth, and the shield part of the twisted pair CAN is connected to PE also! Failing to do this will result in CAN errors.
 
 ## Which protocol to use
 For this inverter type, the recommended option is the "BYD Battery-Box Premium HVS over CAN Bus" m which is found under the "Inverter Protocol" setting. Also be sure to enable the "Deye avoid over/undercharge fix:" checkbox, otherwise the Deye inverter can over/undercharge the battery.
@@ -60,7 +61,7 @@ For this inverter type, the recommended option is the "BYD Battery-Box Premium H
 
 ### Manual charge voltage limits
 The Deye inverters can rely on charge voltage instead of only SOC%. Battery charge voltage defaults to the value set in the integration. This is the theoretical max the battery can take. This becomes the charge target for Deye. To make things safer, you can enable "Manual Charge Voltage Limits", and set the max voltage to your liking. Note that this will reduce the capacity you can extract from the battery, and on integrations that rely on getting fully charged in order to balance/calibrate, you will also disrupt it.
-. To enable this feature, go to the Settings page on BE, and enable manual voltage control and set charge voltage max and min discharge voltage.
+To enable this feature, go to the Settings page on BE, and enable manual voltage control and set charge voltage max and min discharge voltage.
 
 ![image](../images/deye-08.png){ width="410" height="202" }
 
