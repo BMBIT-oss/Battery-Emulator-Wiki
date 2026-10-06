@@ -21,7 +21,7 @@ At the same time, EV manufacturers have been putting high capacity battery packs
 
 **Battery Emulator** enables EV battery packs to be repurposed for stationary storage. It acts as a translation layer between the EV battery and the home inverter. This makes it extremely cheap and easy to use large EV batteries in a true plug'n'play and environment-friendly fashion!
 
-!!! example "DANGER"
+!!! example ""
     This project requires qualified electrician skills along IT knowledge. Working with high voltage is dangerous. Always follow local laws and regulations regarding high voltage work. 
     
     If you are unsure about the rules in your country, consult a licensed electrician for more information.
@@ -46,7 +46,7 @@ Reusing old often crashed EV packs always comes with risks. The system performs 
 !!! info "TIP"
     Check out the [installation guidelines](setup/installation_guidelines.md) section for how to install your battery. There are dedicated [High Voltage](setup/hardware/wiring_tips_hv.md) and [Low Voltage](setup/hardware/wiring_tips_lv.md) wiring pages with tips and examples on how to make the connections safely. Consider protection against [lighning strikes](setup/hardware/lightning_strike.md) when choosing a location deploying cabling.
 
-!!! warning "CAUTION"
+!!! warning ""
     ***At the end of the day, you alone are responsible for the system.***
 
 Safety features implemented in (most) inverters are respected. Parameters sent by the battery are taken in consideration in real time:
