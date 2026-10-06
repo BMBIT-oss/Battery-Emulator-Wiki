@@ -30,9 +30,7 @@ Most Solis inverters are compatible with a wide battery voltage range. Neverthel
 ## Communication wiring
 The Solis inverter works via CAN. A board with a single CAN channel, such as the LilyGo T-CAN485, can have both a CAN battery and a CAN inverter connected on the same pins. When the board is used with two CAN devices at the same time that have termination resistors in all ends, the terminating resistor needs to be removed from the board. Please measure CAN termination if you have issues. This is explained in [CAN-troubleshooting](../setup/can_related/can_wiring_practices_and_troubleshooting.md)
 
-ℹ️ Always check the termination resistance of the system! That way you know if resistor needs to be removed or not.
-
-ℹ️ Grounding is extremely important. Make sure the battery case is connected to protective earth, and the shield part of the twisted pair CAN is connected to PE also! Failing to do this will result in CAN errors.
+--8<-- "snippets/grounding_termination.md"
 
 ## Which protocol to use
 For this inverter type, use the option called "BYD Battery-Box Premium HVS over CAN Bus" under the "Inverter Protocol" setting.
