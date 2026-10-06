@@ -36,9 +36,7 @@ This can be solved in three ways:
 * You can use the [LilyGo T-2CAN](../hardware/lilygo_t_2can.md) hardware
 * You can use a [CAN filter](../setup/can_related/can_filter_hardware.md) between inverter and the rest of the system 
 
-ℹ️ The inverter contains a 120 Ohm terminating resistor on CAN-H/L pins.
-
-ℹ️ Grounding is extremely important for Solax inverters. Make sure the battery case is connected to protective earth, and the shield part of the twisted pair CAN is connected to PE also! Failing to do this will result in CAN errors.
+--8<-- "snippets/grounding_termination.md"
 
 ## Which protocol to use
 For this inverter type, use the option called "SolaX Triple Power LFP over CAN bus" under the "Inverter Protocol" setting.
