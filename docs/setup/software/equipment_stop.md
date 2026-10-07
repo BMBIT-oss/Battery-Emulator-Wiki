@@ -30,6 +30,7 @@ Check out the pinout table for each board, to see which pin is defined for Equip
 Wiring:
 
 ![img](../../images/equipment-stop-02.png)
+![img](../../images/stop_button.jpeg)
 
 We need to use external pull resistors to ensure stable and reliable readings from the equipment stop button. Specifically, we use a 2kΩ resistor between the switch and VCC (3.3V) and a 10kΩ resistor between the GPIO pin and GND. This configuration creates a pull-down circuit, which stabilizes the signal and prevents floating values when the button is not pressed.
 
