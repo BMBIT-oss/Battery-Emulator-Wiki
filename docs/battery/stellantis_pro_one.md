@@ -18,7 +18,7 @@ The following vehicles are compatible
 ## Connectors
 
 ## HV connector
-The battery needs to see capacitance on the HV lines in order to engage contactors. Two 470uF capacitors in parallel is confirmed working.
+The battery needs to see capacitance on the HV lines in order to engage contactors. Two 470uF capacitors in parallel is confirmed working (1000uF total capacity)
 
 HV connector (175 A max). This is the easiest one to source and use, while the others are much harder to find. (Has HVIL that needs to be seated!)
 
