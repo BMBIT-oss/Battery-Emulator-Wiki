@@ -106,7 +106,8 @@ DIY HV battery:
 * [Simp BMS](bms/simpbms.md) ✅
 * [DALY BMS](bms/daly_smartbms.md) ✅
 * [EMUS G1 BMS](bms/emus_g1_bms.md) ✅
-* [Ennoid BMS](bms/ennoid_bms.md) ⚠️ (Not tested)
+* [Ennoid BMS](bms/ennoid_maxkgo_bms.md) ⚠️
+  (Not tested)
 * [Batrium BMS](bms/batrium_bms.md) ✅
 * [Cellpower BMS](bms/cellpower_bms.md) ✅ (250kbps CAN, needs its own CAN channel)
 * [Growatt ARK HV BMS](bms/growatt_ark_bms_hv.md) ✅
