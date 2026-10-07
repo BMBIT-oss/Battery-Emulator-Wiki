@@ -21,7 +21,7 @@ There are 3x batteries available for the Zoe, this page focuses on the Gen1 22/4
 ## Testing a battery before purchasing
 You can connect the Battery-Emulator to a 12V source (AGM Battery, UPS, AC-DC source, etc.) and read the cell voltages and statistics before purchasing a battery. To do this, you will need **Pin 1 3 4 5 6 7 12** (see the wiring diagram further down)
 
-Example, Zoe battery being tested with a Stark CMR and Lead acid battery before purchase
+Example: Zoe battery being tested with a Stark CMR and lead-acid battery before purchase
 
 ![image](../images/renault-zoe-gen1-04.png)
 
@@ -33,9 +33,13 @@ For this battery type, select "Renault Zoe Gen1 22/40kWh" under the "Battery Pro
 You can also enable "Contactor Control via GPIO" to automate contactor opening and closing.
 
 ## Safety fuse/switch
-Note the battery fuse. Do not confuse it with the version from the 52kWh battery; using the wrong one could blow fuses or worse. Use the OEM fuse, part no: 
+**Note the battery fuse**. 
+Do not confuse it with the version from the 52kWh battery; using the wrong one could blow fuses or worse. 
+Use the OEM fuse, part no: 
 - [297C13111R](https://www.ebay.com/sch/i.html?_nkw=297C13111R) for 22kWh.
 - [297C12645R](https://www.ebay.com/sch/i.html?_nkw=297C12645R) for 40kWh.
+
+Both 297C13111R and 297C12645R are interchangeable for 22/40 kWh batteries.
 
 ![image](../images/renault-zoe-gen1-05.png)
 ![image](../images/Zoe_fuse_gen1_2.jpg)
@@ -46,7 +50,7 @@ Renault ZOE Gen 1 fuse has to have **continuity** between the two external sides
 ![image](../images/Zoe_fuse_gen1_1.jpg)
 
 
-There are also two other fuses inside the pack. One fuse is under the cover for the contactors, and another is at the join of the two halves of the pack at the opposite end from the connectors. If the middle fuse blows, this shows as a cell imbalance, with cell 48 around 0V. Replacing the fuse restores operation.
+Two other fuses are also inside the pack. One fuse is under the contactor cover, and another is at the join of the two halves of the pack at the opposite end from the connectors. If the middle fuse blows, this shows as a cell imbalance, with cell 48 around 0V. Replacing the fuse restores operation.
 
 ## Part numbers for Renault Zoe 23/41kWh batteries
 
@@ -60,7 +64,7 @@ There are also two other fuses inside the pack. One fuse is under the cover for 
 ## Wiring diagrams
 
 !!! info "IMPORTANT"
-    This battery does not have a negative contactor. You only control the precharge and positive contactor.
+    This battery has no negative contactor. You only control the precharge and positive contactor.
 
 Example of contactor control via SSR relays, connected to a LilyGo T-CAN485 board:
 
@@ -74,13 +78,13 @@ Alternate version with one power supply and 2 SSR DD NO relays using StarkCMR v2
 ![Image](../images/renault-zoe-gen1-09.jpeg)
 
 ## Notes on balancing :b: 
-The Zoe Gen1 batteries appear to start top-balancing at around 93% SOC. Because of this, it is recommended to fully charge the battery from time to time to give it enough time to balance the cells.
+The Zoe Gen1 batteries appear to start top-balancing at around 93% SOC. Because of this, we recommend fully charging the battery from time to time to give it enough time to balance the cells.
 
 You can observe cell-mV-delta at high SOC to confirm when balancing is active; unfortunately, the Zoe Gen1 battery does not send which specific cells are being balanced, so there is no visualisation in the Cellmonitor page.
 
 ## Troubleshooting
 
-- If the inverter does not want to use the battery with more than a few watts of power, check your precharge wiring. You might be pulling all the power through the precharge resistor instead of the contactor. A classic mistake is swapping these two around!
+- If the inverter does not want to use the battery with more than a few watts of power, check your precharge wiring. You might be pulling all the power through the precharge resistor instead of the contactor. A classic mistake is swapping them!
 - If the cell number 48 is low, your internal battery fuse most likely has blown. Then you need to open up the battery and replace the fuse.
 
 ![image](../images/renault-zoe-gen1-10.png)
