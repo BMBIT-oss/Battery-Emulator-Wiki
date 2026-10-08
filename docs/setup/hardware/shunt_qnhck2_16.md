@@ -157,9 +157,7 @@ QNHCK2-16 zero point calibrated to 1644 mV at 12.0 °C     → morning values
 QNHCK2-16 zero point calibrated to 1653 mV at 19.0 °C     → afternoon values
 ```
 
-Divide the difference in mV by the difference in °C, keeping the sign: **(1653 − 1644) / (19.0 − 12.0) = 1.3 mV/°C**. A zero point that falls as it gets warmer gives a negative figure. To get a reliable figure:
-
-Each reading is used as measured, without compensation, even with [manual calibration](#manual-calibration).
+Divide the difference in mV by the difference in °C, keeping the sign: **(1653 − 1644) / (19.0 − 12.0) = 1.3 mV/°C**. A zero point that falls as it gets warmer gives a negative figure. Each reading is used as measured, without compensation, even with [manual calibration](#manual-calibration).
 
 ### Manual calibration
 
