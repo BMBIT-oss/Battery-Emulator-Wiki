@@ -445,7 +445,44 @@ mqtt:
         optimistic: false
 ```
 
-### [SET_LIMITS](mqtt.md#set_limits) user interface
+### SOC scaling values ([SET_SCALESOC](mqtt.md#set_scalesoc))
+
+These two number entities let you change the "Rescale SOC" max and min percentage from Home Assistant at runtime. Each one sends only its own key, so the other limit is left unchanged. "Rescale SOC" must be enabled in the emulator settings, or the command is ignored.
+
+Replace `battery-emulator-a1b2` with your emulator's hostname and add this to `configuration.yaml`:
+
+```yaml
+mqtt:
+  number:
+    - name: "Battery Emulator SOC scaling max"
+      unique_id: battery_emulator_a1b2_soc_scaling_max
+      command_topic: "battery-emulator-a1b2/command/SET_SCALESOC"
+      command_template: '{"max_pct": {{ value }}}'
+      min: 50.0
+      max: 100.0
+      step: 0.5
+      unit_of_measurement: "%"
+      mode: box
+      optimistic: true
+      icon: mdi:battery-arrow-up
+
+    - name: "Battery Emulator SOC scaling min"
+      unique_id: battery_emulator_a1b2_soc_scaling_min
+      command_topic: "battery-emulator-a1b2/command/SET_SCALESOC"
+      command_template: '{"min_pct": {{ value }}}'
+      min: -10.0
+      max: 50.0
+      step: 0.5
+      unit_of_measurement: "%"
+      mode: box
+      optimistic: true
+      icon: mdi:battery-arrow-down
+```
+
+> [!NOTE]
+> The emulator doesn't publish the current scaling limits, so these entities are `optimistic`: they show the last value sent from Home Assistant. Changes aren't saved to the emulator's settings. After an emulator reboot it goes back to its saved values, but Home Assistant keeps showing the last value it sent. To apply the values again after a reboot, trigger an automation on the emulator's availability topic going `online`.
+
+### User interface for [SET_LIMITS](mqtt.md#set_limits)
 
 Use an input number helper to select the **limit timeout**, and create two MQTT number entities to select the desired current limits. Always set the desired timeout first, and change the current values after.
 
