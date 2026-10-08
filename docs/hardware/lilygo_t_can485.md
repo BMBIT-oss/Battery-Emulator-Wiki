@@ -52,7 +52,7 @@ The hardware has more details on LilyGo's Github page [github/Xinyuan-LilyGO](ht
 !!! tip "TIP"
     You can improve Wi-Fi signal quality on the LilyGo board by adding an external antenna. You can easily salvage one with socket and cable from an old router. There is a SMD resistor that needs to be moved in order for the board to use the external antenna.
     
-    ![image](../../images/webserver-guide-02.png)
+    ![image](../images/webserver-guide-02.png)
 
 ## Expanding the board
 
