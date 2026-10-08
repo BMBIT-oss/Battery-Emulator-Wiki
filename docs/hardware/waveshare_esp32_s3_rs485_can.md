@@ -4,13 +4,13 @@ title: "Waveshare ESP32‐S3‐RS485‐CAN"
 
 **MCU / flash:** ESP32-S3 R8 (Xtensa LX7 dual-core, 240 MHz) with 8 MB octal/OPI PSRAM, 16 MB flash. 
 
-The Waveshare ESP32-S3-RS485-CAN is an affordable and easy to source board. It supports 1x CAN channel, and 1x RS485 port. It comes with a DIN mountable case, and accepts an input voltage between 7-36V.
+The Waveshare ESP32-S3-RS485-CAN is an affordable and easy-to-source board. It supports 1x CAN channel and 1x RS485 port. It comes with a DIN-mountable case and accepts an input voltage between 7-36V.
 
 ![image](../images/waveshare-esp32-s3-rs485-can-01.png)
 
 ### Where this hardware shines
 
-On setups that require RS485, and have CAN controlled contactors (E.g. Tesla Battery with a Fronius inverter), it's a plug and play solution. This board is a more future proof alternative compared to the [LilyGo T-CAN485](lilygo_t_can485.md).
+For setups that require RS485 and have CAN-controlled contactors (E.g., a Tesla Battery with a Fronius inverter), it's a plug-and-play solution. This board is a more future-proof alternative compared to the [LilyGo T-CAN485](lilygo_t_can485.md).
 
 | GPIO | Function |
 |---|---|
@@ -37,13 +37,14 @@ On setups that require RS485, and have CAN controlled contactors (E.g. Tesla Bat
 
 ## Purchase link
 
-The hardware can be bought via sites like Amazon, AliExpress, or the official [Waveshare](https://www.waveshare.com/esp32-s3-rs485-can.htm) shop.
+You can buy the hardware from sites like Amazon, [AliExpress](https://s.click.aliexpress.com/e/_c3gKPYwV), or the official [Waveshare](https://www.waveshare.com/esp32-s3-rs485-can.htm) shop.
+You can choose any version (with internal or external WIFi antenna)
 
 ## Limitations
 
-As can be seen from the pin mapping table above, this board has a single CAN channel and single RS485 port. The 4-pin SH1.0 connector on the board exposes GPIO1 and GPIO2, which can be configured in firmware settings as either a status LED or an I2C display (see below).
+As shown in the pin mapping table above, this board has a single CAN channel and a single RS485 port. The 4-pin SH1.0 connector exposes GPIO1 and GPIO2, which you can configure in the firmware as either a status LED or an I2C display (see below).
 
-Internal header exposes pins to be used for GPIO controlled contactors and an additional CAN interface.
+The internal header exposes pins for GPIO-controlled contactors and an additional CAN interface.
 
 !!! info "IMPORTANT"
     You can build a maximum [double battery](../setup/software/battery_2x.md) setup with this unit when used with an RS485 inverter, using its onboard CAN and a [second CAN interface](../setup/can_related/can_fd_add_on_mcp2518fd.md), as this will mostly max out the available GPIOs on the internal pin header. No way to add a third CAN interface to this board.
@@ -52,11 +53,23 @@ A Waveshare ESP32-S3-RS485-CAN with a [second CAN interface](../setup/can_relate
 
 ![image](../images/waveshare-esp32-s3-rs485-can-07.png)
 
-The plastic case has a bit of a headroom above the USB-C socket which allows for a small cutout to lead the cables from the header:
+The plastic case has a bit of headroom above the USB-C socket, which allows for a small cutout to lead the cables from the header:
 
 ![image](../images/waveshare-esp32-s3-rs485-can-05.png)
 
 ![image](../images/waveshare-esp32-s3-rs485-can-06.png)
+
+Another option is to make an 8 mm diameter hole in the plastic case.
+
+![image](../images/Waveshare_wires1.jpeg)
+
+![image](../images/Waveshare_wires2.jpeg)
+
+
+For future easy access, you can use an [OTG USB-C 90-degree cable](https://s.click.aliexpress.com/e/_c3InqRAt):
+
+![image](../images/Waveshare_otg_easy_access.jpeg)
+
 
 ## Optional accessories
 
@@ -66,21 +79,21 @@ The board has pads for a 20-pin **2.0mm** pitch pin header:
 
 ![image](../images/waveshare-esp32-s3-rs485-can-04.png)
 
-Pigtail cable: [AliExpress](https://www.aliexpress.com/item/1005009728347159.html).
+Pigtail cable (2x10P): [AliExpress](https://s.click.aliexpress.com/e/_c39RWljL) - recommended.
 
-Another version, cut in half: [AliExpress](https://a.aliexpress.com/_Ex1DziI).
+Another version, cut in half: [AliExpress](https://s.click.aliexpress.com/e/_c2xzReCD).
 
-And yet another: [AliExpress](https://a.aliexpress.com/_EzacxGE).
+And yet another (2x10P): [AliExpress](https://s.click.aliexpress.com/e/_c2xBwT9r).
 
-2.0 to 2.54mm dupont wires: [AliExpress](https://www.aliexpress.com/item/32872192805.html)
+2.0 to 2.54mm Dupont wires: [AliExpress](https://s.click.aliexpress.com/e/_c3MjvIsZ)
 
-Socket for own soldering: [AliExpress](https://www.aliexpress.com/item/4000597517515.html).
+Socket for own soldering: [AliExpress](https://s.click.aliexpress.com/e/_c40ysIWz).
 
 Choose the **2x10p** version!
 
 ### Status LED (NeoPixel via GPIO2)
 
-The 4-pin SH1.0 connector (located directly behind the USB C connector) can power an optional **Adafruit NeoPixel** (or any WS2812-compatible single LED) connected to GPIO2, providing a visual status indicator.  Please note that the Waveshare only outputs 3.3v!
+The 4-pin SH1.0 connector (located directly behind the USB-C connector) can power an optional **Adafruit NeoPixel** (or any WS2812-compatible single LED) connected to GPIO2, providing a visual status indicator.  Please note that Waveshare outputs only 3.3V!
 
 ![Waveshare to NeoPixel wiring diagram](../images/waveshare-esp32-s3-rs485-can-02.png)
 
@@ -93,6 +106,6 @@ Once wired, open the **Settings** page in the web interface and set **GPIO 1/2 f
 
 ### See also
 
-- [BOOT button](../setup/software/boot_button_functions.md) for special features to enable AP, wipe wifi settings or factory reset the device
+- [BOOT button](../setup/software/boot_button_functions.md) for special features to enable AP, wipe wifi settings, or factory reset the device
 - [CAN add-on MCP2518FD](../setup/can_related/can_fd_add_on_mcp2518fd.md) for an additional CAN interface
 
