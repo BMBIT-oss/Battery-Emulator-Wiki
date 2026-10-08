@@ -37,23 +37,24 @@ The rated current and the rated output are both printed on the sensor, and each 
 
 | Rated output | Output at ±Ipn | Stays within 0–2.9 V up to | 1 mV is |
 | :-- | :-- | :-- | :-- |
-| 1.65 ± 0.625 V | 1.025 – 2.275 V | the whole measuring range | 0.16 % of Ipn |
-| 1.65 ± 1 V | 0.65 – 2.65 V | the whole measuring range | 0.1 % of Ipn |
-| 1.65 ± 1.25 V | 0.4 – 2.9 V | ±Ipn | 0.08 % of Ipn |
-| 1.65 ± 1.5 V | 0.15 – 3.15 V | about ±0.8 × Ipn | 0.067 % of Ipn |
-| 1.65 ± 1.65 V | 0 – 3.3 V | about ±0.75 × Ipn | 0.06 % of Ipn |
+| 1.65 ± 0.625 V | 1.025 – 2.275 V | the whole measuring range ✅ | 0.16 % of Ipn |
+| 1.65 ± 1 V | 0.65 – 2.65 V | the whole measuring range ✅ | 0.1 % of Ipn |
+| 1.65 ± 1.25 V | 0.4 – 2.9 V | ±Ipn | 0.08 % of Ipn ✅ |
+| 1.65 ± 1.5 V | 0.15 – 3.15 V | about ±0.8 × Ipn ⚠️ | 0.067 % of Ipn |
+| 1.65 ± 1.65 V | 0 – 3.3 V | about ±0.75 × Ipn ⚠️ | 0.06 % of Ipn |
 
-Above 2.9 V the ADC's readings are not reliable and soon stop rising, so the inverter would be told less current than flows, without the emulator noticing. Avoid the ±1.5 V and ±1.65 V outputs for that reason. The 3.3 V version is mostly sold with 1.65 ± 0.625 V, which works well with half the resolution of ±1.25 V; according to its datasheet, the manufacturer makes the other outputs on request.
+??? quote "Details"
+    Above 2.9 V the ADC's readings are not reliable and soon stop rising, so the inverter would be told less current than flows, without the emulator noticing. Avoid the ±1.5 V and ±1.65 V outputs for that reason. The 3.3 V version is mostly sold with 1.65 ± 0.625 V, which works well with half the resolution of ±1.25 V; according to its datasheet, the manufacturer makes the other outputs on request.
 
-What a millivolt is worth in amps: 0.048 A on a 30 A sensor with 1.65 ± 0.625 V, and 0.024 A on one with 1.65 ± 1.25 V. The millivolts that count:
+    What a millivolt is worth in amps: 0.048 A on a 30 A sensor with 1.65 ± 0.625 V, and 0.024 A on one with 1.65 ± 1.25 V. The millivolts that count:
 
-* The zero point is 1.65 V ± 16.5 mV out of the box. The [calibration](#configuration) takes this out, together with the ADC's own error at that point.
-* The ADC itself can be off by tens of millivolts across its range (up to ±50 mV according to the ESP32-S3 datasheet).
-* The zero point drifts by up to 1 mV per °C, and moves by up to 25 mV after heavy current. This builds up between two calibrations: on the 30 A sensor with 1.65 ± 0.625 V, a 10 °C change is up to 0.5 A.
+    * The zero point is 1.65 V ± 16.5 mV out of the box. The [calibration](#configuration) takes this out, together with the ADC's own error at that point.
+    * The ADC itself can be off by tens of millivolts across its range (up to ±50 mV according to the ESP32-S3 datasheet).
+    * The zero point drifts by up to 1 mV per °C, and moves by up to 25 mV after heavy current. This builds up between two calibrations: on the 30 A sensor with 1.65 ± 0.625 V, a 10 °C change is up to 0.5 A. The [temperature compensation](#temperature-compensation) can take most of the temperature part out.
+    * The datasheet's accuracy and linearity only hold at 25 ± 5 °C, and it gives no figure for how the sensitivity changes with temperature, so readings at high current may be a little further off in a hot or cold place.
 
-### 3.3 V or 5 V version
-
-The QNHCK2-16 is also made for a 5 V supply, with its zero point at 2.5 V and outputs of 2.5 ± 0.625 V or 2.5 ± 2 V. **Only the 3.3 V version** can be used: 2.5 ± 2 V goes up to 4.5 V, which can damage the ESP32's pin (3.6 V at most), and the emulator refuses a zero point further than 0.2 V from 1.65 V. Both versions share the name and the housing, so check the label: the rated output printed on it has to start with 1.65 V. Never supply the 3.3 V version with 5 V either.
+!!! note "3.3 V or 5 V version"
+    The QNHCK2-16 also has a version for a 5 V supply, with its zero point at 2.5 V and outputs of 2.5 ± 0.625 V or 2.5 ± 2 V. **Only the 3.3 V version** can be used with ESP32: 2.5 ± 2 V goes up to 4.5 V, which can damage the ESP32's pin (3.6 V at most), and the emulator refuses a zero point further than 0.2 V from 1.65 V. Both versions share the name and the housing, so check the label: the rated output printed on it has to start with 1.65 V. Never supply the 3.3 V version with 5 V either.
 
 ## LV Wiring
 
@@ -79,14 +80,13 @@ On the Waveshare and the T-2CAN, a pigtail with a 4-pin JST SH (1.0 mm pitch) pl
 * The leads can be extended: twist the output together with GND, or use shielded cable, and keep it away from HV cables and contactor coil wiring. The emulator averages up to a thousand readings every second, which smooths out noise.
 * Do not load the output: the datasheet asks for at least 4.7 kΩ. The ADC pin needs nothing added, no divider or pull resistor.
 
-### ADC pin on other boards
+??? quote "ADC pin on other boards"
+    The pin is fixed for each board in the firmware (`SHUNT_ADC_PIN()` in its HAL), and boards without one do not offer the sensor. A good pin for a new one:
 
-The pin is fixed for each board in the firmware (`SHUNT_ADC_PIN()` in its HAL), and boards without one do not offer the sensor. A good pin for a new one:
-
-* is on ADC1 (ESP32-S3: GPIO1–10, ESP32: GPIO32–39), since ADC2 is shared with Wi-Fi and cannot be read reliably while Wi-Fi runs,
-* is not a strapping pin, and not used for anything else on that board.
-
-The classic ESP32's ADC only reads accurately up to about 2.45 V, which leaves only the ±0.625 V output fully usable there.
+    * is on ADC1 (ESP32-S3: GPIO1–10, ESP32: GPIO32–39), since ADC2 is shared with Wi-Fi and cannot be read reliably while Wi-Fi runs,
+    * is not a strapping pin, and not used for anything else on that board.
+    
+    The classic ESP32's ADC only reads accurately up to about 2.45 V, which leaves only the ±0.625 V output fully usable there.
 
 ## HV Wiring
 
@@ -110,22 +110,25 @@ The sensor is supported on the [Waveshare ESP32-S3-RS485-CAN](../../hardware/wav
 
 In **Settings → Optional components config**:
 
-![settimgs](../../images/shunt-qnhck2-16-05.png)
+<img width="746" height="217" alt="settimgs" src="https://github.com/user-attachments/assets/40f64767-1ea6-49e8-97d6-15ba7388ff68" />
 
 * **Measurement:** QNHCK2-16 Clamp
 * **Rated current:** as printed on the sensor, e.g. 30 A (±33 A)
 * **Rated output:** as printed on the sensor, e.g. 1.65 ± 0.625 V
 * **Automatic calibration:** ticked by default, see below
+* **Zero point drift (mV/°C):** 0 (off) by default, see [Temperature compensation](#temperature-compensation)
 
-Save and reboot. The main page then shows it as e.g. **Shunt protocol: QNHCK2-16 (30A ±0.625V) ✓**. The ✓ means the sensor's current is the one in use. A red ✗ means the batteries' own is used instead, because the sensor has no reading yet, its zero point has not been measured yet, it reads more than 1.2 × its rated current, or its pin is not available (the Events page then reports a GPIO conflict).
+Save and reboot. The main page then shows it as e.g. **Measurement: QNHCK2-16 (30A ±0.625V) ✓**. The ✓ means the sensor's current is the one in use. A red ✗ means the batteries' own is used instead, because the sensor has no reading yet, its zero point has not been measured yet, it reads more than 1.2 × its rated current, or its pin is not available (the Events page then reports a GPIO conflict).
 
 ### Automatic calibration
 
 No sensor has its zero point at exactly 1.65 V, and it drifts with temperature, so it has to be measured. With **Automatic calibration** ticked, the emulator does this every time the contactors open, when no current can flow through the sensor: from 0.3 s after they open until they close again, over the latest 10 seconds. As they close, the log shows, for example:
 
 ```
-QNHCK2-16 zero point calibrated to 1648 mV
+QNHCK2-16 zero point calibrated to 1644 mV at 12.0 °C
 ```
+
+The temperature is the batteries' as the measurement ended, see [Temperature compensation](#temperature-compensation). It is left out while no battery reports one.
 
 With [Contactor control via GPIO](../software/contactor_control_via_gpio_pins.md) enabled the contactors stay open for at least 10 seconds after every boot, so the zero point is measured within seconds of booting, and nothing needs to be stored. Until then, the inverter gets the batteries' own current (✗ on the main page). The zero point then holds until the contactors open again: at the next boot, when **Open Contactors** is pressed on the main page, when the inverter asks for it, or after a fault.
 
@@ -138,6 +141,25 @@ Requirements:
 * The sensor sits where the current stops as the contactors open (see [HV Wiring](#hv-wiring)).
 
 A measurement further than 0.2 V from 1.65 V is not used, and the log names the pin and what it read (see [LV Wiring](#lv-wiring)).
+
+### Temperature compensation
+
+The zero point drifts with temperature, and in a stationary system the contactors may stay closed for weeks, long enough for a season's worth of temperature change to build up. **Zero point drift (mV/°C)**, shown while **Automatic calibration** is ticked, makes up for it. As each zero point measurement ends, the emulator notes the reported temperature. From then on it moves the zero point by the set amount for every °C that temperature changes, until the contactors open again and the next measurement starts over from a new temperature.
+
+Although the datasheet only limits the sensor's drift to ±1 mV/°C either way, each sensor's own figure has to be found. The setting accepts −5.0 to +5.0 mV/°C in 0.1 steps, since the figure found this way also takes in the ADC's drift. 0, the default, is off.
+
+To find it, compare the zero points the log shows at different temperatures. Typically this can be done early in the morning for a low temperature point, and late in the afternoon for a high one. 
+
+In **Settings** make sure you have enabled **General logging via Webserver**, and reboot the emulator once early in the morning and once late in the afternoon. After each reboot, look in the log and note the displayed values:
+
+```
+QNHCK2-16 zero point calibrated to 1644 mV at 12.0 °C     → morning values
+QNHCK2-16 zero point calibrated to 1653 mV at 19.0 °C     → afternoon values
+```
+
+Divide the difference in mV by the difference in °C, keeping the sign: **(1653 − 1644) / (19.0 − 12.0) = 1.3 mV/°C**. A zero point that falls as it gets warmer gives a negative figure. To get a reliable figure:
+
+Each reading is used as measured, without compensation, even with [manual calibration](#manual-calibration).
 
 ### Manual calibration
 
@@ -158,8 +180,9 @@ The log (**Log** on the main page, with **General logging via Webserver** enable
 | Log message | Meaning |
 | :-- | :-- |
 | `QNHCK2-16 on GPIO1: 30 A ±0.625 V, zero point measured while the contactors are open` | Started, with automatic calibration |
+| `QNHCK2-16: zero point follows the batteries' temperature by 0.9 mV/°C` | Started, with [temperature compensation](#temperature-compensation) |
 | `QNHCK2-16 on GPIO1: 30 A ±0.625 V, zero point 1648 mV` | Started, with the zero point stored by the manual calibration |
-| `QNHCK2-16 zero point calibrated to 1648 mV` | New zero point measured |
+| `QNHCK2-16 zero point calibrated to 1648 mV at 21.5 °C` | New zero point measured, at that battery temperature. Without the temperature while no battery reports one, and with the manual calibration |
 | `QNHCK2-16: automatic calibration needs contactor control via GPIO for every battery. Its reading is not used until then.` | See [Automatic calibration](#automatic-calibration) |
 | `QNHCK2-16: GPIO1 reads 93 mV with the contactors open, too far from 1.65 V to be its zero point.` | Check its supply and the pin, see [LV Wiring](#lv-wiring) |
 | `QNHCK2-16 reads 36500 mA, beyond its range. Using the current the batteries report.` | More than 1.2 × its rated current. `QNHCK2-16 reading back within range.` follows when it drops again |
