@@ -132,9 +132,6 @@ The temperature is the batteries' as the measurement ended, see [Temperature com
 
 With [Contactor control via GPIO](../software/contactor_control_via_gpio_pins.md) enabled the contactors stay open for at least 10 seconds after every boot, so the zero point is measured within seconds of booting, and nothing needs to be stored. Until then, the inverter gets the batteries' own current (✗ on the main page). The zero point then holds until the contactors open again: at the next boot, when **Open Contactors** is pressed on the main page, when the inverter asks for it, or after a fault.
 
-!!! tip "TIP"
-    To measure the zero point again without a reboot, press **Open Contactors** on the main page, wait at least 10 seconds after they have opened, then press **Close Contactors**.
-
 Requirements:
 
 * **Contactor control via GPIO** (Settings → Hardware config), because only the contactors the emulator drives itself tell it for sure that no current flows. With double or triple batteries, you'd need **2ⁿᵈ battery contactor control via GPIO** and **3ʳᵈ battery contactor control via GPIO** too. Without them, the log warns at boot and the sensor's reading is never used: set up [Contactor control via GPIO](../software/contactor_control_via_gpio_pins.md), or use the manual calibration.
@@ -167,7 +164,7 @@ For setups whose contactors the emulator does not drive through GPIO, e.g. batte
 2. Stop all current through the sensor: open the contactors, e.g. with **Open Contactors** on the main page, or take the clamp off the cable, close it and keep it away from other cables.
 3. Wait a few seconds, as the reading is the mean of the last second, then press **Start**.
 
-The result, e.g. `1.648 V (calibrated)`, is used right away and stored, and the log shows `QNHCK2-16 zero point calibrated to 1648 mV`. A reading further than 0.2 V from 1.65 V is refused, with a message saying what GPIO1 read. Repeat the calibration after moving the sensor, and when the temperature around it has changed a lot, e.g. with the seasons.
+The result, e.g. `1.648 V (calibrated)`, is used right away and stored, and the log shows `QNHCK2-16 zero point calibrated to 1648 mV`. A reading further than 0.2 V from 1.65 V is refused, with a message saying what GPIO1 read. 
 
 ### Checking it works
 
