@@ -39,7 +39,7 @@ The rated current and the rated output are both printed on the sensor, and each 
 | :-- | :-- | :-- | :-- |
 | 1.65 ± 0.625 V | 1.025 – 2.275 V | the whole measuring range ✅ | 0.16 % of Ipn |
 | 1.65 ± 1 V | 0.65 – 2.65 V | the whole measuring range ✅ | 0.1 % of Ipn |
-| 1.65 ± 1.25 V | 0.4 – 2.9 V | ±Ipn | 0.08 % of Ipn ✅ |
+| 1.65 ± 1.25 V | 0.4 – 2.9 V | ±Ipn ✅ | 0.08 % of Ipn |
 | 1.65 ± 1.5 V | 0.15 – 3.15 V | about ±0.8 × Ipn ⚠️ | 0.067 % of Ipn |
 | 1.65 ± 1.65 V | 0 – 3.3 V | about ±0.75 × Ipn ⚠️ | 0.06 % of Ipn |
 
