@@ -1,0 +1,5 @@
+nav:
+  - webserver_guide.md
+  - software_installation.md
+  - ota_update.md
+  - "*.md"
