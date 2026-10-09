@@ -31,9 +31,9 @@ To have Battery Emulator accessible in your home network, enter your home Wi-Fi 
 When the board boots, it will attempt to connect to the Wi-Fi network you specified. When several access points broadcast the same SSID (mesh or multi-AP networks), it always joins the one with the strongest signal. Your router will give it an IP address (unless you set a [static IP](#network-config)), so next up is figuring out what that address is. There are a few options:
 
 - Connect temporarily to the Battery Emulator's [access point](#b-through-the-access-point), browse to [192.168.4.1](http://192.168.4.1), and read out the address it got at the top of the [main page](#system-information) (hostname followed by the IP in square brackets)
-- Browse to `http://battery-emulator-a1b2.local` (with the board's own hostname). This mDNS address works on all boards except the [small flash boards](../../hardware/index.md#small-flash-boards), and only if your computer supports mDNS.
-- Connect via USB and read out the serial output with a serial terminal at **115200 baud** (if you only see `?????` in the terminal, the baud rate is wrong). When the board joins the network it prints the line `Got IP address: ...`. The board only prints to USB when [General logging via USB serial](#usb-serial) is enabled.
+- Browse to `http://battery-emulator-a1b2.local` (with the board's own hostname). This mDNS address works on all boards except the [small flash boards](../../hardware/index.md#small-flash-boards), and if your network and computer support mDNS.
 - Check your router. If your home router has a login page (typically 192.168.1.1), you can see the devices connected to your home network there. The board shows up as `battery-emulator-a1b2` (or the custom hostname you set) in its DHCP leases table.
+- Connect via USB and read out the serial output with a serial terminal at **115200 baud** (if you only see `?????` in the terminal, the baud rate is wrong). When the board joins the network it prints the line `Got IP address: ...`. The board only prints to USB when [General logging via USB serial](#usb-serial) is enabled.
 
 Once the address of the board has been determined, open a web browser on a device that is connected to the same home network, and type in the address. This opens the main page of the web interface.
 
@@ -41,9 +41,9 @@ Once the address of the board has been determined, open a web browser on a devic
 
 By default, the board broadcasts a Wi-Fi access point (AP) with the SSID `battery-emulator-a1b2` (containing the last two bytes of its MAC address). If you set a custom **Hostname**, the access point takes that name instead. The default password is `123456789`. After connecting your laptop/phone to this network, open a web browser and browse to [192.168.4.1](http://192.168.4.1).
 
-You have to change the access point password in the [Network config](#network-config) to improve cyber-security: while the access point is running with the factory-default password, it is automatically switched off after 5 minutes, raising a corresponding event. It is not switched off while a device is connected to it, and it gets a new 5 minute window after every reboot. If a custom access point password has been set, it stays enabled indefinitely. Limiting the default-password access point to a short provisioning window mitigates the attack vector while keeping first-time setup and recovery access fully functional.
+You have to change the access point password in the [Network config](#network-config) to improve cyber-security: while the access point is running with the factory-default password, it is automatically switched off after 5 minutes, raising a corresponding event. It is not switched off while a device is connected to it, and it gets a new 5 minute window after every reboot. If a custom access point password has been set, it stays enabled indefinitely. The default-password access point being limited to a short provisioning window mitigates the attack vector while keeping first-time setup and recovery access fully functional.
 
-If a home network is configured but the board cannot join it (wrong password, network out of range), the access point is brought up automatically as a rescue path, even if it has been disabled in the settings, unless its default-password window has already expired.
+If a home network is configured but the board can’t join it after booting (wrong password, network out of range), the access point is brought up automatically as a rescue path, even if it’s disabled in the settings. This lasts for that boot only; the setting itself isn’t changed, and with the default password it will be up for 5 minutes as described above.
 
 If you don't plan to use the access point on a regular basis, disable it with **Broadcast Wi-Fi Access Point**. Not only will the system be more secure, it will also consume less energy and the board will run 10 degrees cooler, because the radio will not be transmitting continuously. Bonus: less radio interference.
 
@@ -97,10 +97,10 @@ The colour of the card shows the state of the system:
 
 | Colour | Meaning |
 |---|---|
-| Dark green | All is well |
-| Yellow | A warning event is active |
-| Red | An error event is active, operation is blocked |
-| Blue | A firmware update is in progress |
+| 🟩 Dark green | All is well |
+| 🟨 Yellow | A warning event is active |
+| 🟥 Red | An error event is active, operation is blocked |
+| 🟦 Blue | A reboot or firmware update is in progress |
 
 When there is a warning or an error, check the [Events](#events) page to see what went wrong. The [status LED](../../hardware/index.md#status-led) of the board follows the same colours.
 
@@ -139,7 +139,7 @@ If no current is flowing in or out of the battery, the text simply says **Batter
 - **2ⁿᵈ / 3ʳᵈ battery allowed to join**: ✗ (voltage mismatch) while the voltage of the extra pack differs too much from the main battery to connect it in parallel
 - **Contactors control**: when Battery Emulator drives the contactors itself ([contactor control via GPIO](contactor_control_via_gpio_pins.md)), the state of the contactors: OFF (DISCONNECTED), PRECHARGE, ON (or **Economized** with [PWM control](contactor_control_via_gpio_pins.md#pwm-control-for-lower-power-draw)), or OFF (FAULT), which needs a reboot to recover from. Otherwise it shows **non-exclusive**: the contactors are controlled via CAN or other methods, and Battery Emulator has only limited influence over them.
 
-If a [charger](../chargers/index.md) is configured, an orange card shows its state and output values.
+If a [charger](../chargers/index.md) is configured, an 🟧 orange card shows its state and output values.
 
 ### Buttons
 
@@ -371,13 +371,13 @@ If enabled, the system rescales the SOC% between the configured **SOC min percen
 
 For [double](battery_2x.md) and [triple](battery_3x.md) setups SOC scaling is applied once, to the installation aggregated total, per-pack values remain unchanged. The scaling can also be changed through [MQTT](mqtt.md#set_scalesoc).
 
-!!! note "NOTE"
+!!! note "Chemistry"
     For some battery chemistries (LFP especially), rescaling SOC% prevents the battery from top-balancing properly. For these chemistries it is recommended to rescale only the bottom section with **SOC min percentage** (e.g. using 20-100%).
     
     For batteries of NMC chemistries it's specifically advised against habitual full charging, which adds wear - thus, for longer lifetime, you should set **SOC max percentage** to around **80** on long term (during the summer, when the pack charges to full quickly, and then stays full almost all day).
 
-!!! tip "TIP"
-    It is now possible to do negative rescaling, as some inverters restrict the possibility to use the entire battery capacity at the bottom section. With this trick you can circumvent that. Use with caution!
+!!! tip "Negative rescaling"
+    It is also possible to do negative rescaling, as some inverters restrict the possibility to use the entire battery capacity at the bottom section. With this trick you can circumvent that. Use with caution!
 
 #### Max charge/discharge current { #battery-chargedischarge-limit }
 
@@ -388,7 +388,7 @@ These settings cap the current that can go in/out of the battery (0-1000 A). Eve
 
 ![image](../../images/webserver-guide-05.png)
 
-!!! tip "TIP"
+!!! tip "Example"
     If you have a 3 kW inverter, the max charge/discharge current would be 3000 W / 300 Vmin = 10 A
 
 #### Manual charge voltage limits
@@ -415,9 +415,7 @@ Only shown when a [charger](../chargers/index.md) is configured: **Charger HVDC 
 
 ## More battery info
 
-The **More Battery/Cell Info** button of the main page opens a page with detailed information about the battery that is specific to the battery integration: its current status, health and lifetime usage, as the battery reports them. See the page of your [battery](../../battery/index.md) for what is shown. The page does not refresh itself; reload it to see new values.
-
-With a [double](battery_2x.md) or [triple](battery_3x.md) battery setup, tabs at the top select the battery. Battery integrations that have not been updated for multiple batteries show the detailed information only for Battery 1.
+The **More Battery/Cell Info** button of the main page opens a page with detailed information about the battery that is specific to the battery integration: its current status, health and lifetime usage, as the battery reports them. See the page of your [battery](../../battery/index.md) for what is shown. The page does not refresh itself; reload it to see new values. With a [double](battery_2x.md) or [triple](battery_3x.md) battery setup, tabs at the top select the battery. 
 
 Some battery packs show the stored **Diagnostic Trouble Codes**, which are read on demand with **Read DTC**, and can be cleared with **Erase DTC**. Each code is shown with its status (Active, Confirmed or Stored) and a description, fetched from GitHub (boards with enough flash also carry the descriptions built in).
 
@@ -437,13 +435,13 @@ Click or tap a bar or a cell to select it: its number and voltage are shown abov
 
 In general, the lower the voltage deviation in mV, the better. A battery with 10 mV deviation is considerably healthier than one with 100 mV deviation. Individual cells that are lower than the rest can be a sign of early stages of cell failures/degradation/overheating, however, this depends heavily on the chemistry of the battery. Some chemistries like LMO can have way larger deviations at lower SOC% compared to NCM chemistries.
 
-Deviations can also grow under heavy load. If you pull tens of kW out of the battery, the mV deviation usually increases. This is completely normal.
+Deviations can also grow under heavy load. If you pull higher power out of the battery, the mV deviation usually increases. This is completely normal.
 
-The system will automatically go into a warning state in case a cell voltage goes too high or too low. If this happens, an event will be raised (see the [Events](#events) page), and further charging/discharging will be halted.
+The system will automatically go into a warning state in case a cell voltage goes too high or too low. The value is battery-specific. If this happens, an event will be raised (see the [Events](#events) page), and further charging/discharging will be halted.
 
 ### Balancing status
 
-On some battery types (Nissan LEAF, Renault Zoe Gen1 and Gen2, Pylon, Fake battery) we visualize the balancing status that the BMS reports for each cell. Cells that are balancing are shown as cyan bars, and **(balancing)** is added to the readout of a selected balancing cell. The legend below the graph says **Balancing**, or **Pending** while the BMS has flagged the cells for balancing but has not started draining them yet. If the battery reports that balancing is active without telling which cells, the legend says **Balancing is active now!** instead, and **(balancing now!)** is added to the Delta at the top.
+On some battery types (like Nissan LEAF, Renault Zoe Gen1 and Gen2, Pylon, Fake battery) we visualize the balancing status that the BMS reports for each cell. Cells that are balancing are shown as cyan bars, and **(balancing)** is added to the readout of a selected balancing cell. The legend below the graph says **Balancing**, or **Pending** while the BMS has flagged the cells for measurement. If the battery reports that balancing is active, the legend says **Balancing is active now!**, and **(balancing now!)** is added to the Delta at the top.
 
 ## CAN tools
 
